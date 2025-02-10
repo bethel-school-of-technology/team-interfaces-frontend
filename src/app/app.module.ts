@@ -3,14 +3,20 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HttpFeatureKind, withFetch } from '@angular/common/http';
+import { MarketComponent } from './components/market/market.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MarketComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
