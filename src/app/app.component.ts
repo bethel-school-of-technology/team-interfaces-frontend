@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'backend-api-demo';
+  
+  title: string = '';
+  userList: User[] = [];
+
+  constructor (private myUserService: UserService) {}
+
+  ngOnInit(): void {
+    this.title = this.myUserService.title;
+    this.userList = this.myUserService.listOfUsers;
+  }
 }
