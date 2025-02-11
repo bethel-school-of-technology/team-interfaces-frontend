@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarketComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CoinDetailsComponent
   ],
   imports: [
     BrowserModule,
