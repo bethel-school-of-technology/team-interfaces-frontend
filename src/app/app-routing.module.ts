@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'market', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'market', component: MarketComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
