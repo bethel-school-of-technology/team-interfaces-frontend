@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MarketComponent,
     LoginComponent,
     SignupComponent,
-    CoinDetailsComponent
+    CoinDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,15 @@ import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'market', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'market', component: MarketComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'market/:coinId', component: CoinDetailsComponent }
+  { path: 'market/:coinId', component: CoinDetailsComponent },
+  { path: 'profile/:userId', component: ProfileComponent}
 ];
 
 @NgModule({
