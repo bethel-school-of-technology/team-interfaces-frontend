@@ -5,5 +5,5 @@ export class User {
     name: string = '';
     email: string = '';
     bankAccount: string = '';
-    ballance: number = 0;
+    balance: number = 0;
 }
