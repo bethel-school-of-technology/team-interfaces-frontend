@@ -8,16 +8,20 @@ import { Crypto } from '../models/crypto';
 })
 export class CryptoService {
 
-  baseUrl: string = 'https://api.coinpaprika.com/v1/';
+  baseUrl: string = 'https://api.coinpaprika.com/v1';
 
   constructor(private http: HttpClient) { }
 
   getCoins(): Observable<Crypto[]> {
-    return this.http.get<Crypto[]>(`${this.baseUrl}coins`)
+    return this.http.get<Crypto[]>(`${this.baseUrl}/coins`)
   }
 
-  getCoinById(coinId: string){
+  getCoinById(coinId: string) {
+    return this.http.get<Crypto>(`${this.baseUrl}/coins/${coinId}`)
+  }
 
+  getOHLCById(coinId: string) {
+    return this.http.get<any>(`${this.baseUrl}/coins/${coinId}/ohlcv/latest`)
   }
 
 }

@@ -2,6 +2,8 @@
 
 
     <div *ngFor="let c of cryptoList">
-        <h2>{{c.symbol}} - ${{c.name}}</h2>
-        <p>{{c.rank}}</p>  
+        <h2>{{c.name}}</h2>
+        <h4>{{c.symbol}}</h4>
+        <a [routerLink]="['/market', c.id]">View Details</a>
+        <hr> 
     </div>

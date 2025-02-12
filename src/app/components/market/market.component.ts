@@ -18,8 +18,10 @@ export class MarketComponent implements OnInit{
   ngOnInit(): void {
     this.cryptoService.getCoins().subscribe(result => {
       this.cryptoList = result
-      this.cryptoList.length = 10;
+      this.cryptoList.length = 500;
     })
   }
+
+  
 
 }
