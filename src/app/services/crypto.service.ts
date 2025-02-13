@@ -13,7 +13,7 @@ export class CryptoService {
   constructor(private http: HttpClient) { }
 
   getCoins(): Observable<Crypto[]> {
-    return this.http.get<Crypto[]>(`${this.baseUrl}/coins`)
+    return this.http.get<Crypto[]>(`${this.baseUrl}/tickers`)
   }
 
   getCoinById(coinId: string) {
@@ -21,7 +21,7 @@ export class CryptoService {
   }
 
   getOHLCById(coinId: string) {
-    return this.http.get<any>(`${this.baseUrl}/coins/${coinId}/ohlcv/latest`)
+    return this.http.get<any>(`${this.baseUrl}/tickers/${coinId}`)
   }
 
 }
