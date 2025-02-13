@@ -1,21 +1,31 @@
-<h1>Crypto Market</h1>
-<header style="background-color: lightgray; padding: 10px;">
-    <h2 class="marketItem">Name</h2>
-    <h2 class="marketItem">Symbol</h2>
-    <h2 class="marketItem">Price</h2>
-    <h2 class="marketItem">24hr %</h2>
-</header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" >
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h2 class="navbar-nav me-auto mb-2 mb-lg-0" id="title" aria-current="page">DISCOVER</h2>
 
-<div class="marketWindow">
-    <div *ngFor="let c of cryptoList">
-        <div>
-            <img src="https://static.coinpaprika.com/coin/{{c.id}}/logo.png"/>
-            <h2 class="marketItem">{{c.name}}</h2>
-            <h4 class="marketItem">{{c.symbol}}</h4>
-            <p class="marketItem">${{c.quotes.USD.price.toFixed(2)}}</p>
-            <p class="marketItem">{{c.quotes.USD.percent_change_24h}}</p>
-            <a class="marketItem" [routerLink]="['/market', c.id]">View Details</a>
+            <form class="d-flex" style="justify-content: end;" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-        <hr>
+    </div>
+</nav>
+
+<div class="container marketWindow" style="padding-top: 20px; margin-top: 40px;">
+    <div class="row">
+        <div class="col" *ngFor="let c of cryptoList">
+
+            <div class="card marketItem" style="width: 18rem;">
+                <div class="card-body">
+
+                    <h5 class="card-title"> {{c.name}} </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{c.symbol}}</h6>
+                    <img src="https://static.coinpaprika.com/coin/{{c.id}}/logo.png" />
+                    <p class="card-text">Price: ${{c.quotes.USD.price.toFixed(2)}}</p>
+                    <p class="card-text">Last 24hrs: {{c.quotes.USD.percent_change_24h}}%</p>
+                    <a [routerLink]="['/market', c.id]" class="card-link">View Details</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
