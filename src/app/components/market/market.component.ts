@@ -11,7 +11,7 @@ import { ScrollDispatcher, ScrollingModule } from '@angular/cdk/scrolling'
 })
 export class MarketComponent implements OnInit{
 
-  cryptoList: Crypto[] = [];
+  cryptoList: any[] = [];
 
   constructor(private cryptoService: CryptoService, private scrollDispatcher: ScrollDispatcher) { }
 

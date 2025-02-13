@@ -1,9 +1,21 @@
 <h1>Crypto Market</h1>
+<header style="background-color: lightgray; padding: 10px;">
+    <h2 class="marketItem">Name</h2>
+    <h2 class="marketItem">Symbol</h2>
+    <h2 class="marketItem">Price</h2>
+    <h2 class="marketItem">24hr %</h2>
+</header>
 
-
+<div class="marketWindow">
     <div *ngFor="let c of cryptoList">
-        <h2>{{c.name}}</h2>
-        <h4>{{c.symbol}}</h4>
-        <a [routerLink]="['/market', c.id]">View Details</a>
-        <hr> 
+        <div>
+            <img src="https://static.coinpaprika.com/coin/{{c.id}}/logo.png"/>
+            <h2 class="marketItem">{{c.name}}</h2>
+            <h4 class="marketItem">{{c.symbol}}</h4>
+            <p class="marketItem">${{c.quotes.USD.price.toFixed(2)}}</p>
+            <p class="marketItem">{{c.quotes.USD.percent_change_24h}}</p>
+            <a class="marketItem" [routerLink]="['/market', c.id]">View Details</a>
+        </div>
+        <hr>
     </div>
+</div>

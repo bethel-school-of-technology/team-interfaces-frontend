@@ -1,0 +1,13 @@
+
+img {
+    max-width: 20px;
+}
+.marketWindow {
+    max-width: 60%;
+    display: block;
+}
+.marketItem {
+    display: inline;
+    margin: 10px;
+    
+}

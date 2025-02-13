@@ -21,13 +21,12 @@ export class CoinDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.currentCoinId = this.actRoute.snapshot.paramMap.get('coinId') ?? "";
     this.cryptoService.getCoinById(this.currentCoinId).subscribe(result => {
-      console.log(result);
       this.coin = result;
     });
     this.cryptoService.getOHLCById(this.currentCoinId).subscribe(result => {
       console.log(result);
       this.coinOHLC = result;
-      const closeValueToString = this.coinOHLC[0].close.toFixed(2);
+      const closeValueToString = this.coinOHLC.quotes.USD.price.toFixed(2);
       this.closeValue = parseFloat(closeValueToString);
 
     });
