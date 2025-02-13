@@ -1,43 +1,38 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { User } from '../models/user';
-import { Observable, of } from 'rxjs';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class UserService {
-    listOfUsers: User[] = [{
-        id: 1,
-        username: "bob1",
-        password: "bob#password",
-        name: "Bob Smith",
-        email: "bsmith@exp.com",
-        bankAccount: "123456789",
-        balance: 1000.00
-    }, {
-        id: 2,
-        username: "ape2",
-        password: "apr#password",
-        name: "April Jones",
-        email: "ajones@exp.com",
-        bankAccount: "234567891",
-        balance: 2000.00
-    }, {
-        id: 3,
-        username: "Jim3",
-        password: "jim#password",
-        name: "Jim Adams",
-        email: "jadams@exp.com",
-        bankAccount: "345678912",
-        balance: 3000.00
-    }];
+  private apiUrl = 'http://localhost:3000/users';
 
-    title: string = "My Users";
+  constructor(private http: HttpClient) {}
 
-    signUp(newUser: User): Observable<User> {
-        // Add the new user to the list
-        this.listOfUsers.push(newUser);
-        // Return the added user as an Observable
-        return of(newUser);
-    }
+  signUp(user: User): Observable<User> {
+    // Hash the password before saving
+    const hashedPassword = bcrypt.hashSync(user.password, 10);
+    const newUser = { ...user, password: hashedPassword };
+    return this.http.post<User>(this.apiUrl, newUser);
+  }
+
+  login(username: string, password: string): Observable<User> {
+    return this.http.post<User>(`${this.apiUrl}/login`, {
+      username,
+      password
+    });
+  }
+
+  // Add this method to verify password
+  private verifyPassword(storedPassword: string, providedPassword: string): boolean {
+    return bcrypt.compareSync(providedPassword, storedPassword);
+  }
+
+  listOfUsers(): User[] {
+    // Implementation for getting list of users
+    return [];
+  }
 }

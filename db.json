@@ -1,4 +1,13 @@
 {
   "users": [
+    {
+      "email": "bw@exp.com",
+      "password": "$2a$10$09Zk.KbxO66HyZNKbokhHOMrWZuD0cZYq9Wvj6j1YUD.C5pKMOOPe",
+      "id": 1739419685039,
+      "username": "Brian",
+      "name": "Brian W.",
+      "bankAccount": "123456789",
+      "balance": 25000
+    }
   ]
 }
