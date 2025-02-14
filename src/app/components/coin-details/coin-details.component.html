@@ -1,12 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <img src="{{this.coin.logo}}" />
+                    <h3></h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
+                    <p class="card-text">Description: {{this.coin.description}}</p>
+                    <p class="card-text">Price: ${{this.closeValue}}</p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
 
-<img src="{{this.coin.logo}}"/>
-<h3>{{this.coin.name}}</h3>
-<h4>Description:</h4>
-<p>{{this.coin.description}}</p>
-<p>Rank: {{this.coin.rank}}</p>
-<p>Price: ${{this.closeValue}}</p>
-
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>What They're saying:</h2>
+                <div *ngFor="let c of TwitterFeed">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="{{c.user_image_link}}" />
+                            <h5 class="card-title">{{c.user_name}}</h5>
+                            <p class="card-text">{{c.status}}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
 
 <br>
 
-<a routerLink="/market" >Back</a>
+<a routerLink="/market">Back</a>

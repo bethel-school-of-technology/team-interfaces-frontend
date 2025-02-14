@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from '../../services/crypto.service';
 import { ActivatedRoute } from '@angular/router';
-import { Crypto } from '../../models/crypto';
+
 
 @Component({
   selector: 'app-coin-details',
@@ -15,6 +15,7 @@ export class CoinDetailsComponent implements OnInit {
   coin: any = null;
   closeValue: any = null;
   coinOHLC: any = null;
+  TwitterFeed: any[] = []
 
   constructor(private cryptoService: CryptoService, private actRoute: ActivatedRoute) { }
 
@@ -29,6 +30,10 @@ export class CoinDetailsComponent implements OnInit {
       const closeValueToString = this.coinOHLC.quotes.USD.price.toFixed(2);
       this.closeValue = parseFloat(closeValueToString);
 
+    });
+    this.cryptoService.getTwitter(this.currentCoinId).subscribe(result => {
+      this.TwitterFeed = result;
+    
     });
 
   }
