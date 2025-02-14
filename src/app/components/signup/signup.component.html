@@ -8,6 +8,19 @@
           <div class="card-body">
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   
+              <!-- Email Field -->
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
+                <div *ngIf="isFieldInvalid('email')">
+                  <div *ngFor="let error of getFormValidationErrors('email')" 
+                        class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                </div>
+              </div>
+              
               <!-- Password Field -->
               <div class="mb-3">
                 <label class="form-label">Password</label>
@@ -28,19 +41,6 @@
                        [ngClass]="{ 'is-invalid': isFieldInvalid('name') }">
                 <div *ngIf="isFieldInvalid('name')">
                   <div *ngFor="let error of getFormValidationErrors('name')" 
-                       class="invalid-feedback">
-                    {{ error }}
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Email Field -->
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" formControlName="email" class="form-control"
-                       [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
-                <div *ngIf="isFieldInvalid('email')">
-                  <div *ngFor="let error of getFormValidationErrors('email')" 
                        class="invalid-feedback">
                     {{ error }}
                   </div>
