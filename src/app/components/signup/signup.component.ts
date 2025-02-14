@@ -22,10 +22,6 @@ export class SignupComponent {
 
   private initializeForm(): void {
     this.signupForm = new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3)
-      ]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6)
