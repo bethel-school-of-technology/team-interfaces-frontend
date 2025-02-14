@@ -14,9 +14,9 @@ export class UserService {
 
   signUp(user: User): Observable<User> {
     // Hash the password before saving
-    const hashedPassword = bcrypt.hashSync(user.password, 10);
-    const newUser = { ...user, password: hashedPassword };
-    return this.http.post<User>(this.apiUrl, newUser);
+    // const hashedPassword = bcrypt.hashSync(user.password, 10);
+    // const newUser = { ...user, password: hashedPassword };
+    return this.http.post<User>(this.apiUrl, user);
   }
 
   login(username: string, password: string): Observable<User> {
