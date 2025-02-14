@@ -8,6 +8,15 @@
       "name": "Brian W.",
       "bankAccount": "123456789",
       "balance": 25000
+    },
+    {
+      "email": "Rudy@test.com",
+      "password": "$2a$10$J6QbRvLcbdj9G3fIuPPyceAXmHDfGN6g/lD9QRn9QQzvtXGSk9L0i",
+      "id": 1739496140059,
+      "username": "rweiler",
+      "name": "Rudy Weiler",
+      "bankAccount": "987654321",
+      "balance": 0
     }
   ]
 }
