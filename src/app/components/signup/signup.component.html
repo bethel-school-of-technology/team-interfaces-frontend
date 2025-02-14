@@ -7,18 +7,6 @@
           </div>
           <div class="card-body">
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-              <!-- Username Field -->
-              <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" formControlName="username" class="form-control"
-                       [ngClass]="{ 'is-invalid': isFieldInvalid('username') }">
-                <div *ngIf="isFieldInvalid('username')">
-                  <div *ngFor="let error of getFormValidationErrors('username')" 
-                       class="invalid-feedback">
-                    {{ error }}
-                  </div>
-                </div>
-              </div>
   
               <!-- Password Field -->
               <div class="mb-3">
@@ -93,6 +81,10 @@
                 <button type="reset" class="btn btn-outline-secondary">
                   Reset
                 </button>
+                <a routerLink="/login" class="btn btn-link">
+                  Already have an account? Login
+                </a>
+              
               </div>
             </form>
           </div>
