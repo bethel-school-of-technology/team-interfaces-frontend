@@ -24,4 +24,8 @@ export class CryptoService {
     return this.http.get<any>(`${this.baseUrl}/tickers/${coinId}`)
   }
 
+  getTwitter(coinId: string) {
+    return this.http.get<any>(`${this.baseUrl}/coins/${coinId}/twitter`)
+  }
+
 }
