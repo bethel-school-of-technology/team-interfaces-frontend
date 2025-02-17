@@ -1,59 +1,65 @@
-<div class="container mt-4">
-    <div class="row justify-content-md-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h4>Login</h4>
-          </div>
-          <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<!-- Background w/> bootstrap -->
+<div class="bg-image d-flex justify-content-center align-items-center"
+     style="background-image: url('/assets/images/unsplash02.jpg');
+            height: 100vh;">
 
-              <!-- Email Field -->
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" formControlName="email" class="form-control"
-                       [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
-                <div *ngIf="isFieldInvalid('email')">
-                  <div *ngFor="let error of getFormValidationErrors('email')"
-                       class="invalid-feedback">
-                    {{ error }}
-                  </div>
+<div class="container mt-4">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card bg-transparent border-white">
+        <div class="card-header">
+          <h4 class="text-white border-white">Login</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label class="form-label text-white">Email</label>
+              <input type="text" formControlName="email" class="form-control"
+                     [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
+              <div *ngIf="isFieldInvalid('email')">
+                <div *ngFor="let error of getFormValidationErrors('email')"
+                     class="invalid-feedback">
+                  {{ error }}
                 </div>
               </div>
+            </div>
+            
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label class="form-label text-white">Password</label>
+              <input type="password" formControlName="password" class="form-control"
+                     [ngClass]="{ 'is-invalid': isFieldInvalid('password') }">
+              <div *ngIf="isFieldInvalid('password')">
+                <div *ngFor="let error of getFormValidationErrors('password')"
+                     class="invalid-feedback">
+                  {{ error }}
+                </div>
+              </div>
+            </div>
+            <!-- Error Message -->
+            <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+              {{ errorMessage }}
+            </div>
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary"
+                      [disabled]="!loginForm.valid || isSubmitting">
+                Login
+              </button>
+              <button type="reset" class="btn btn-outline-secondary bg-white">
+                Reset
+              </button>
+              <a routerLink="/signup" class="btn btn-link bg-white">
+                Don't have an account? Sign up
+              </a>
+            </div>
+            <div class="d-flex gap-2">
               
-              <!-- Password Field -->
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" formControlName="password" class="form-control"
-                       [ngClass]="{ 'is-invalid': isFieldInvalid('password') }">
-                <div *ngIf="isFieldInvalid('password')">
-                  <div *ngFor="let error of getFormValidationErrors('password')"
-                       class="invalid-feedback">
-                    {{ error }}
-                  </div>
-                </div>
-              </div>
-              <!-- Error Message -->
-              <div *ngIf="errorMessage" class="alert alert-danger mb-3">
-                {{ errorMessage }}
-              </div>
-              <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary"
-                        [disabled]="!loginForm.valid || isSubmitting">
-                  Login
-                </button>
-                <a routerLink="/signup" class="btn btn-link">
-                  Don't have an account? Sign up
-                </a>
-              </div>
-              <div class="d-flex gap-2">
-                <button type="reset" class="btn btn-outline-secondary">
-                  Reset
-                </button>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
