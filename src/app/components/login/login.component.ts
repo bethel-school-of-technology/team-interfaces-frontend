@@ -55,8 +55,9 @@ export class LoginComponent implements OnInit {
 
       this.userService.login(email, password).subscribe({
         next: (user: User) => {
+          localStorage.setItem('currentUser', JSON.stringify(user))
           console.log('Login successful:', user);
-          this.router.navigate(['/market']);
+          this.router.navigate(['/profile']);
         },
         error: (error: any) => {
           console.error('Login failed:', error);

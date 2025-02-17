@@ -17,6 +17,14 @@
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
       "balance": 0
+    },
+    {
+      "email": "rw@test.com",
+      "password": "$2a$10$ak8GXXryDtNjmsxcn2vBHuQiNz8SWpJzIqv6jYzzXZplZqXLaynU2",
+      "id": 1739819648033,
+      "name": "Rudy Weiler",
+      "bankAccount": "987654321",
+      "balance": 0
     }
   ]
 }

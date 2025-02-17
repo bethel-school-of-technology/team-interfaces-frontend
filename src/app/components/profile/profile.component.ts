@@ -12,11 +12,18 @@ export class ProfileComponent implements OnInit{
 
   currentUserId: number = 0;
   currentUser: User = new User;
+  test: any = null;
   
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    
+   this.test = localStorage.getItem("currentUser");
+   this.test = JSON.parse(this.test);
+   this.currentUser = this.test.user
+   
+  
+   
+  
   }
 
 }
