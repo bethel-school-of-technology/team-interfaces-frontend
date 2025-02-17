@@ -1,16 +1,21 @@
+<!-- Background w/> bootstrap -->
+<div class="bg-image d-flex justify-content-center align-items-center"
+     style="background-image: url('/assets/images/getty01.jpg');
+            height: 100vh;">
+
 <div class="container mt-4">
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <div class="card">
+        <div class="card bg-transparent border-white">
           <div class="card-header">
-            <h4>Sign Up</h4>
+            <h4 class="text-white border-white">Sign Up</h4>
           </div>
           <div class="card-body">
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   
               <!-- Email Field -->
               <div class="mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label text-white">Email</label>
                 <input type="email" formControlName="email" class="form-control"
                         [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
                 <div *ngIf="isFieldInvalid('email')">
@@ -23,7 +28,7 @@
               
               <!-- Password Field -->
               <div class="mb-3">
-                <label class="form-label">Password</label>
+                <label class="form-label text-white">Password</label>
                 <input type="password" formControlName="password" class="form-control"
                        [ngClass]="{ 'is-invalid': isFieldInvalid('password') }">
                 <div *ngIf="isFieldInvalid('password')">
@@ -36,7 +41,7 @@
   
               <!-- Name Field -->
               <div class="mb-3">
-                <label class="form-label">Full Name</label>
+                <label class="form-label text-white">Full Name</label>
                 <input type="text" formControlName="name" class="form-control"
                        [ngClass]="{ 'is-invalid': isFieldInvalid('name') }">
                 <div *ngIf="isFieldInvalid('name')">
@@ -49,7 +54,7 @@
   
               <!-- Bank Account Field -->
               <div class="mb-3">
-                <label class="form-label">Bank Account Number</label>
+                <label class="form-label text-white">Bank Account Number</label>
                 <input type="text" formControlName="bankAccount" class="form-control"
                        [ngClass]="{ 'is-invalid': isFieldInvalid('bankAccount') }">
                 <div *ngIf="isFieldInvalid('bankAccount')">
@@ -62,7 +67,7 @@
   
               <!-- Balance Field -->
               <div class="mb-3">
-                <label class="form-label">Initial Balance</label>
+                <label class="form-label text-white">Initial Balance</label>
                 <input type="number" formControlName="balance" class="form-control"
                        [ngClass]="{ 'is-invalid': isFieldInvalid('balance') }">
                 <div *ngIf="isFieldInvalid('balance')">
@@ -78,10 +83,10 @@
                         [disabled]="!signupForm.valid">
                   Sign Up
                 </button>
-                <button type="reset" class="btn btn-outline-secondary">
+                <button type="reset" class="btn btn-outline-secondary bg-white">
                   Reset
                 </button>
-                <a routerLink="/login" class="btn btn-link">
+                <a routerLink="/login" class="btn btn-link bg-white">
                   Already have an account? Login
                 </a>
               
@@ -92,3 +97,4 @@
       </div>
     </div>
   </div>
+</div>
