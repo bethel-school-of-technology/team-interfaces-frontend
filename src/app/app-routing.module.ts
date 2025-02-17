@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'market/:coinId', component: CoinDetailsComponent },
-  { path: 'profile/:userId', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
