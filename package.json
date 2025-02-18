@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server db.json -m ./node_modules/json-server-auth",
+    "server": "json-server db.json -m ./node_modules/json-server-auth -r routes.json",
     "serve:ssr:backend-api-demo": "node dist/backend-api-demo/server/server.mjs"
   },
   "private": true,

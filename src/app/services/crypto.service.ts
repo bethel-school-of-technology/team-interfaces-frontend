@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Crypto } from '../models/crypto';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +12,16 @@ export class CryptoService {
 
   constructor(private http: HttpClient) { }
 
-  getCoins(): Observable<Crypto[]> {
-    return this.http.get<Crypto[]>(`${this.baseUrl}/tickers`)
+  getCoins(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/tickers`)
   }
 
   getCoinById(coinId: string) {
-    return this.http.get<Crypto>(`${this.baseUrl}/coins/${coinId}`)
+    return this.http.get<any>(`${this.baseUrl}/tickers/${coinId}`)
   }
 
-  getOHLCById(coinId: string) {
-    return this.http.get<any>(`${this.baseUrl}/tickers/${coinId}`)
+  getDescriptionById(coinId: string) {
+    return this.http.get<any>(`${this.baseUrl}/coins/${coinId}`)
   }
 
   getTwitter(coinId: string) {
