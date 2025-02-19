@@ -19,20 +19,13 @@
       "balance": 0
     },
     {
-      "email": "rw@test.com",
-      "password": "$2a$10$ak8GXXryDtNjmsxcn2vBHuQiNz8SWpJzIqv6jYzzXZplZqXLaynU2",
-      "id": 1739819648033,
+      "email": "test3@test.com",
+      "password": "$2a$10$WLeH9gKt9sa26zgS7bfVeeJESJYIUvOH8ceIiSP.H/MmF49NH1ome",
+      "id": 1739910726603,
       "name": "Rudy Weiler",
-      "bankAccount": "987654321",
-      "balance": 0
-    },
-    {
-      "email": "brian@test.com",
-      "password": "$2a$10$pm0wx5yoNp/EziUblGwK9u.MBoP8PkSTDa.GdheHIzv59LCVXi48a",
-      "id": 1739829996547,
-      "name": "Brian Whisenhunt",
-      "bankAccount": "159487263",
-      "balance": 35000
+      "bankAccount": "123456789",
+      "balance": 1000,
+      "coin": []
     }
   ]
 }
