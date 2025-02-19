@@ -1,0 +1,19 @@
+<nav class="nav justify-content-center bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="navbar-logo">
+      <a routerLink="/profile">
+        <img src="assets\images\starcoin.jpg" alt="App Logo">
+      </a>
+      <h2 class="text-white border-white">Welcome To CoinSpace</h2>
+    </div>
+    
+    <a class="nav-link active" aria-current="Profile" href="profile">Profile</a>
+    <a class="nav-link" aria-current="Market" href="market">Market</a>
+    
+    <div class="nav justify-content-end">
+      <button *ngIf="userService.getCurrentUser()" 
+              class="btn btn-secondary" 
+              (click)="logout()">
+        Logout
+      </button>
+    </div>
+</nav>

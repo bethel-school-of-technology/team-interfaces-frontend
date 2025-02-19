@@ -26,6 +26,15 @@
       "bankAccount": "123456789",
       "balance": 1000,
       "coin": []
+    },
+    {
+      "email": "brian@test.com",
+      "password": "$2a$10$.suJUqDeZBfTrahtjQj5b.adJI.DI.md1OxDyMJsDrl9ahqV0uq3u",
+      "id": 1739935184693,
+      "name": "Brian Whisenhunt",
+      "bankAccount": "789456123",
+      "balance": 100000,
+      "coin": []
     }
   ]
 }
