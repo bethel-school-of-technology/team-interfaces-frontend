@@ -50,7 +50,8 @@ export class SignupComponent {
       const newUser: User = {
         id: Date.now(),
         ...this.signupForm.value,
-        balance: this.signupForm.get('balance')?.value
+        balance: this.signupForm.get('balance')?.value,
+        coin: []
       };
 
       console.log('Attempting to register:', newUser);

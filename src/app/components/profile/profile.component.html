@@ -1,3 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="profile">Welcome, {{currentUser.name}}</h1>
+        </div>
+        <div class="col" style="text-align: end;">
+            <h2 class="profile">Assets: {{currentUser.balance}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div>
+                <h4 class="profile">Purchases</h4>
+                <div *ngIf="purchased">
+                    <div *ngFor="let c of purchased">
+                        <p>{{c.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
-<h1>Welome: {{currentUser.name}}</h1>
+
+<a style="margin: 20px;" class="marketItem" (click)="logOut()">Sign out</a>
