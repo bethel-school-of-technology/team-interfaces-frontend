@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from '../../services/crypto.service';
-import { Crypto } from '../../models/crypto';
-import { ScrollDispatcher, ScrollingModule } from '@angular/cdk/scrolling'
+
 
 @Component({
   selector: 'app-market',
@@ -13,7 +12,7 @@ export class MarketComponent implements OnInit{
 
   cryptoList: any[] = [];
 
-  constructor(private cryptoService: CryptoService, private scrollDispatcher: ScrollDispatcher) { }
+  constructor(private cryptoService: CryptoService) { }
 
   ngOnInit(): void {
     this.cryptoService.getCoins().subscribe(result => {

@@ -27,11 +27,9 @@ export class CoinDetailsComponent implements OnInit {
       this.closeValue = parseFloat(this.coin.quotes.USD.price.toFixed(2));
       
     });
-    this.cryptoService.getDescriptionById(this.currentCoinId).subscribe(result => {
+      this.cryptoService.getDescriptionById(this.currentCoinId).subscribe(result => {
       console.log(result);
       this.Description = result;
-      
-
     });
     this.cryptoService.getTwitter(this.currentCoinId).subscribe(result => {
       this.TwitterFeed = result;
