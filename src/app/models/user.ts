@@ -1,7 +1,7 @@
 import { Crypto } from "./crypto";
 
 export class User {
-    id: number = 0;
+    id: number|undefined;
     password: string = '';
     name: string = '';
     email: string = '';

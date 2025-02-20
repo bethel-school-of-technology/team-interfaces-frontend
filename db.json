@@ -7,7 +7,7 @@
       "username": "Brian",
       "name": "Brian W.",
       "bankAccount": "123456789",
-      "balance": 3000
+      "balance": 150000
     },
     {
       "email": "Rudy@test.com",
@@ -17,24 +17,12 @@
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
       "balance": 0
-    },
-    {
-      "email": "test3@test.com",
-      "password": "$2a$10$WLeH9gKt9sa26zgS7bfVeeJESJYIUvOH8ceIiSP.H/MmF49NH1ome",
-      "id": 1739910726603,
-      "name": "Rudy Weiler",
-      "bankAccount": "123456789",
-      "balance": 1000,
-      "coin": []
-    },
-    {
-      "email": "brian@test.com",
-      "password": "$2a$10$.suJUqDeZBfTrahtjQj5b.adJI.DI.md1OxDyMJsDrl9ahqV0uq3u",
-      "id": 1739935184693,
-      "name": "Brian Whisenhunt",
-      "bankAccount": "789456123",
-      "balance": 100000,
-      "coin": []
     }
+  ],
+  "transactions":[
+
+  ],
+  "cryptos":[
+
   ]
 }

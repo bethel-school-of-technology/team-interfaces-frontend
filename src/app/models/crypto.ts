@@ -1,7 +1,9 @@
 export class Crypto {
-    id: string = "";
+    id: number|undefined;
+    user_id: number|undefined;
     name: string = "";
     symbol: string = "";
-    rank: number = 0;
+    amount: number = 0;
     price: number = 0;
+    rank: number = 0
 }
