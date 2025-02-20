@@ -26,14 +26,5 @@ export class ProfileComponent implements OnInit{
    this.currentUser = this.test.user;
    this.currentUser.coin = this.purchased;
    
-  
-   
-  
   }
-
-  logOut() {
-    localStorage.clear();
-    this.router.navigate(['login']);
-  }
-
 }

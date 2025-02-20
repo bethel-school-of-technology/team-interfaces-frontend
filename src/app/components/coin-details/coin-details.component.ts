@@ -44,11 +44,13 @@ export class CoinDetailsComponent implements OnInit {
     
     
     let purchasedCoin: Crypto = {
-    id: coin.id,
-    name: coin.name,
-    symbol: coin.symbol,
-    rank: coin.rank,
-    price: parseFloat(coin.quotes.USD.price.toFixed(2))
+      id: coin.id,
+      name: coin.name,
+      symbol: coin.symbol,
+      rank: coin.rank,
+      price: parseFloat(coin.quotes.USD.price.toFixed(2)),
+      user_id: undefined,
+      amount: 0
     }
     
     let user = JSON.parse(localStorage.getItem("currentUser") ?? "");
