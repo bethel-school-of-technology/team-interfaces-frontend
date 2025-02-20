@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit{
    this.test = localStorage.getItem("currentUser");
    this.test = JSON.parse(this.test);
    this.currentUser = this.test.user;
-   this.currentUser.coin = this.purchased;
+   
    
   }
 }

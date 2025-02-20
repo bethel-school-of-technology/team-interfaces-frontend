@@ -4,6 +4,5 @@ export class Crypto {
     name: string = "";
     symbol: string = "";
     amount: number = 0;
-    price: number = 0;
-    rank: number = 0
+   
 }

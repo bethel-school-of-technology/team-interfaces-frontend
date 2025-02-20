@@ -13,7 +13,12 @@
                         <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
                         <p class="card-text">Description: {{this.Description.description}}</p>
                         <p class="card-text">Price: ${{this.closeValue}}</p>
-                        <a class="btn btn-primary" (click)="buy(this.coin)">Buy</a>
+                        <form #form="ngForm" (ngSubmit)="buy(this.coin)">
+                            <label>Quantity</label>
+                            <input type="number" name="amount" [(ngModel)]="this.amount">
+                            <button class="btn btn-primary" type="submit">Buy</button>
+                        </form>
+                        
                     </div>
 
                 </div>

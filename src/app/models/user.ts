@@ -6,6 +6,5 @@ export class User {
     name: string = '';
     email: string = '';
     bankAccount: string = '';
-    balance: number = 0.00;
-    coin: Crypto[] = [];
+    balance: number = 0;
 }
