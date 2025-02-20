@@ -3,17 +3,21 @@ img {
     max-width: 20px;
     display: inline;
 }
-.marketWindow {
-    max-width: 60%;
-    
-}
+
 .marketItem {
     
-    margin: 10px;
+    
+    margin: 10px auto;
+
     
 }
+
+
 #title {
     display: block;
     margin: auto;
+    
 }
+
+
 
