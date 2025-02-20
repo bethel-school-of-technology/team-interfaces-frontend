@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CryptoService } from '../../services/crypto.service';
+import { CryptoService } from '../../services/coinPaprikaAPI.service';
+
 
 
 @Component({

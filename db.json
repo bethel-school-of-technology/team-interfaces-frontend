@@ -10,19 +10,72 @@
       "balance": 150000
     },
     {
-      "email": "Rudy@test.com",
-      "password": "$2a$10$J6QbRvLcbdj9G3fIuPPyceAXmHDfGN6g/lD9QRn9QQzvtXGSk9L0i",
-      "id": 1739496140059,
-      "username": "rweiler",
+      "email": "rudy@test.com",
+      "password": "$2a$10$tDxlKF8UepYYl9jsksdTp.CJilpJPzw/.oZkJRF0ZKbwId89cegI.",
+      "id": 1740074987696,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 0
+      "balance": 2500
     }
   ],
-  "transactions":[
-
+  "transactions": [
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 0,
+      "buyDate": 1740082954865,
+      "buyPrice": 1,
+      "id": 1
+    },
+    {
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": "2",
+      "buyDate": 1740083228709,
+      "buyPrice": 2.71,
+      "id": 2
+    },
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": "3",
+      "buyDate": 1740083628370,
+      "buyPrice": 1,
+      "id": 3
+    },
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "buyDate": 1740084063437,
+      "buyPrice": 2755.54,
+      "id": 4
+    }
   ],
-  "cryptos":[
-
+  "cryptos": [
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 0,
+      "id": 1
+    },
+    {
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": "2",
+      "id": 2
+    },
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": "3",
+      "id": 3
+    },
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "id": 4
+    }
   ]
 }
