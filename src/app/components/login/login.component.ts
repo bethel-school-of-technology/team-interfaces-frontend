@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-login',
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
 
       this.userService.login(email, password).subscribe({
         next: (user: User) => {
-          localStorage.setItem('currentUser', JSON.stringify(user))
+            localStorage.setItem('currentUser', JSON.stringify(user));
           console.log('Login successful:', user);
           this.router.navigate(['/profile']);
         },
