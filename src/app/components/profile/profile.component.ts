@@ -15,16 +15,18 @@ export class ProfileComponent implements OnInit{
 
   currentUserId: number = 0;
   currentUser: User = new User;
-  test: any = null;
+  user: any = null;
   purchased: Crypto[] = []
   
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-   this.test = localStorage.getItem("currentUser");
-   this.test = JSON.parse(this.test);
-   this.currentUser = this.test.user;
-   
+    const user = JSON.parse(localStorage.getItem('currentUser')  ?? "");
+    this.currentUserId = parseFloat(user.user.id);
+    this.userService.getUserById(this.currentUserId).subscribe(result => {
+      this.currentUser = result;
+    })
+    
    
   }
 }

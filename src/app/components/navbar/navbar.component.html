@@ -10,10 +10,13 @@
     <a class="nav-link" aria-current="Market" href="market">Market</a>
     
     <div class="nav justify-content-end">
-      <button *ngIf="userService.getCurrentUser()" 
+      <button 
+      
               class="btn btn-secondary" 
               (click)="logout()">
         Logout
       </button>
     </div>
 </nav>
+
+<!-- *ngIf="userService.getCurrentUser()" -->

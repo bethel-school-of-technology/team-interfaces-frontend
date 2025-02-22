@@ -30,15 +30,19 @@ export class TransactionService {
     return this.http.put<Transaction>(`${this.transactionURL}/${TransactionId}`, edittedTransaction);
   }
 
-  getTransactionByCustomId(userId: number): Observable<Transaction> {
-    return this.http.get<Transaction>(`${this.transactionURL}?user_id=${userId}`);
+  getTransactionUserId(userId: number): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(`${this.transactionURL}?user_id=${userId}`);
   }
 
-  getCryptoByUserId(userId: number): Observable<Crypto> {
-    return this.http.get<Crypto>(`${this.cryptoURL}?user_id=${userId}`);
+  getCryptoByUserId(userId: number): Observable<Crypto[]> {
+    return this.http.get<Crypto[]>(`${this.cryptoURL}?user_id=${userId}`);
   }
 
   createNewCrypto(NewCrypto: Crypto): Observable<Crypto> {
     return this.http.post<Crypto>(this.cryptoURL, NewCrypto)
+  }
+
+  getCryptoBySymbolAndUserId(userId: number|undefined, CryptoSymbol: string): Observable<Crypto> {
+    return this.http.get<Crypto>(`${this.cryptoURL}/?symbol=${CryptoSymbol}&user_id=${userId}`)
   }
 }
