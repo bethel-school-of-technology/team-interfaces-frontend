@@ -16,463 +16,133 @@
       "name": "Rudy Weiler",
       "bankAccount": "123456789",
       "balance": 97358.47
+    },
+    {
+      "email": "rudy2@test.com",
+      "password": "$2a$10$tsahfebwzIrryAITpO3qBeklMiQctSJ/v/5Dmd2x.vfg3i6LapQu6",
+      "id": 1740426641422,
+      "name": "Rudy Weiler",
+      "bankAccount": "567894321",
+      "balance": 77857.59000000003
+    },
+    {
+      "email": "rudyw@test.com",
+      "password": "$2a$10$.9VB2pj2IwCeY8mMxocjfuxql3yZOkAK9m04dDZRE1EZlYPUQneWG",
+      "id": 1740431439146,
+      "name": "Rudy Weiler",
+      "bankAccount": "678954321",
+      "balance": 530154
     }
   ],
   "transactions": [
     {
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 0,
-      "buyDate": 1740082954865,
-      "buyPrice": 1,
+      "user_id": 1740426641422,
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 5,
+      "buyDate": 1740426674995,
+      "buyPrice": 626.33,
       "id": 1
     },
     {
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": "2",
-      "buyDate": 1740083228709,
-      "buyPrice": 2.71,
-      "id": 2
-    },
-    {
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": "3",
-      "buyDate": 1740083628370,
-      "buyPrice": 1,
-      "id": 3
-    },
-    {
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
-      "buyDate": 1740084063437,
-      "buyPrice": 2755.54,
-      "id": 4
-    },
-    {
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 1,
-      "buyDate": 1740084515921,
-      "buyPrice": 98637.4,
-      "id": 5
-    },
-    {
-      "user_id": 1740074987696,
+      "user_id": 1740426641422,
       "name": "Solana",
       "symbol": "SOL",
       "amount": 1,
-      "buyDate": 1740163498490,
-      "buyPrice": 171.85,
+      "buyDate": 1740429733787,
+      "buyPrice": 152.31,
+      "id": 4
+    },
+    {
+      "user_id": 1740426641422,
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 2,
+      "buyDate": 1740429755540,
+      "buyPrice": 152.31,
+      "id": 5
+    },
+    {
+      "user_id": 1740426641422,
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 4,
+      "buyDate": 1740429832235,
+      "buyPrice": 2.43,
       "id": 6
     },
     {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "buyDate": 1740163639981,
-      "buyPrice": 0.25,
+      "user_id": 1740426641422,
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 1,
+      "buyDate": 1740429845531,
+      "buyPrice": 2.43,
       "id": 7
     },
     {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
+      "user_id": 1740431439146,
+      "name": "Bitcoin",
+      "symbol": "BTC",
       "amount": 2,
-      "buyDate": 1740164135351,
-      "buyPrice": 1,
+      "buyDate": 1740431468049,
+      "buyPrice": 93814.84,
       "id": 8
     },
     {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "buyDate": 1740164752043,
+      "user_id": 1740431439146,
+      "name": "TRON",
+      "symbol": "TRX",
+      "amount": 2,
+      "buyDate": 1740431997043,
       "buyPrice": 0.25,
       "id": 9
     },
     {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 10,
-      "buyDate": 1740167165407,
-      "buyPrice": 1,
+      "user_id": 1740431439146,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 3,
+      "buyDate": 1740432062105,
+      "buyPrice": 94071.94,
       "id": 10
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 10,
-      "buyDate": 1740167298175,
-      "buyPrice": 1,
-      "id": 11
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "buyDate": 1740167816874,
-      "buyPrice": 1,
-      "id": 12
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "buyDate": 1740167860634,
-      "buyPrice": 1,
-      "id": 13
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "buyDate": 1740167894810,
-      "buyPrice": 1,
-      "id": 14
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "buyDate": 1740168103077,
-      "buyPrice": 1,
-      "id": 15
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethena USDe",
-      "symbol": "USDE",
-      "amount": 5,
-      "buyDate": 1740168528722,
-      "buyPrice": 1,
-      "id": 16
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "buyDate": 1740169937614,
-      "buyPrice": 0.24,
-      "id": 17
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 5,
-      "buyDate": 1740170579102,
-      "buyPrice": 1,
-      "id": 18
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 5,
-      "buyDate": 1740170790510,
-      "buyPrice": 1,
-      "id": 19
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 5,
-      "buyDate": 1740170810958,
-      "buyPrice": 1,
-      "id": 20
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Sui",
-      "symbol": "SUI",
-      "amount": 1,
-      "buyDate": 1740170933038,
-      "buyPrice": 3.27,
-      "id": 21
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Sui",
-      "symbol": "SUI",
-      "amount": 2,
-      "buyDate": 1740170954164,
-      "buyPrice": 3.27,
-      "id": 22
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Avalanche",
-      "symbol": "AVAX",
-      "amount": 1,
-      "buyDate": 1740171168676,
-      "buyPrice": 24.11,
-      "id": 23
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 1,
-      "buyDate": 1740171353523,
-      "buyPrice": 1,
-      "id": 24
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 1,
-      "buyDate": 1740171488987,
-      "buyPrice": 1,
-      "id": 25
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 1,
-      "buyDate": 1740171739042,
-      "buyPrice": 0.24,
-      "id": 26
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "buyDate": 1740171963015,
-      "buyPrice": 2641.53,
-      "id": 27
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "buyDate": 1740172010751,
-      "buyPrice": 2641.53,
-      "id": 28
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "buyDate": 1740172142401,
-      "buyPrice": 2641.53,
-      "id": 29
     }
   ],
   "cryptos": [
     {
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 0,
+      "user_id": 1740426641422,
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 5,
       "id": 1
     },
     {
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": "2",
+      "user_id": 1740426641422,
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 3,
       "id": 2
     },
     {
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": "3",
+      "user_id": 1740426641422,
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 5,
       "id": 3
     },
     {
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
+      "user_id": 1740431439146,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 5,
       "id": 4
     },
     {
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 1,
+      "user_id": 1740431439146,
+      "name": "TRON",
+      "symbol": "TRX",
+      "amount": 2,
       "id": 5
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 1,
-      "id": 6
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "id": 7
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 2,
-      "id": 8
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "id": 9
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 10,
-      "id": 10
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 10,
-      "id": 11
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "id": 12
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "id": 13
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "id": 14
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 5,
-      "id": 15
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethena USDe",
-      "symbol": "USDE",
-      "amount": 5,
-      "id": 16
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 4,
-      "id": 17
-    },
-    {
-      "name": "",
-      "symbol": "",
-      "amount": 0,
-      "id": 18
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 5,
-      "id": 19
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 5,
-      "id": 20
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Sui",
-      "symbol": "SUI",
-      "amount": 1,
-      "id": 21
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Sui",
-      "symbol": "SUI",
-      "amount": 2,
-      "id": 22
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Avalanche",
-      "symbol": "AVAX",
-      "amount": 1,
-      "id": 23
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 1,
-      "id": 24
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 1,
-      "id": 25
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 1,
-      "id": 26
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "id": 27
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "id": 28
-    },
-    {
-      "user_id": 1740074987696,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 1,
-      "id": 29
     }
   ]
 }

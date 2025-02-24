@@ -22,6 +22,8 @@ export class TransactionService {
     return this.http.get<Transaction>(`${this.transactionURL}/${TransactionId}`);
   }
 
+  
+
   createNewTransaction(NewTransaction: Transaction): Observable<Transaction> {
     return this.http.post<Transaction>(this.transactionURL, NewTransaction);
   }
@@ -34,7 +36,7 @@ export class TransactionService {
     return this.http.get<Transaction[]>(`${this.transactionURL}?user_id=${userId}`);
   }
 
-  getCryptoByUserId(userId: number): Observable<Crypto[]> {
+  getCryptoByUserId(userId: number | undefined): Observable<Crypto[]> {
     return this.http.get<Crypto[]>(`${this.cryptoURL}?user_id=${userId}`);
   }
 
@@ -42,7 +44,13 @@ export class TransactionService {
     return this.http.post<Crypto>(this.cryptoURL, NewCrypto)
   }
 
-  getCryptoBySymbolAndUserId(userId: number|undefined, CryptoSymbol: string): Observable<Crypto> {
-    return this.http.get<Crypto>(`${this.cryptoURL}/?symbol=${CryptoSymbol}&user_id=${userId}`)
+  editCryptoById(cryptoId: number | undefined, edittedCrypto: Crypto): Observable<Crypto> {
+    return this.http.put<Crypto>(`${this.cryptoURL}/${cryptoId}`, edittedCrypto);
   }
+
+  getCryptoBySymbolAndUserId(userId: number|undefined, CryptoSymbol: string): Observable<Crypto[]> {
+    return this.http.get<Crypto[]>(`${this.cryptoURL}/?user_id=${userId}&symbol=${CryptoSymbol}`);
+  }
+
+  
 }
