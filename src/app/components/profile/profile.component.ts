@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Crypto } from '../../models/crypto';
 import Chart from 'chart.js/auto';
 import { ChartDataPoint } from '../../models/chart-data-point';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,33 +14,46 @@ import { ChartDataPoint } from '../../models/chart-data-point';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
-  private currentUserID!: number;  // Non-null assertion since we'll initialize it
+  private currentUserID!: number;
+  currentUserId: number = 0;
   currentUser: User = new User;
   user: any = null;
   purchased: Crypto[] = [];
   chartData: ChartDataPoint[] = [];
-  chart: Chart | null = null;  // Add type declaration here
+  chart: Chart | null = null;
+  assets: Crypto[] = [];
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private transactionService: TransactionService
+  ) {}
 
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
     if (!user?.user?.id) {
-      // Redirect to login if no user is logged in
       this.router.navigate(['/login']);
       return;
     }
+    
     this.currentUserID = parseFloat(user.user.id);
     this.userService.getUserById(this.currentUserID).subscribe(result => {
       this.currentUser = result;
+      
+      // Load crypto assets
+      this.transactionService.getCryptoByUserId(this.currentUserId).subscribe(result => {
+        this.assets = result;
+      });
+      
+      // Load chart data
       this.loadChartData();
     });
   }
 
   private loadChartData(): void {
-    this.userService.GetChartInfo(this.userService.getCurrentUser()?.id ?? 0).subscribe({
+    const userId = this.userService.getCurrentUser()?.id ?? this.currentUserID;
+    this.userService.GetChartInfo(userId).subscribe({
       next: (results: ChartDataPoint[]) => {
-        // Group and sum transactions with the same name
         const groupedData = results.reduce((acc: ChartDataPoint[], current: ChartDataPoint) => {
           const existingIndex = acc.findIndex(item => item.name === current.name);
           if (existingIndex !== -1) {
@@ -49,7 +63,6 @@ export class ProfileComponent implements OnInit {
           }
           return acc;
         }, [] as ChartDataPoint[]);
-        
         this.chartData = groupedData;
         this.createChart();
       },
@@ -85,7 +98,7 @@ export class ProfileComponent implements OnInit {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top',
+            position: 'top'
           }
         }
       }
