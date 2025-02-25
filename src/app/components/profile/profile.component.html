@@ -13,10 +13,8 @@
         <div class="col">
             <div>
                 <h4 class="profile">Purchases</h4>
-                <div *ngIf="purchased">
-                    <div *ngFor="let c of purchased">
-                        <p>{{c.name}}</p>
-                    </div>
+                <div *ngFor="let crypto of assests">
+                    <p>Name: {{crypto.name}} | Amount: {{crypto.amount}}</p>
                 </div>
             </div>
         </div>
