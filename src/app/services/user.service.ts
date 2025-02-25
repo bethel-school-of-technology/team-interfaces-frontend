@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { User } from '../models/user';
+import { ChartDataPoint } from '../models/chart-data-point';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000';
+  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  currentUser$ = this.currentUserSubject.asObservable();
   
-  constructor(private http: HttpClient) { }
+  private apiUrl = 'http://localhost:3000';
+
+  constructor(private http: HttpClient) {
+    this.loadCurrentUser();
+  }
+
+  private loadCurrentUser(): void {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      this.currentUserSubject.next(JSON.parse(user));
+    }
+  }
 
   signUp(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/register`, user);
@@ -19,7 +32,12 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/login`, {
       email,
       password
-    });
+    }).pipe(
+      tap((user: User) => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        this.currentUserSubject.next(user);
+      })
+    );
   }
 
   listOfUsers(): User[] {
@@ -34,18 +52,22 @@ export class UserService {
     return this.http.put<User>(`${this.apiUrl}/users/${userId}`, updatedUser);
   }
 
-  // getCurrentUser(userId?: number): Observable<User> {
-  //   if (userId) {
-  //     return this.http.get<User>(`${this.apiUrl}/users/${userId}`);
-  //   }
-  //   const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
-  //   return new Observable<User>(observer => {
-  //     observer.next(currentUser as User);
-  //     observer.complete();
-  //   });
-  // }
+  GetChartInfo(userId: number): Observable<ChartDataPoint[]> {
+    const params = new HttpParams().set('userId', userId.toString());
+    return this.http.get<ChartDataPoint[]>(
+      `${this.apiUrl}/transactions`,
+      { params }
+    ).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error fetching chart data:', error);
+        return throwError(() => new Error('Failed to fetch chart data'));
+      })
+    );
+  }
 
   logout(): Observable<void> {
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
     return this.http.post<void>(`${this.apiUrl}/logout`, {}).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error('Logout error:', error);
@@ -53,5 +75,9 @@ export class UserService {
         return throwError(() => new Error('Logout failed'));
       })
     );
+  }
+
+  getCurrentUser(): User | null {
+    return this.currentUserSubject.value;
   }
 }

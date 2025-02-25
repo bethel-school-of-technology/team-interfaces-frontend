@@ -1,5 +1,3 @@
-import { Crypto } from "./crypto";
-
 export class User {
     id: number|undefined;
     password: string = '';
