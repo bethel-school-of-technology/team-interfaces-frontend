@@ -47,12 +47,17 @@ export class ProfileComponent implements OnInit {
       this.currentUser = result;
       
       // Load crypto assets
-      this.transactionService.getCryptoByUserId(this.currentUserId).subscribe(result => {
-        this.assets = result;
-      });
+      this.loadCryptoAssets();
       
       // Load chart data
       this.loadChartData();
+    });
+  }
+
+  private loadCryptoAssets() : void {
+    const userId = this.userService.getCurrentUser()?.id ?? this.currentUserID;
+    this.transactionService.getCryptoByUserId(userId).subscribe(result => {
+      this.assets = result
     });
   }
 

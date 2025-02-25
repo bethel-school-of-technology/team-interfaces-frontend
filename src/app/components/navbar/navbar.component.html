@@ -1,22 +1,35 @@
-<nav class="nav justify-content-center bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div class="navbar-logo">
-      <a routerLink="/profile">
-        <img src="assets\images\starcoin.jpg" alt="App Logo">
-      </a>
-      <h2 class="text-white border-white">Welcome To CoinSpace</h2>
+
+<nav class="navbar justify-content-center bg-dark border-body" data-bs-theme="dark">
+  <nav class="navbar justify-content-center navbar-expand-lg bg-body-tertiary bg-dark border-body" data-bs-theme="dark">
+ 
+    <div class="container-fluid">
+      <div class="navbar-logo">
+        <a routerLink="/profile">
+          <img src="assets\images\starcoin.jpg" alt="App Logo">
+        </a>
+        <h2 class="text-white border-white">Welcome To CoinSpace</h2>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="market">Buy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="account">Manage account</a>
+          </li>
+          <div class="nav-item">
+            <button class="btn btn-secondary" (click)="logout()">Logout</button>
+          </div>
+
+        </ul>
+
+      </div>
     </div>
-    
-    <a class="nav-link active" aria-current="Profile" href="profile">Profile</a>
-    <a class="nav-link" aria-current="Market" href="market">Market</a>
-    
-    <div class="nav justify-content-end">
-      <button 
-      
-              class="btn btn-secondary" 
-              (click)="logout()">
-        Logout
-      </button>
-    </div>
+  
 </nav>
+
 
 <!-- *ngIf="userService.getCurrentUser()" -->

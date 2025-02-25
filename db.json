@@ -11,19 +11,19 @@
     },
     {
       "email": "rudy@test.com",
-      "password": "$2a$10$qwJ1jA3shy1jwfe2ohNJEeJNVVdX1PRLPwXoxBhHPGbIY1856h/yK",
-      "id": 1740510112810,
-      "name": "Rudy Weiler",
-      "bankAccount": "789654321",
-      "balance": 999950
-    },
-    {
-      "email": "rudyw@test.com",
-      "password": "$2a$10$KOOP41AfMDfEG.I5VGUXkubWGWVY.IUOtIfFd2Y4.WCdGY1fBuNMu",
-      "id": 1740510661509,
+      "password": "$2a$10$QsnPYVV2jTtDB/Ks3gbzNexdcyjA34mNJkqkEmd375FXc9.GhonsK",
+      "id": 1740512017346,
       "name": "Rudy Weiler",
       "bankAccount": "897654321",
-      "balance": 9995137.4
+      "balance": 6912295.53
+    },
+    {
+      "email": "rw@test.com",
+      "password": "$2a$10$x/3zDuSszUXN.2e.cazhcupXsoWLCArIkeqtp0vQFqlxFnlp6VsyG",
+      "id": 1740512512980,
+      "name": "Rudy",
+      "bankAccount": "123456789",
+      "balance": 0
     }
   ],
   "transactions": [
@@ -100,22 +100,31 @@
       "id": 10
     },
     {
-      "user_id": 1740510112810,
+      "user_id": 1740512017346,
       "name": "Tether",
       "symbol": "USDT",
-      "amount": 50,
-      "buyDate": 1740510161481,
+      "amount": 3,
+      "buyDate": 1740512292307,
       "buyPrice": 1,
       "id": 11
     },
     {
-      "user_id": 1740510661509,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
-      "buyDate": 1740510683216,
-      "buyPrice": 2431.3,
+      "user_id": 1740512017346,
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 5,
+      "buyDate": 1740512300709,
+      "buyPrice": 141.94,
       "id": 12
+    },
+    {
+      "user_id": 1740512017346,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "buyDate": 1740512308493,
+      "buyPrice": 86991.77,
+      "id": 13
     }
   ],
   "cryptos": [
@@ -155,18 +164,25 @@
       "id": 5
     },
     {
-      "user_id": 1740510112810,
+      "user_id": 1740512017346,
       "name": "Tether",
       "symbol": "USDT",
-      "amount": 50,
+      "amount": 3,
       "id": 6
     },
     {
-      "user_id": 1740510661509,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
+      "user_id": 1740512017346,
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 5,
       "id": 7
+    },
+    {
+      "user_id": 1740512017346,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "id": 8
     }
   ]
 }
