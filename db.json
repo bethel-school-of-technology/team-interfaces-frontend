@@ -11,27 +11,11 @@
     },
     {
       "email": "rudy@test.com",
-      "password": "$2a$10$zxgYAW9TNyHFseMu9SzYOuf93lDhCO6el9B7keSX5FnGn80TNe9Ai",
-      "id": 1740074987696,
+      "password": "$2a$10$qwJ1jA3shy1jwfe2ohNJEeJNVVdX1PRLPwXoxBhHPGbIY1856h/yK",
+      "id": 1740510112810,
       "name": "Rudy Weiler",
-      "bankAccount": "123456789",
-      "balance": 97358.47
-    },
-    {
-      "email": "rudy2@test.com",
-      "password": "$2a$10$tsahfebwzIrryAITpO3qBeklMiQctSJ/v/5Dmd2x.vfg3i6LapQu6",
-      "id": 1740426641422,
-      "name": "Rudy Weiler",
-      "bankAccount": "567894321",
-      "balance": 77857.59000000003
-    },
-    {
-      "email": "rudyw@test.com",
-      "password": "$2a$10$.9VB2pj2IwCeY8mMxocjfuxql3yZOkAK9m04dDZRE1EZlYPUQneWG",
-      "id": 1740431439146,
-      "name": "Rudy Weiler",
-      "bankAccount": "678954321",
-      "balance": 530154
+      "bankAccount": "789654321",
+      "balance": 999950
     }
   ],
   "transactions": [
@@ -106,6 +90,15 @@
       "buyDate": 1740432062105,
       "buyPrice": 94071.94,
       "id": 10
+    },
+    {
+      "user_id": 1740510112810,
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 50,
+      "buyDate": 1740510161481,
+      "buyPrice": 1,
+      "id": 11
     }
   ],
   "cryptos": [
@@ -143,6 +136,13 @@
       "symbol": "TRX",
       "amount": 2,
       "id": 5
+    },
+    {
+      "user_id": 1740510112810,
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 50,
+      "id": 6
     }
   ]
 }
