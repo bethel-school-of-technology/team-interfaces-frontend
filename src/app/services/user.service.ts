@@ -55,7 +55,7 @@ export class UserService {
   GetChartInfo(userId: number): Observable<ChartDataPoint[]> {
     const params = new HttpParams().set('userId', userId.toString());
     return this.http.get<ChartDataPoint[]>(
-      `${this.apiUrl}/transactions`,
+      `${this.apiUrl}/transactions/?user_id=${userId}`,
       { params }
     ).pipe(
       catchError((error: HttpErrorResponse) => {
