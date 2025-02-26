@@ -7,30 +7,6 @@
       "name": "Rudy Weiler",
       "bankAccount": "897654321",
       "balance": 6912295.53
-    },
-    {
-      "email": "rw@test.com",
-      "password": "$2a$10$C2ScXHhNvKpPgSLrkmV3nOfFUNJEmnCA8VoLtMI0eMjfS.Wm.JgSi",
-      "id": 1740512512980,
-      "name": "Rudy",
-      "bankAccount": "123456789",
-      "balance": 993093.56
-    },
-    {
-      "email": "rweiler@test.com",
-      "password": "$2a$10$hwawZU/goYNEtJmhNE7Kau7dN2Hd3GP5sngsJOq095bFI.gJGNQZC",
-      "id": 1740599988738,
-      "name": "Rudy Weiler",
-      "bankAccount": "123456789",
-      "balance": 109748433.17999999
-    },
-    {
-      "email": "rudyweiler@test.com",
-      "password": "$2a$10$47Vts/tihuTRsDY1wnq3OeA5.oLRno3cPy.yb.zVyewPylLi8.GAG",
-      "id": 1740601789619,
-      "name": "Rudy Weiler",
-      "bankAccount": "987654321",
-      "balance": 84384.56
     }
   ],
   "transactions": [
@@ -103,6 +79,46 @@
       "buyDate": 1740601998557,
       "buyPrice": 1,
       "id": 7
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "dot-polkadot",
+      "name": "Polkadot",
+      "symbol": "DOT",
+      "amount": 50,
+      "buyDate": 1740602689998,
+      "buyPrice": 4.78,
+      "id": 8
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "buyDate": 1740602710001,
+      "buyPrice": 83870.43,
+      "id": 9
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 20,
+      "buyDate": 1740602778521,
+      "buyPrice": 2320.72,
+      "id": 10
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 100,
+      "buyDate": 1740603093826,
+      "buyPrice": 135.4,
+      "id": 11
     }
   ],
   "cryptos": [
@@ -153,6 +169,38 @@
       "symbol": "USDT",
       "amount": 400,
       "id": 6
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "dot-polkadot",
+      "name": "Polkadot",
+      "symbol": "DOT",
+      "amount": 50,
+      "id": 7
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 0,
+      "id": 8
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 20,
+      "id": 9
+    },
+    {
+      "user_id": 1740602658683,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 100,
+      "id": 10
     }
   ]
 }
