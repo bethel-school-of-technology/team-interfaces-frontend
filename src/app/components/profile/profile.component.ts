@@ -3,14 +3,9 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { Crypto } from '../../models/crypto';
-
 import Chart from 'chart.js/auto';
 import { ChartDataPoint } from '../../models/chart-data-point';
 import { TransactionService } from '../../services/transaction.service';
-
-
-
-
 
 @Component({
   selector: 'app-profile',
@@ -122,17 +117,6 @@ export class ProfileComponent implements OnInit {
       colors.push(`#${Math.floor(Math.random()*16000000).toString(16)}`);
     }
     return colors;
-
-
-  
-
-
-  
-  
-
-
-
-
-
   }
+
 }
