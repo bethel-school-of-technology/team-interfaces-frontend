@@ -77,6 +77,7 @@ export class CoinDetailsComponent implements OnInit {
             this.newCrypto = {
               id: undefined,
               user_id: this.currentUser.id,
+              crypto_id: coin.id,
               name: coin.name,
               symbol: coin.symbol,
               amount: this.amount,
@@ -92,6 +93,7 @@ export class CoinDetailsComponent implements OnInit {
         this.newTransaction = {
           id: undefined,
           user_id: this.currentUser.id,
+          crypto_id: coin.id,
           name: coin.name,
           symbol: coin.symbol,
           amount: this.amount,

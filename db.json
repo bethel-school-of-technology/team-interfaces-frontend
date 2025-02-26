@@ -10,170 +10,149 @@
     },
     {
       "email": "rw@test.com",
-      "password": "$2a$10$x/3zDuSszUXN.2e.cazhcupXsoWLCArIkeqtp0vQFqlxFnlp6VsyG",
+      "password": "$2a$10$C2ScXHhNvKpPgSLrkmV3nOfFUNJEmnCA8VoLtMI0eMjfS.Wm.JgSi",
       "id": 1740512512980,
       "name": "Rudy",
       "bankAccount": "123456789",
-      "balance": 0
+      "balance": 993093.56
+    },
+    {
+      "email": "rweiler@test.com",
+      "password": "$2a$10$hwawZU/goYNEtJmhNE7Kau7dN2Hd3GP5sngsJOq095bFI.gJGNQZC",
+      "id": 1740599988738,
+      "name": "Rudy Weiler",
+      "bankAccount": "123456789",
+      "balance": 109748433.17999999
+    },
+    {
+      "email": "rudyweiler@test.com",
+      "password": "$2a$10$47Vts/tihuTRsDY1wnq3OeA5.oLRno3cPy.yb.zVyewPylLi8.GAG",
+      "id": 1740601789619,
+      "name": "Rudy Weiler",
+      "bankAccount": "987654321",
+      "balance": 84384.56
     }
   ],
   "transactions": [
     {
-      "user_id": 1740426641422,
+      "user_id": 1740599988738,
+      "crypto_id": "bnb-binance-coin",
       "name": "Binance Coin",
       "symbol": "BNB",
       "amount": 5,
-      "buyDate": 1740426674995,
-      "buyPrice": 626.33,
+      "buyDate": 1740600014081,
+      "buyPrice": 601.54,
       "id": 1
     },
     {
-      "user_id": 1740426641422,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 1,
-      "buyDate": 1740429733787,
-      "buyPrice": 152.31,
+      "user_id": 1740599988738,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 5,
+      "buyDate": 1740601044735,
+      "buyPrice": 1,
+      "id": 2
+    },
+    {
+      "user_id": 1740599988738,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "buyDate": 1740601503147,
+      "buyPrice": 2278.56,
+      "id": 3
+    },
+    {
+      "user_id": 1740599988738,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 550,
+      "buyDate": 1740601530101,
+      "buyPrice": 1,
       "id": 4
     },
     {
-      "user_id": 1740426641422,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 2,
-      "buyDate": 1740429755540,
-      "buyPrice": 152.31,
+      "user_id": 1740601789619,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 5,
+      "buyDate": 1740601892388,
+      "buyPrice": 2303.26,
       "id": 5
     },
     {
-      "user_id": 1740426641422,
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": 4,
-      "buyDate": 1740429832235,
-      "buyPrice": 2.43,
+      "user_id": 1740601789619,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 10,
+      "buyDate": 1740601934490,
+      "buyPrice": 600.24,
       "id": 6
     },
     {
-      "user_id": 1740426641422,
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": 1,
-      "buyDate": 1740429845531,
-      "buyPrice": 2.43,
-      "id": 7
-    },
-    {
-      "user_id": 1740431439146,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 2,
-      "buyDate": 1740431468049,
-      "buyPrice": 93814.84,
-      "id": 8
-    },
-    {
-      "user_id": 1740431439146,
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 2,
-      "buyDate": 1740431997043,
-      "buyPrice": 0.25,
-      "id": 9
-    },
-    {
-      "user_id": 1740431439146,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 3,
-      "buyDate": 1740432062105,
-      "buyPrice": 94071.94,
-      "id": 10
-    },
-    {
-      "user_id": 1740512017346,
+      "user_id": 1740601789619,
+      "crypto_id": "usdt-tether",
       "name": "Tether",
       "symbol": "USDT",
-      "amount": 3,
-      "buyDate": 1740512292307,
+      "amount": 400,
+      "buyDate": 1740601998557,
       "buyPrice": 1,
-      "id": 11
-    },
-    {
-      "user_id": 1740512017346,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 5,
-      "buyDate": 1740512300709,
-      "buyPrice": 141.94,
-      "id": 12
-    },
-    {
-      "user_id": 1740512017346,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 1,
-      "buyDate": 1740512308493,
-      "buyPrice": 86991.77,
-      "id": 13
+      "id": 7
     }
   ],
   "cryptos": [
     {
-      "user_id": 1740426641422,
+      "user_id": 1740599988738,
+      "crypto_id": "bnb-binance-coin",
       "name": "Binance Coin",
       "symbol": "BNB",
       "amount": 5,
       "id": 1
     },
     {
-      "user_id": 1740426641422,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 3,
+      "user_id": 1740599988738,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 455,
       "id": 2
     },
     {
-      "user_id": 1740426641422,
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": 5,
+      "user_id": 1740599988738,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
       "id": 3
     },
     {
-      "user_id": 1740431439146,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 5,
+      "user_id": 1740601789619,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 4,
       "id": 4
     },
     {
-      "user_id": 1740431439146,
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 2,
+      "user_id": 1740601789619,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 10,
       "id": 5
     },
     {
-      "user_id": 1740512017346,
+      "user_id": 1740601789619,
+      "crypto_id": "usdt-tether",
       "name": "Tether",
       "symbol": "USDT",
-      "amount": 3,
+      "amount": 400,
       "id": 6
-    },
-    {
-      "user_id": 1740512017346,
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 5,
-      "id": 7
-    },
-    {
-      "user_id": 1740512017346,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 1,
-      "id": 8
     }
   ]
 }
