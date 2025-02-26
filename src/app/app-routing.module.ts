@@ -5,6 +5,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoinDetailsComponent } from './components/coin-details/coin-details.component';
 import { ProfileComponent } from './components/profile/profile.component'
+import { AccountComponent } from './components/account/account.component';
+import { UpdateComponent } from './components/update/update.component';
+import { TransferComponent } from './components/transfer/transfer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,7 +15,22 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'market/:coinId', component: CoinDetailsComponent },
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'account', component: AccountComponent,
+    children: [
+      {
+        path: 'transfer',
+        component: TransferComponent
+      },
+      {
+        path: 'update',
+        component: UpdateComponent
+      },
+      {
+        path: '', redirectTo: 'transfer', pathMatch: 'full'
+      }
+    ]
+  },
 ];
 
 @NgModule({

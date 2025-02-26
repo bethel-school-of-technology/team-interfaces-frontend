@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -16,8 +17,22 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) { }
 
+  currentUser: User = new User;
+
   ngOnInit(): void {
+    const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
+    if (!user?.user?.id) {
+      this.router.navigate(['/login']);
+      return;
+    }
+    
+    let currentUserID = parseFloat(user.user.id);
+    this.userService.getUserById(currentUserID).subscribe(result => {
+      this.currentUser = result;
+    });
+    
   }
+  
 
   logout(): void {
     this.userService.logout().subscribe({
