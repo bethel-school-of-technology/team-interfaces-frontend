@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "email": "bw@test.com",
-      "password": "$2a$10$yFVzTVuYH9nVRgIBGD4A2uWbNlHmi34AawE3UfkHjsD2U1JAs3p9e",
-      "id": 1739499634814,
-      "username": "Brian",
-      "name": "Brian W.",
-      "bankAccount": "123456789",
-      "balance": 150000
-    },
-    {
       "email": "rudy@test.com",
       "password": "$2a$10$QsnPYVV2jTtDB/Ks3gbzNexdcyjA34mNJkqkEmd375FXc9.GhonsK",
       "id": 1740512017346,

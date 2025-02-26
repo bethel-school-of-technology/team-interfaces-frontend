@@ -1,30 +1,24 @@
 <app-navbar></app-navbar>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-        
-                <div class="card">
-                    <div class="card-header">
-                        <img src="https://static.coinpaprika.com/coin/{{this.currentCoinId}}/logo.png" />
-                        <h3></h3>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
-                        <p class="card-text">Description: {{this.Description.description}}</p>
-                        <p class="card-text">Price: ${{this.closeValue}}</p>
-                        <form #form="ngForm" (ngSubmit)="buy(this.coin)">
-                            <label>Quantity</label>
-                            <input type="number" name="amount" [(ngModel)]="this.amount">
-                            <button class="btn btn-primary" type="submit">Buy</button>
-                        </form>
-                        
-                    </div>
-
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://static.coinpaprika.com/coin/{{this.currentCoinId}}/logo.png" />
+                    <h3></h3>
                 </div>
-           
-
-            
+                <div class="card-body">
+                    <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
+                    <p class="card-text">Description: {{this.Description.description}}</p>
+                    <p class="card-text">Price: ${{this.closeValue}}</p>
+                    <form #form="ngForm" (ngSubmit)="buy(this.coin)">
+                        <label>Quantity</label>
+                        <input type="number" name="amount" [(ngModel)]="this.amount">
+                        <button class="btn btn-primary" type="submit">Buy</button>
+                        <button class="btn btn-danger" type="button" (click)="sell(this.coin)">Sell</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <h2>What They're saying:</h2>
@@ -40,5 +34,4 @@
         </div>
     </div>
 </div>
-
 <br>
