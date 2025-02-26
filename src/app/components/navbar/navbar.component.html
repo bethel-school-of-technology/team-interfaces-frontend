@@ -1,35 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-dark border-body" data-bs-theme="dark">
+  <div class="container-fluid">
 
-<nav class="navbar justify-content-center bg-dark border-body" data-bs-theme="dark">
-  <nav class="navbar justify-content-center navbar-expand-lg bg-body-tertiary bg-dark border-body" data-bs-theme="dark">
- 
-    <div class="container-fluid">
-      <div class="navbar-logo">
-        <a routerLink="/profile">
-          <img src="assets\images\starcoin.jpg" alt="App Logo">
-        </a>
-        <h2 class="text-white border-white">Welcome To CoinSpace</h2>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="profile">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="market">Buy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="account">Manage account</a>
-          </li>
-          <div class="nav-item">
-            <button class="btn btn-secondary" (click)="logout()">Logout</button>
-          </div>
+    <!-- Main navigation items -->
+    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
 
-        </ul>
+        <!-- Navbar logo section -->
+        <div class="navbar-logo d-flex align-items-center justify-content-center">
+          <a routerLink="/profile">
+            <img src="assets/images/starcoin.jpg" alt="App Logo" class="me-2">
+          </a>
+          <h2 class="text-white m-0">Welcome To CoinSpace</h2>
+        </div>
 
-      </div>
+        <!-- Dropdown menu -->
+        <div class="btn-group" d-flex justify-content-center>
+          <button type="button" class="btn btn-danger">Action Press Down Arrow</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/market">Buy</a></li>
+            <li><a class="dropdown-item" routerLink="/update" routerLinkActive="active">Update Account Info</a></li>
+            <li><a class="dropdown-item" routerLink="/transfer" routerLinkActive="active">Transfer Funds</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+
+          <!-- User Funds Available -->
+          <li class="nav-item">
+            <a class="nav-link text-white fs-5" >Available Funds: ${{currentUser.balance}}</a>
+          </li>
+        </div>
+      </ul>
     </div>
-  
+
+    <!-- Mobile toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 </nav>
-
-
-<!-- *ngIf="userService.getCurrentUser()" -->

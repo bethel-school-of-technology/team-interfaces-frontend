@@ -11,7 +11,6 @@ import { CoinDetailsComponent } from './components/coin-details/coin-details.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AccountComponent } from './components/account/account.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { UpdateComponent } from './components/update/update.component';
 
@@ -26,7 +25,6 @@ import { UpdateComponent } from './components/update/update.component';
     CoinDetailsComponent,
     ProfileComponent,
     NavbarComponent,
-    AccountComponent,
     TransferComponent,
     UpdateComponent
   ],
