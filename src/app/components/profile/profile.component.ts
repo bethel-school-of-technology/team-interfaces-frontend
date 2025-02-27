@@ -6,6 +6,8 @@ import { Crypto } from '../../models/crypto';
 import Chart from 'chart.js/auto';
 import { ChartDataPoint } from '../../models/chart-data-point';
 import { TransactionService } from '../../services/transaction.service';
+import { CryptoService } from '../../services/coinPaprikaAPI.service';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -27,7 +29,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private transactionService: TransactionService
+    private transactionService: TransactionService,
+    private coinPaprikaAPI: CryptoService
   ) {}
 
   ngOnInit(): void {
@@ -60,17 +63,22 @@ export class ProfileComponent implements OnInit {
     const userId = this.userService.getCurrentUser()?.id ?? this.currentUserID;
     this.userService.GetChartInfo(userId).subscribe({
       next: (results: ChartDataPoint[]) => {
-        const groupedData = results.reduce((acc: ChartDataPoint[], current: ChartDataPoint) => {
-          const existingIndex = acc.findIndex(item => item.name === current.name);
-          if (existingIndex !== -1) {
-            acc[existingIndex].amount += current.amount;
-          } else {
-            acc.push(current);
-          }
-          return acc;
-        }, [] as ChartDataPoint[]);
-        this.chartData = groupedData;
-        this.createChart();
+        const requests = results.map(current => 
+          this.coinPaprikaAPI.getCoinById(current.crypto_id).pipe(
+            map(crypto => {
+              current.value = parseFloat((crypto.quotes.USD.price * current.amount).toFixed(2));
+              return current;
+            })
+          )
+        );
+  
+        forkJoin(requests).subscribe({
+          next: (finalResults) => {
+            this.chartData = finalResults;
+            this.createChart();
+          },
+          error: (err) => console.error('Error fetching coin data', err)
+        });
       },
       error: (error) => {
         console.error('Error fetching chart data:', error);
@@ -80,6 +88,7 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
 
   private createChart(): void {
     const canvasElement = document.getElementById('profile-chart') as HTMLCanvasElement | null;
@@ -93,8 +102,8 @@ export class ProfileComponent implements OnInit {
       data: {
         labels: this.chartData.map(point => point.name),
         datasets: [{
-          label: 'Number Of Coins',
-          data: this.chartData.map(point => point.amount),
+          label: 'USD',
+          data: this.chartData.map(point => point.value),
           backgroundColor: this.generateColors(this.chartData.length),
           hoverOffset: 4
         }]

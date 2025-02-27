@@ -1,2 +1,53 @@
 <app-navbar></app-navbar>
-<p>transfer works!</p>
+<div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/getty01.jpg');
+            height: 100vh;">
+
+    <div class="container mt-4">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="card bg-transparent border-white">
+                    <div class="card-header">
+                        <h4 class="text-white border-white">Transfer Funds</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="transactionForm">
+                            <div class="mb-3">
+                                <span>
+                                    <label for="paymentMethod" class="form-label text-white">Payment method</label>
+
+                                    <button style="margin-left: 10px;" type="button" [routerLink]="['/update']"
+                                        class="btn btn-outline-light form-label">
+                                        Change payment method
+                                    </button>
+                                </span>
+                                <input id="paymentMethod" formControlName="paymentMethod" type="text"  class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="transactionType" class="form-label text-white">
+                                    <div class="dropdown-center">
+                                        <button class="btn btn-outline-light dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Transaction Type
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item">Add Money</a></li>
+                                            <li><a class="dropdown-item">Depost</a></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                                <input id="transactionType" formControlName="transactionType" type="text" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="amount" class="form-label text-white">Amount</label>
+                                <input id="amount" formControlName="amount" type="text" formControlName="name" class="form-control">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
