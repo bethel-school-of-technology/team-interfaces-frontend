@@ -49,7 +49,7 @@ export class UserService {
   }
 
   updateUserById(userId: number|undefined, updatedUser: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/users/${userId}`, updatedUser);
+    return this.http.patch<User>(`${this.apiUrl}/users/${userId}`, { balance: updatedUser.balance });
   }
 
   GetChartInfo(userId: number): Observable<ChartDataPoint[]> {

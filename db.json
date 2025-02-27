@@ -7,6 +7,30 @@
       "name": "Rudy Weiler",
       "bankAccount": "897654321",
       "balance": 6912295.53
+    },
+    {
+      "email": "rw@test.com",
+      "password": "$2a$10$HeOEKMgF.a2LNMzZbPT4DeqI/8Rw9I.ZLJF40VDx4aZ0DmPC55EES",
+      "id": 1740618262256,
+      "name": "Rudy Weiler",
+      "bankAccount": "123456789",
+      "balance": 3000000
+    },
+    {
+      "email": "rudyw@test.com",
+      "password": "$2a$10$DeV6Tqm3.Dj2InY0F6lXEOxnRYbM0WytO29VPHyCon5nViHn.7RC2",
+      "id": 1740618339663,
+      "name": "Rudy",
+      "bankAccount": "123456789",
+      "balance": 210724.33
+    },
+    {
+      "email": "rweiler@test.com",
+      "password": "$2a$10$L9ou5dLM5VcR4w4GBou/BOS6Wfi8io6sCDyujzF17BYnSLc1pew.y",
+      "id": 1740619008665,
+      "name": "Rudy",
+      "bankAccount": "123456789",
+      "balance": 986.8820000000001
     }
   ],
   "transactions": [
@@ -119,6 +143,66 @@
       "buyDate": 1740603093826,
       "buyPrice": 135.4,
       "id": 11
+    },
+    {
+      "user_id": 1740618339663,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "buyDate": 1740618417852,
+      "buyPrice": 2335.29,
+      "id": 12
+    },
+    {
+      "user_id": 1740618339663,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "buyDate": 1740618480159,
+      "buyPrice": 84605.09,
+      "id": 13
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 5,
+      "buyDate": 1740619152320,
+      "buyPrice": 2.18,
+      "id": 14
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 0,
+      "buyDate": 1740619364749,
+      "buyPrice": 2337.33,
+      "id": 15
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 5,
+      "buyDate": 1740619405217,
+      "buyPrice": 1,
+      "id": 16
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 0.1,
+      "buyDate": 1740619425181,
+      "buyPrice": 2.18,
+      "id": 17
     }
   ],
   "cryptos": [
@@ -201,6 +285,46 @@
       "symbol": "SOL",
       "amount": 100,
       "id": 10
+    },
+    {
+      "user_id": 1740618339663,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "id": 11
+    },
+    {
+      "user_id": 1740618339663,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "id": 12
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 5.1,
+      "id": 13
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 0,
+      "id": 14
+    },
+    {
+      "user_id": 1740619008665,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 2,
+      "id": 15
     }
   ]
 }
