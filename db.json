@@ -1,44 +1,20 @@
 {
   "users": [
     {
-      "email": "rudy@test.com",
-      "password": "$2a$10$QsnPYVV2jTtDB/Ks3gbzNexdcyjA34mNJkqkEmd375FXc9.GhonsK",
-      "id": 1740512017346,
-      "name": "Rudy Weiler",
-      "bankAccount": "897654321",
-      "balance": 6912295.53
-    },
-    {
-      "email": "rw@test.com",
-      "password": "$2a$10$HeOEKMgF.a2LNMzZbPT4DeqI/8Rw9I.ZLJF40VDx4aZ0DmPC55EES",
-      "id": 1740618262256,
-      "name": "Rudy Weiler",
-      "bankAccount": "123456789",
-      "balance": 3000000
-    },
-    {
-      "email": "rudyw@test.com",
-      "password": "$2a$10$DeV6Tqm3.Dj2InY0F6lXEOxnRYbM0WytO29VPHyCon5nViHn.7RC2",
-      "id": 1740618339663,
-      "name": "Rudy",
-      "bankAccount": "123456789",
-      "balance": 210724.33
-    },
-    {
-      "email": "rweiler@test.com",
-      "password": "$2a$10$L9ou5dLM5VcR4w4GBou/BOS6Wfi8io6sCDyujzF17BYnSLc1pew.y",
-      "id": 1740619008665,
-      "name": "Rudy",
-      "bankAccount": "123456789",
-      "balance": 986.8820000000001
-    },
-    {
       "email": "bw@test.com",
       "password": "$2a$10$Kt1R5MIINz2NZStNDNnfV.bk9YrwqFgrvd8Y6.yNmvXPhEgW/k/bS",
       "id": 1740625879669,
       "name": "Brian",
       "bankAccount": "789456123",
       "balance": 299985
+    },
+    {
+      "email": "rw@test.com",
+      "password": "$2a$10$54o17CncN2QxsLmRbf/MquJYM/JVyRrLyg9am3pHJ4nb6chfZqMgG",
+      "id": 1740684281625,
+      "name": "Rudy Weiler",
+      "bankAccount": "987654321",
+      "balance": 8857.900000000001
     }
   ],
   "transactions": [
@@ -241,6 +217,36 @@
       "buyDate": 1740627283049,
       "buyPrice": 0.2,
       "id": 20
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 25,
+      "buyDate": 1740684330237,
+      "buyPrice": 1,
+      "id": 21
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 5,
+      "buyDate": 1740684365334,
+      "buyPrice": 2.21,
+      "id": 22
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 5,
+      "buyDate": 1740684393130,
+      "buyPrice": 2.21,
+      "id": 23
     }
   ],
   "cryptos": [
@@ -387,6 +393,22 @@
       "symbol": "DOGE",
       "amount": 25,
       "id": 18
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 25,
+      "id": 19
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 10,
+      "id": 20
     }
   ]
 }
