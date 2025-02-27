@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { UpdateComponent } from './components/update/update.component';
+import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
 
 
 
@@ -26,7 +27,8 @@ import { UpdateComponent } from './components/update/update.component';
     ProfileComponent,
     NavbarComponent,
     TransferComponent,
-    UpdateComponent
+    UpdateComponent,
+    TransactionHistoryComponent
   ],
   imports: [
     BrowserModule,

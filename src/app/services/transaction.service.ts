@@ -52,5 +52,10 @@ export class TransactionService {
     return this.http.get<Crypto[]>(`${this.cryptoURL}/?user_id=${userId}&symbol=${CryptoSymbol}`);
   }
 
-  
+  sellTransaction(transactionId: number, sellPrice: number): Observable<Transaction> {
+    return this.http.put<Transaction>(
+      `${this.transactionURL}/${transactionId}/sell`,
+      { sellPrice }
+    );
+  }
 }

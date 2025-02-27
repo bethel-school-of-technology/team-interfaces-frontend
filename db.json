@@ -31,6 +31,14 @@
       "name": "Rudy",
       "bankAccount": "123456789",
       "balance": 986.8820000000001
+    },
+    {
+      "email": "bw@test.com",
+      "password": "$2a$10$Kt1R5MIINz2NZStNDNnfV.bk9YrwqFgrvd8Y6.yNmvXPhEgW/k/bS",
+      "id": 1740625879669,
+      "name": "Brian",
+      "bankAccount": "789456123",
+      "balance": 299985
     }
   ],
   "transactions": [
@@ -203,6 +211,36 @@
       "buyDate": 1740619425181,
       "buyPrice": 2.18,
       "id": 17
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 5,
+      "buyDate": 1740627255011,
+      "buyPrice": 1,
+      "id": 18
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "usdc-usd-coin",
+      "name": "USDC",
+      "symbol": "USDC",
+      "amount": 10,
+      "buyDate": 1740627269511,
+      "buyPrice": 1,
+      "id": 19
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "doge-dogecoin",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "amount": 25,
+      "buyDate": 1740627283049,
+      "buyPrice": 0.2,
+      "id": 20
     }
   ],
   "cryptos": [
@@ -325,6 +363,30 @@
       "symbol": "USDT",
       "amount": 2,
       "id": 15
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 0,
+      "id": 16
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "usdc-usd-coin",
+      "name": "USDC",
+      "symbol": "USDC",
+      "amount": 10,
+      "id": 17
+    },
+    {
+      "user_id": 1740625879669,
+      "crypto_id": "doge-dogecoin",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "amount": 25,
+      "id": 18
     }
   ]
 }
