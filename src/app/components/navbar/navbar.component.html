@@ -7,9 +7,7 @@
 
         <!-- Navbar logo section -->
         <div class="navbar-logo d-flex align-items-center justify-content-center">
-          <a routerLink="/profile">
-            <img src="assets/images/starcoin.jpg" alt="App Logo" class="me-2">
-          </a>
+          <img src="assets/images/starcoin.jpg" alt="App Logo" class="me-2">
           <h2 class="text-white m-0">Welcome To CoinSpace</h2>
         </div>
 
@@ -22,12 +20,10 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
-           
-
             <li><a class="dropdown-item" routerLink="/market">Buy/Sell</a></li>
-
             <li><a class="dropdown-item" routerLink="/update" routerLinkActive="active">Update Account Info</a></li>
             <li><a class="dropdown-item" routerLink="/transfer" routerLinkActive="active">Transfer Funds</a></li>
+            <li><a class="dropdown-item" routerLink="/transaction-history" routerLinkActive="active">Transaction History</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>

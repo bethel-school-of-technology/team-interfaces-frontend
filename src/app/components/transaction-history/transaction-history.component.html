@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<!-- User Information -->
+<div class="user-info">
+  <h2>Transactions for {{ currentUser.name }}</h2>
+</div>
+
+<!-- Open Transactions Table -->
+<div class="table-section">
+  <h3>Open Transactions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Crypto</th>
+        <th>Amount</th>
+        <th>Buy Price</th>
+        <th>Current Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of openTransactions">
+        <td>{{ transaction.buyDate | date:'short' }}</td>
+        <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
+        <td>{{ transaction.currentValue | currency:'USD':true }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Closed Transactions Table -->
+<div class="table-section">
+  <h3>Closed Transactions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Crypto</th>
+        <th>Amount</th>
+        <th>Buy/Sell Price</th>
+        <th>Profit/Loss</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of closedTransactions">
+        <td>{{ transaction.buyDate | date:'short' }}</td>
+        <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
+        <td>{{ transaction.amount }}</td>
+        <td>
+          Buy: {{ transaction.buyPrice | currency:'USD':true}}<br>
+          Sell: {{ transaction.sellPrice | currency:'USD':true}}
+        </td>
+        <td [class.profit]="transaction.profitLoss! > 0"
+            [class.loss]="transaction.profitLoss! < 0">
+          {{ transaction.profitLoss! | currency:'USD':true }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

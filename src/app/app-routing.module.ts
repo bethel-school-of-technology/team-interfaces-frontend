@@ -7,16 +7,18 @@ import { CoinDetailsComponent } from './components/coin-details/coin-details.com
 import { ProfileComponent } from './components/profile/profile.component'
 import { UpdateComponent } from './components/update/update.component';
 import { TransferComponent } from './components/transfer/transfer.component';
+import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'market', component: MarketComponent },
+  { path: 'market/:coinId', component: CoinDetailsComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'market/:coinId', component: CoinDetailsComponent },
-  { path: 'profile', component: ProfileComponent},
-  { path: 'transfer', component: TransferComponent},
-  { path: 'update' , component: UpdateComponent}
+  { path: 'profile', component: ProfileComponent },
+  { path: 'transfer', component: TransferComponent },
+  { path: 'update', component: UpdateComponent },
+  { path: 'transaction-history', component: TransactionHistoryComponent }
 ];
 
 @NgModule({
