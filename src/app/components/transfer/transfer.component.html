@@ -10,39 +10,41 @@
                         <h4 class="text-white border-white">Transfer Funds</h4>
                     </div>
                     <div class="card-body">
-                        <form [formGroup]="transactionForm">
+                        <form #form="ngForm" (ngSubmit)="transfer()">
                             <div class="mb-3">
                                 <span>
-                                    <label for="paymentMethod" class="form-label text-white">Payment method</label>
+                                    <label for="paymentMethod" class="form-label text-white">Account</label>
 
                                     <button style="margin-left: 10px;" type="button" [routerLink]="['/update']"
                                         class="btn btn-outline-light form-label">
-                                        Change payment method
+                                        Change Account
                                     </button>
                                 </span>
-                                <input id="paymentMethod" formControlName="paymentMethod" type="text"  class="form-control">
+                                <input type="text" name="bankAccount" class="form-control"
+                                    [(ngModel)]="currentUser.bankAccount"
+                                    [ngModel]="formatBankAccount(currentUser.bankAccount)" readonly />
                             </div>
 
                             <div class="mb-3">
-                                <label for="transactionType" class="form-label text-white">
-                                    <div class="dropdown-center">
-                                        <button class="btn btn-outline-light dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Transaction Type
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item">Add Money</a></li>
-                                            <li><a class="dropdown-item">Depost</a></li>
-                                        </ul>
-                                    </div>
-                                </label>
-                                <input id="transactionType" formControlName="transactionType" type="text" class="form-control">
+                                <label for="transactionType" class="form-label text-white">Transaction Type</label>
+
+                                <select class="form-control">
+                                    <option value="" disabled selected>Choose Transaction Type</option>
+                                    <option  value="add-money" [(ngModel)]="selectedTransactionType" (ngModelChange)="onTransactionChange($event)">Add Money</option>
+                                    <option  value="deposit" [(ngModel)]="selectedTransactionType" (ngModelChange)="onTransactionChange($event)">Deposit</option>
+                                </select>
                             </div>
+
 
                             <div class="mb-3">
                                 <label for="amount" class="form-label text-white">Amount</label>
-                                <input id="amount" formControlName="amount" type="text" formControlName="name" class="form-control">
+                                <input placeholder="0.00" type="number" name="amount" class="form-control" [(ngModel)]="transferAmount"/>
                             </div>
+
+                            <button type="submit" class="btn btn-outline-light form-label">
+                                Transfer
+                            </button>
+
 
                         </form>
                     </div>
