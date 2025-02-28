@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+
+
 <div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/getty01.jpg');
             height: 100vh;">
 
@@ -28,10 +30,10 @@
                             <div class="mb-3">
                                 <label for="transactionType" class="form-label text-white">Transaction Type</label>
 
-                                <select class="form-control">
-                                    <option value="" disabled selected>Choose Transaction Type</option>
-                                    <option  value="add-money" [(ngModel)]="selectedTransactionType" (ngModelChange)="onTransactionChange($event)">Add Money</option>
-                                    <option  value="deposit" [(ngModel)]="selectedTransactionType" (ngModelChange)="onTransactionChange($event)">Deposit</option>
+                                <select class="form-control" [(ngModel)]="selectedTransactionType" name="transactionType">
+                                    <option value="1" disabled selected>Choose Transaction Type</option>
+                                    <option value="2">Add Money</option>
+                                    <option  value="deposit">Deposit</option>
                                 </select>
                             </div>
 

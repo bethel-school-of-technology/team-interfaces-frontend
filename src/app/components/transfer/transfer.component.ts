@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
@@ -12,8 +12,9 @@ import { User } from '../../models/user';
 })
 export class TransferComponent implements OnInit {
 
+
   currentUser: User = new User;
-  selectedTransactionType: string = '';
+  selectedTransactionType: string = "0";
   transferAmount: number = 0;
   
 
@@ -47,29 +48,34 @@ export class TransferComponent implements OnInit {
     return masked + lastFour;
   }
 
-  onTransactionChange(value: string) {
-    console.log('Selected Transaction Type:', value);  // Check what value is being emitted
-    this.selectedTransactionType = value;
-  }
-
-  
-
   // transfer method
   transfer() {
+
+    //check for positive transfer amount
+    if(this.transferAmount <= 0) {
+      alert("Enter a transfer amount");
+    }
+    
+    const selection = parseFloat(this.selectedTransactionType)
     console.log(this.selectedTransactionType);
-    console.log(this.transferAmount);
-    //If false, withdraw funds
-    if(this.selectedTransactionType == "deposit") {
+    if(selection == 0) {
+      alert("Select transaction type");
+    }
+
+    //If 1, withdraw funds
+    if(selection == 1) {
       this.currentUser.balance -= this.transferAmount;
       this.userService.updateUserById(this.currentUser.id, this.currentUser).subscribe(() => {
       });
       this.router.navigate(['/profile']);
-      // if true, add funds
-    } else {
+     
+      // if 2, add funds
+    } 
+    if(selection == 2) {
       this.currentUser.balance += this.transferAmount;
       this.userService.updateUserById(this.currentUser.id, this.currentUser).subscribe(() => {
-
       });
+      this.router.navigate(['/profile']);
     }
     
 

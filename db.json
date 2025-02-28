@@ -10,11 +10,11 @@
     },
     {
       "email": "rw@test.com",
-      "password": "$2a$10$54o17CncN2QxsLmRbf/MquJYM/JVyRrLyg9am3pHJ4nb6chfZqMgG",
+      "password": "$2a$10$WJ.ahPVX8zduSjmMYIbc5eX8tQtYIO5vsBHjcOdBcpKJapS6EcBO6",
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 8857.900000000001
+      "balance": 18861.9
     }
   ],
   "transactions": [

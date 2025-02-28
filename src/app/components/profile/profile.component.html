@@ -10,9 +10,11 @@
     <div class="row">
         <div class="col">
             <div>
-                <h4 class="profile">Purchases</h4>
-                <div *ngFor="let crypto of assets">
-                    <p>Name: {{crypto.name}} | Amount: {{crypto.amount}}</p>
+                <h3 class="profile">Purchases</h3>
+                <div *ngFor="let crypto of assets" >
+                        <img id="cryptoIcon" src="https://static.coinpaprika.com/coin/{{crypto.crypto_id}}/logo.png" />
+                        <p class="assetTableItem" style="font-weight: 700;">{{crypto.name}}</p>
+                        <p class="assetTableItem">Amount: {{crypto.amount}}</p>
                 </div>
             </div>
         </div>
