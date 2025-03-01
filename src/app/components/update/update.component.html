@@ -1,2 +1,83 @@
 <app-navbar></app-navbar>
-<p>update works!</p>
+<!-- Background w/> bootstrap -->
+<div class="bg-image d-flex justify-content-center align-items-center"
+     style="background-image: url('/assets/images/getty01.jpg');
+            height: 100vh;">
+
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="card bg-transparent border-white">
+          <div class="card-header">
+            <h4 class="text-white border-white">Update Account Info</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+  
+              <!-- Email Field -->
+              <div class="mb-3">
+                <label class="form-label text-white">Email</label>
+                <input type="email" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': isFieldInvalid('email') }">
+                <div *ngIf="isFieldInvalid('email')">
+                  <div *ngFor="let error of getFormValidationErrors('email')" 
+                        class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Password Field -->
+              <div class="mb-3">
+                <label class="form-label text-white">Password</label>
+                <input type="password" formControlName="password" class="form-control"
+                       [ngClass]="{ 'is-invalid': isFieldInvalid('password') }">
+                <div *ngIf="isFieldInvalid('password')">
+                  <div *ngFor="let error of getFormValidationErrors('password')" 
+                       class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Name Field -->
+              <div class="mb-3">
+                <label class="form-label text-white">Full Name</label>
+                <input type="text" formControlName="name" class="form-control"
+                       [ngClass]="{ 'is-invalid': isFieldInvalid('name') }">
+                <div *ngIf="isFieldInvalid('name')">
+                  <div *ngFor="let error of getFormValidationErrors('name')" 
+                       class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Bank Account Field -->
+              <div class="mb-3">
+                <label class="form-label text-white">Bank Account Number</label>
+                <input type="text" formControlName="bankAccount" class="form-control"
+                       [ngClass]="{ 'is-invalid': isFieldInvalid('bankAccount') }">
+                <div *ngIf="isFieldInvalid('bankAccount')">
+                  <div *ngFor="let error of getFormValidationErrors('bankAccount')" 
+                       class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                </div>
+              </div>
+  
+  
+              <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"
+                        [disabled]="!updateUserForm.valid">
+                  Update
+                </button>
+              
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

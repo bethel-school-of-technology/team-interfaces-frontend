@@ -52,6 +52,14 @@ export class UserService {
     return this.http.patch<User>(`${this.apiUrl}/users/${userId}`, { balance: updatedUser.balance });
   }
 
+  updateUserInfo(userId: number|undefined, updatedUser: User): Observable<User> {
+    return this.http.patch<User>(`${this.apiUrl}/users/${userId}`, {email: updatedUser.email, name: updatedUser.name, bankAccount: updatedUser.bankAccount});
+  }
+
+  updateUserPassWord(userId: number|undefined, updatedUser: User): Observable<User> {
+    return this.http.patch<User>(`${this.apiUrl}/users/${userId}`, {email: updatedUser.email, password: updatedUser.password, name: updatedUser.name, bankAccount: updatedUser.bankAccount});
+  }
+
   GetChartInfo(userId: number): Observable<ChartDataPoint[]> {
     const params = new HttpParams().set('userId', userId.toString());
     return this.http.get<ChartDataPoint[]>(
