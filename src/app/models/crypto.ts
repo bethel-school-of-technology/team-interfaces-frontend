@@ -5,5 +5,4 @@ export class Crypto {
     name: string = "";
     symbol: string = "";
     amount: number = 0;
-   
 }

@@ -102,6 +102,8 @@ export class CoinDetailsComponent implements OnInit {
           sellDate: undefined,
           sellPrice: undefined,
           profitLoss: undefined,
+          currentValue: undefined,
+          closeValue: undefined
         }
         this.transactionService.createNewTransaction(this.newTransaction).subscribe();
 

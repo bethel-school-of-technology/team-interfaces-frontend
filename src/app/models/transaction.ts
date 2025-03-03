@@ -10,5 +10,6 @@ export class Transaction {
     sellDate: number|undefined;
     sellPrice: number|undefined;
     profitLoss: number|undefined;
-    currentValue?: number;
+    currentValue: number|undefined;
+    closeValue: number|undefined;
 }

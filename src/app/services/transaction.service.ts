@@ -22,8 +22,6 @@ export class TransactionService {
     return this.http.get<Transaction>(`${this.transactionURL}/${TransactionId}`);
   }
 
-  
-
   createNewTransaction(NewTransaction: Transaction): Observable<Transaction> {
     return this.http.post<Transaction>(this.transactionURL, NewTransaction);
   }
