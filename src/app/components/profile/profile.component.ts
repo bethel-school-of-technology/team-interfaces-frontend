@@ -8,6 +8,7 @@ import { ChartDataPoint } from '../../models/chart-data-point';
 import { TransactionService } from '../../services/transaction.service';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { forkJoin, map } from 'rxjs';
+import { Transaction } from '../../models/transaction';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,6 @@ import { forkJoin, map } from 'rxjs';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
-
   private currentUserID!: number;
   currentUserId: number = 0;
   currentUser: User = new User;
@@ -25,6 +25,9 @@ export class ProfileComponent implements OnInit {
   chartData: ChartDataPoint[] = [];
   chart: Chart | null = null;
   assets: Crypto[] = [];
+  valueMap = new Map<string, number>();
+  transactions: Transaction[] = [];
+  transactionDates = new Map<string, Date>();
 
   constructor(
     private userService: UserService,
@@ -39,14 +42,11 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-    
     this.currentUserID = parseFloat(user.user.id);
     this.userService.getUserById(this.currentUserID).subscribe(result => {
       this.currentUser = result;
-      
-      // Load crypto assets
+      // Load crypto assets and transactions
       this.loadCryptoAssets();
-      
       // Load chart data
       this.loadChartData();
     });
@@ -54,8 +54,18 @@ export class ProfileComponent implements OnInit {
 
   private loadCryptoAssets() : void {
     const userId = this.userService.getCurrentUser()?.id ?? this.currentUserID;
-    this.transactionService.getCryptoByUserId(userId).subscribe(result => {
-      this.assets = result
+    forkJoin([
+      this.transactionService.getCryptoByUserId(userId),
+      this.transactionService.getTransactionUserId(userId)
+    ]).subscribe({
+      next: ([assets, transactions]) => {
+        this.assets = assets;
+        this.transactions = transactions;
+        // Create a mapping of crypto_id to latest transaction date
+        this.transactionDates = new Map(
+          transactions.map(t => [t.crypto_id, new Date(t.buyDate)])
+        );
+      }
     });
   }
 
@@ -63,15 +73,15 @@ export class ProfileComponent implements OnInit {
     const userId = this.userService.getCurrentUser()?.id ?? this.currentUserID;
     this.userService.GetChartInfo(userId).subscribe({
       next: (results: ChartDataPoint[]) => {
-        const requests = results.map(current => 
+        const requests = results.map(current =>
           this.coinPaprikaAPI.getCoinById(current.crypto_id).pipe(
             map(crypto => {
               current.value = parseFloat((crypto.quotes.USD.price * current.amount).toFixed(2));
+              this.valueMap.set(current.crypto_id, current.value);
               return current;
             })
           )
         );
-  
         forkJoin(requests).subscribe({
           next: (finalResults) => {
             this.chartData = finalResults;
@@ -89,14 +99,12 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-
   private createChart(): void {
     const canvasElement = document.getElementById('profile-chart') as HTMLCanvasElement | null;
     if (!canvasElement) {
       console.error('Canvas element not found');
       return;
     }
-    
     this.chart = new Chart(canvasElement, {
       type: 'pie',
       data: {
@@ -122,10 +130,13 @@ export class ProfileComponent implements OnInit {
 
   private generateColors(count: number): string[] {
     const colors: string[] = [];
+    const hueStep = 360 / count;
+    
     for (let i = 0; i < count; i++) {
-      colors.push(`#${Math.floor(Math.random()*16000000).toString(16)}`);
+        const hue = (i * hueStep) % 360;
+        colors.push(`hsl(${hue}, 100%, 50%)`);
     }
+    
     return colors;
   }
-
 }
