@@ -5,6 +5,7 @@ import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { User } from '../../models/user';
+import { Crypto } from '../../models/crypto';
 
 
 @Component({
@@ -22,14 +23,14 @@ export class TransactionHistoryComponent implements OnInit {
   closedTransactions: Transaction[] = [];
   loading = false;
   error?: string;
-  saleRevenue: number = 0;
+  
 
   constructor(
     private userService: UserService,
     private transactionService: TransactionService,
     private router: Router,
     private coinPaprikaAPI: CryptoService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadUserData();
@@ -42,7 +43,7 @@ export class TransactionHistoryComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-    
+
     this.currentUserID = parseFloat(user.user.id);
     this.currentUser = {
       id: user.user.id,
@@ -74,66 +75,44 @@ export class TransactionHistoryComponent implements OnInit {
     this.closedTransactions = this.transactions.filter(t => t.sellDate);
   }
 
-  async sell(transaction: Transaction): Promise<void> {
-    console.log(transaction);
-    // Validate if user has enough crypto to sell
-    const existingCrypto = await this.transactionService.getCryptoBySymbolAndUserId(
-      this.currentUser.id,
-      transaction.symbol
-    ).toPromise();
-  
-    if (!existingCrypto || existingCrypto.length === 0) {
-      throw new Error('You don\'t own any of this cryptocurrency.');
-    }
-  
-    if (existingCrypto[0].amount < transaction.amount) {
-      throw new Error('Insufficient funds to sell this amount.');
-    }
-
+  sell(transaction: Transaction) {
+    console.log("current user 1st: ", this.currentUser)
     this.coinPaprikaAPI.getCoinById(transaction.crypto_id).subscribe(result => {
-      const coin = result;
-      
-      // Calculate sale revenue
+      console.log(transaction);
+      let sellPrice = Math.round(result.quotes.USD.price * 100) / 100;
+      let saleRevenue = ((sellPrice * transaction.amount) - (transaction.buyPrice * transaction.amount)).toFixed(2);
+      console.log(saleRevenue);
+      //get exisiting crypto and edit amount
+      this.transactionService.getCryptoBySymbolAndUserId(transaction.user_id, transaction.symbol).subscribe(result => {
+        let existinCrypto = result[0];
+        if (existinCrypto.amount < transaction.amount) {
+          alert(`You have do not have enough ${transaction.name} to complete this transaction`)
+        }
+        existinCrypto.amount -= transaction.amount;
+        console.log(existinCrypto);
 
-      this.saleRevenue = transaction.amount * (coin.closeValue);
-    })
-  
-    
-    
-  
-    try {
-      // Update user balance
-      this.currentUser.balance += this.saleRevenue;
-      await this.userService.updateUserById(this.currentUser.id, this.currentUser).toPromise();
-  
-      // Update crypto holdings
-      const updatedCrypto = { ...existingCrypto[0] };
-      if (updatedCrypto.amount === transaction.amount) {
-        updatedCrypto.amount = 0;
-      } else {
-        updatedCrypto.amount -= transaction.amount;
-      }
-      await this.transactionService.editCryptoById(updatedCrypto.id, updatedCrypto).toPromise();
-  
-      // Update transaction with sell details
-      const profitLoss = this.saleRevenue - (transaction.amount * transaction.buyPrice);
-      const updatedTransaction = {
-        ...transaction,
-        sellDate: Date.now(),
-        sellPrice: transaction.sellPrice,
-        profitLoss: profitLoss,
-        id: transaction.id ?? 0,
-        user_id: transaction.user_id ?? 0,
-      };
-      await this.transactionService.editTransactionById(updatedTransaction.id, updatedTransaction).toPromise();
+        this.transactionService.editCryptoById(existinCrypto.id, existinCrypto).subscribe(() => {
 
-  
-      this.router.navigate(['/profile']);
-    } catch (error) {
-      if (error instanceof Error) {
-        throw new Error(`Failed to complete sale: ${error.message}`);
-      }
-      throw new Error(`Failed to complete sale: An unknown error occurred`);
-    }
+        });
+
+        //update user balance
+        this.currentUser.balance += parseFloat(saleRevenue);
+        this.userService.updateUserById(this.currentUserID, this.currentUser).subscribe(() => {
+
+        });
+
+        //close transaction
+        transaction.sellDate = Date.now();
+        transaction.sellPrice = sellPrice;
+        transaction.profitLoss = parseFloat(saleRevenue);
+        this.transactionService.editTransactionById(transaction.id ?? 0, transaction).subscribe(() => {
+
+          this.router.navigate(['/profile']);
+        });
+
+      });
+    });
   }
+
+
 }
