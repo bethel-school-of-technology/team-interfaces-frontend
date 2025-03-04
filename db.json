@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 97869.48000000001
+      "balance": 101040.37
     },
     {
       "email": "bw@test.com",
@@ -19,168 +19,82 @@
   ],
   "transactions": [
     {
-      "user_id": 1740883722113,
-      "crypto_id": "usdt-tether",
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 25,
-      "buyDate": 1741027816874,
-      "buyPrice": 1,
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 20,
+      "buyDate": 1741118056781,
+      "buyPrice": 2.84,
       "id": 1
     },
     {
-      "user_id": 1740883722113,
-      "crypto_id": "ada-cardano",
-      "name": "Cardano",
-      "symbol": "ADA",
-      "amount": 30,
-      "buyDate": 1741027827931,
-      "buyPrice": 0.9,
+      "user_id": 1740684281625,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 100,
+      "buyDate": 1741118106338,
+      "buyPrice": 582.57,
       "id": 2
     },
     {
-      "user_id": 1740883722113,
-      "crypto_id": "usdt-tether",
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 100,
-      "buyDate": 1741028991951,
-      "buyPrice": 1,
+      "user_id": 1740684281625,
+      "crypto_id": "rndr-render-token",
+      "name": "Render",
+      "symbol": "RENDER",
+      "amount": 50,
+      "buyDate": 1741118543449,
+      "buyPrice": 3.57,
       "id": 3
     },
     {
-      "user_id": 1740883722113,
+      "user_id": 1740684281625,
       "crypto_id": "xrp-xrp",
       "name": "XRP",
       "symbol": "XRP",
-      "amount": 20,
-      "buyDate": 1741031837599,
-      "buyPrice": 2.4,
-      "id": 4
-    },
-    {
-      "user_id": 1740883722113,
-      "crypto_id": "trx-tron",
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 25,
-      "buyDate": 1741035389621,
-      "buyPrice": 0.23,
-      "id": 5
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
-      "buyDate": 1741112529309,
-      "buyPrice": 2134.97,
-      "id": 6
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
-      "buyDate": 1741112537085,
-      "buyPrice": 2134.97,
-      "id": 7,
-      "sellDate": 1741112612700,
-      "sellPrice": 2134.97,
+      "amount": 1000,
+      "buyDate": 1741118660750,
+      "buyPrice": 2.5,
+      "id": 4,
+      "currentValue": 2.5,
+      "sellDate": 1741118721536,
+      "sellPrice": 2.5,
       "profitLoss": 0
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "steth-lido-staked-ether",
-      "name": "Lido Staked Ether",
-      "symbol": "STETH",
-      "amount": 1,
-      "buyDate": 1741112554314,
-      "buyPrice": 2130.37,
-      "id": 8,
-      "sellDate": 1741112652820,
-      "sellPrice": 2130.37,
-      "profitLoss": 0
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "sol-solana",
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 5,
-      "buyDate": 1741112568332,
-      "buyPrice": 140.81,
-      "id": 9
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "steth-lido-staked-ether",
-      "name": "Lido Staked Ether",
-      "symbol": "STETH",
-      "amount": 1,
-      "buyDate": 1741112670374,
-      "buyPrice": 2130.37,
-      "id": 10
     }
   ],
   "cryptos": [
     {
-      "user_id": 1740883722113,
-      "crypto_id": "usdt-tether",
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 125,
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 20,
       "id": 1
     },
     {
-      "user_id": 1740883722113,
-      "crypto_id": "ada-cardano",
-      "name": "Cardano",
-      "symbol": "ADA",
-      "amount": 30,
+      "user_id": 1740684281625,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 100,
       "id": 2
     },
     {
-      "user_id": 1740883722113,
-      "crypto_id": "xrp-xrp",
-      "name": "XRP",
-      "symbol": "XRP",
-      "amount": 20,
+      "user_id": 1740684281625,
+      "crypto_id": "rndr-render-token",
+      "name": "Render",
+      "symbol": "RENDER",
+      "amount": 50,
       "id": 3
     },
     {
-      "user_id": 1740883722113,
-      "crypto_id": "trx-tron",
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 25,
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 0,
       "id": 4
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 2,
-      "id": 5
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "steth-lido-staked-ether",
-      "name": "Lido Staked Ether",
-      "symbol": "STETH",
-      "amount": 1,
-      "id": 6
-    },
-    {
-      "user_id": 1740684281625,
-      "crypto_id": "sol-solana",
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 5,
-      "id": 7
     }
   ]
 }
