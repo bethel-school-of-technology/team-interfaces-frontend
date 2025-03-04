@@ -80,7 +80,8 @@ export class TransactionHistoryComponent implements OnInit {
     this.coinPaprikaAPI.getCoinById(transaction.crypto_id).subscribe(result => {
       console.log(transaction);
       let sellPrice = Math.round(result.quotes.USD.price * 100) / 100;
-      let saleRevenue = ((sellPrice * transaction.amount) - (transaction.buyPrice * transaction.amount)).toFixed(2);
+      let saleTotal = sellPrice * transaction.amount;
+      let saleRevenue = (saleTotal - (transaction.buyPrice * transaction.amount)).toFixed(2);
       console.log(saleRevenue);
       //get exisiting crypto and edit amount
       this.transactionService.getCryptoBySymbolAndUserId(transaction.user_id, transaction.symbol).subscribe(result => {
@@ -96,7 +97,7 @@ export class TransactionHistoryComponent implements OnInit {
         });
 
         //update user balance
-        this.currentUser.balance += parseFloat(saleRevenue);
+        this.currentUser.balance += saleTotal;
         this.userService.updateUserById(this.currentUserID, this.currentUser).subscribe(() => {
 
         });

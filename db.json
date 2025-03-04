@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 99999.85
+      "balance": 97869.48000000001
     },
     {
       "email": "bw@test.com",
@@ -67,6 +67,62 @@
       "buyDate": 1741035389621,
       "buyPrice": 0.23,
       "id": 5
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "buyDate": 1741112529309,
+      "buyPrice": 2134.97,
+      "id": 6
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "buyDate": 1741112537085,
+      "buyPrice": 2134.97,
+      "id": 7,
+      "sellDate": 1741112612700,
+      "sellPrice": 2134.97,
+      "profitLoss": 0
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 1,
+      "buyDate": 1741112554314,
+      "buyPrice": 2130.37,
+      "id": 8,
+      "sellDate": 1741112652820,
+      "sellPrice": 2130.37,
+      "profitLoss": 0
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 5,
+      "buyDate": 1741112568332,
+      "buyPrice": 140.81,
+      "id": 9
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 1,
+      "buyDate": 1741112670374,
+      "buyPrice": 2130.37,
+      "id": 10
     }
   ],
   "cryptos": [
@@ -101,6 +157,30 @@
       "symbol": "TRX",
       "amount": 25,
       "id": 4
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 2,
+      "id": 5
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 1,
+      "id": 6
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 5,
+      "id": 7
     }
   ]
 }
