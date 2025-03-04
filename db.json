@@ -12,15 +12,95 @@
       "email": "bw@test.com",
       "password": "$2a$10$jKfjJ6Ct1YH2.Kf1/.Ke1OgNOdN4YPVsiawAWfMXuobzblu.3In5u",
       "id": 1740883722113,
-      "name": "Brian",
+      "name": "Brian W",
       "bankAccount": "789456123",
-      "balance": 10000
+      "balance": 9794.25
     }
   ],
   "transactions": [
-    
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 25,
+      "buyDate": 1741027816874,
+      "buyPrice": 1,
+      "id": 1
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "ada-cardano",
+      "name": "Cardano",
+      "symbol": "ADA",
+      "amount": 30,
+      "buyDate": 1741027827931,
+      "buyPrice": 0.9,
+      "id": 2
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 100,
+      "buyDate": 1741028991951,
+      "buyPrice": 1,
+      "id": 3
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 20,
+      "buyDate": 1741031837599,
+      "buyPrice": 2.4,
+      "id": 4
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "trx-tron",
+      "name": "TRON",
+      "symbol": "TRX",
+      "amount": 25,
+      "buyDate": 1741035389621,
+      "buyPrice": 0.23,
+      "id": 5
+    }
   ],
   "cryptos": [
-    
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 125,
+      "id": 1
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "ada-cardano",
+      "name": "Cardano",
+      "symbol": "ADA",
+      "amount": 30,
+      "id": 2
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 20,
+      "id": 3
+    },
+    {
+      "user_id": 1740883722113,
+      "crypto_id": "trx-tron",
+      "name": "TRON",
+      "symbol": "TRX",
+      "amount": 25,
+      "id": 4
+    }
   ]
 }
