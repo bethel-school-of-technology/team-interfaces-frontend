@@ -14,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { UpdateComponent } from './components/update/update.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
-
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -28,7 +28,8 @@ import { TransactionHistoryComponent } from './components/transaction-history/tr
     NavbarComponent,
     TransferComponent,
     UpdateComponent,
-    TransactionHistoryComponent
+    TransactionHistoryComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
