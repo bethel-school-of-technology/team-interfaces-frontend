@@ -6,13 +6,95 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 99999.85
+      "balance": 101040.37
+    },
+    {
+      "email": "bw@test.com",
+      "password": "$2a$10$jKfjJ6Ct1YH2.Kf1/.Ke1OgNOdN4YPVsiawAWfMXuobzblu.3In5u",
+      "id": 1740883722113,
+      "name": "Brian W",
+      "bankAccount": "789456123",
+      "balance": 9794.25
     }
   ],
   "transactions": [
-  
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 20,
+      "buyDate": 1741118056781,
+      "buyPrice": 2.84,
+      "id": 1
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 100,
+      "buyDate": 1741118106338,
+      "buyPrice": 582.57,
+      "id": 2
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "rndr-render-token",
+      "name": "Render",
+      "symbol": "RENDER",
+      "amount": 50,
+      "buyDate": 1741118543449,
+      "buyPrice": 3.57,
+      "id": 3
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 1000,
+      "buyDate": 1741118660750,
+      "buyPrice": 2.5,
+      "id": 4,
+      "currentValue": 2.5,
+      "sellDate": 1741118721536,
+      "sellPrice": 2.5,
+      "profitLoss": 0
+    }
   ],
   "cryptos": [
-    
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 20,
+      "id": 1
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 100,
+      "id": 2
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "rndr-render-token",
+      "name": "Render",
+      "symbol": "RENDER",
+      "amount": 50,
+      "id": 3
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 0,
+      "id": 4
+    }
   ]
 }

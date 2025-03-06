@@ -63,7 +63,7 @@ export class CoinDetailsComponent implements OnInit {
   }
 
   buy(coin: any): void {
-    let totalCost = this.amount * this.closeValue;
+    let totalCost = parseFloat((this.amount * this.closeValue).toFixed(2));  
     console.log(totalCost);
 
     if (this.currentUser.balance >= totalCost) {
@@ -98,7 +98,7 @@ export class CoinDetailsComponent implements OnInit {
           symbol: coin.symbol,
           amount: this.amount,
           buyDate: Date.now(),
-          buyPrice: this.closeValue,
+          buyPrice: parseFloat((this.closeValue).toFixed(2)),
           sellDate: undefined,
           sellPrice: undefined,
           profitLoss: undefined,

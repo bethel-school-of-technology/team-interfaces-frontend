@@ -23,7 +23,8 @@ export class TransactionHistoryComponent implements OnInit {
   closedTransactions: Transaction[] = [];
   loading = false;
   error?: string;
-  
+
+
 
   constructor(
     private userService: UserService,
@@ -61,6 +62,7 @@ export class TransactionHistoryComponent implements OnInit {
       next: (transactions) => {
         this.transactions = transactions;
         this.splitTransactions();
+        this.openTransactions.forEach(t => this.getCurrentValue(t, t.crypto_id))
         this.loading = false;
       },
       error: (err) => {
@@ -75,12 +77,20 @@ export class TransactionHistoryComponent implements OnInit {
     this.closedTransactions = this.transactions.filter(t => t.sellDate);
   }
 
+  getCurrentValue(transaction: Transaction, cryptoId: string) {
+    this.coinPaprikaAPI.getCoinById(cryptoId).subscribe(result => {
+      transaction.currentValue = parseFloat((result.quotes.USD.price).toFixed(2));
+    })
+  }
+
   sell(transaction: Transaction) {
+    console.log("user balance at beginnig of sell transaction", this.currentUser.balance);
     console.log("current user 1st: ", this.currentUser)
     this.coinPaprikaAPI.getCoinById(transaction.crypto_id).subscribe(result => {
       console.log(transaction);
       let sellPrice = Math.round(result.quotes.USD.price * 100) / 100;
-      let saleRevenue = ((sellPrice * transaction.amount) - (transaction.buyPrice * transaction.amount)).toFixed(2);
+      let saleTotal = parseFloat((sellPrice * transaction.amount).toFixed(2));
+      let saleRevenue = (saleTotal - (transaction.buyPrice * transaction.amount)).toFixed(2);
       console.log(saleRevenue);
       //get exisiting crypto and edit amount
       this.transactionService.getCryptoBySymbolAndUserId(transaction.user_id, transaction.symbol).subscribe(result => {
@@ -96,7 +106,11 @@ export class TransactionHistoryComponent implements OnInit {
         });
 
         //update user balance
-        this.currentUser.balance += parseFloat(saleRevenue);
+        console.log(saleTotal);
+        console.log("user balance before adding sales total: ", this.currentUser.balance);
+        this.currentUser.balance += saleTotal;
+        console.log(this.currentUser.balance);
+
         this.userService.updateUserById(this.currentUserID, this.currentUser).subscribe(() => {
 
         });

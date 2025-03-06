@@ -24,7 +24,7 @@
         <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
         <td>{{ transaction.amount }}</td>
         <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
-        <td>{{ (transaction.amount * transaction.buyPrice) | currency:'USD':true }}</td>
+        <td>{{ transaction.currentValue| currency:'USD':true }}</td>
         <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
           (click)="sell(transaction)">Sell</button>
         </td>
