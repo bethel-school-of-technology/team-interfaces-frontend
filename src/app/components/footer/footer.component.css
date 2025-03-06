@@ -1,0 +1,101 @@
+.app-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.me-5.d-none.d-lg-block {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.facebook { color: #1877f2; }
+.x { color: #1d1d1d; }
+.google { color: #4285f4; }
+.instagram { color: #e4405f; }
+.linkedin { color: #0077b5; }
+.github { color: #333; }
+
+/* Add collapsible functionality styles */
+#toggleFooterBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1050;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+#toggleFooterBtn:hover {
+    transform: scale(1.1);
+}
+
+#collapsibleFooter {
+    position: fixed;
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    transition: bottom 0.3s ease;
+    z-index: 1040;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#collapsibleFooter.expanded {
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+#footerBackdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+}
+
+#footerBackdrop.show {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-icon {
+        font-size: 20px;
+    }
+}
