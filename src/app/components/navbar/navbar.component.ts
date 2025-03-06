@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,13 @@ import { User } from '../../models/user';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
+  private isBrowser: boolean;
+  
   constructor(
     public userService: UserService,
-    private router: Router
-  ) { }
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) { this.isBrowser = isPlatformBrowser(platformId); }
 
   currentUser: User = new User();
 
@@ -27,7 +31,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
+    const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
     if (!user?.user?.id) {
       this.router.navigate(['/login']);
       return;

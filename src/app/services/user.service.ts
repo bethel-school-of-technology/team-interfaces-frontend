@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { User } from '../models/user';
 import { ChartDataPoint } from '../models/chart-data-point';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,23 @@ import { ChartDataPoint } from '../models/chart-data-point';
 export class UserService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSubject.asObservable();
+  private isBrowser: boolean;
   
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: object) {
+    this.isBrowser = isPlatformBrowser(platformId);
     this.loadCurrentUser();
   }
 
   private loadCurrentUser(): void {
-    const user = localStorage.getItem('currentUser');
-    if (user) {
-      this.currentUserSubject.next(JSON.parse(user));
+    if (this.isBrowser) {
+      const user = localStorage.getItem('currentUser');
+      if (user) {
+        this.currentUserSubject.next(JSON.parse(user));
+      }
     }
+    
   }
 
   signUp(user: User): Observable<User> {
