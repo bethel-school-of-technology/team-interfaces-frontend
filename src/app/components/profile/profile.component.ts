@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { TransactionService } from '../../services/transaction.service';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { forkJoin, map } from 'rxjs';
 import { Transaction } from '../../models/transaction';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +18,7 @@ import { Transaction } from '../../models/transaction';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+  private isBrowser: boolean;
   private currentUserID!: number;
   currentUserId: number = 0;
   currentUser: User = new User;
@@ -33,11 +35,12 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private transactionService: TransactionService,
-    private coinPaprikaAPI: CryptoService
-  ) {}
+    private coinPaprikaAPI: CryptoService,
+    @Inject(PLATFORM_ID) private platformId: object
+      ) { this.isBrowser = isPlatformBrowser(platformId); }
 
   ngOnInit(): void {
-    const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
+    const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
     if (!user?.user?.id) {
       this.router.navigate(['/login']);
       return;

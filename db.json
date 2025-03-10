@@ -10,11 +10,11 @@
     },
     {
       "email": "bw@test.com",
-      "password": "$2a$10$jKfjJ6Ct1YH2.Kf1/.Ke1OgNOdN4YPVsiawAWfMXuobzblu.3In5u",
-      "id": 1740883722113,
-      "name": "Brian W",
+      "password": "$2a$10$rUBSOrtIiKUNAbMe3LxWQu3YVlXFtMLaT4hQY.NGXZF2D8mXdR13u",
+      "id": 1741229357244,
+      "name": "Brian W.",
       "bankAccount": "789456123",
-      "balance": 9794.25
+      "balance": 120071.71999999997
     }
   ],
   "transactions": [
@@ -61,6 +61,46 @@
       "sellDate": 1741118721536,
       "sellPrice": 2.5,
       "profitLoss": 0
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "buyDate": 1741229466309,
+      "buyPrice": 91433.08,
+      "id": 5
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 40,
+      "buyDate": 1741229496936,
+      "buyPrice": 2270.05,
+      "id": 6
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "mkr-maker",
+      "name": "Maker",
+      "symbol": "MKR",
+      "amount": 80,
+      "buyDate": 1741229648939,
+      "buyPrice": 1356.59,
+      "id": 7
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 600,
+      "buyDate": 1741229704652,
+      "buyPrice": 148.61,
+      "id": 8
     }
   ],
   "cryptos": [
@@ -95,6 +135,38 @@
       "symbol": "XRP",
       "amount": 0,
       "id": 4
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "btc-bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "amount": 1,
+      "id": 5
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 40,
+      "id": 6
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "mkr-maker",
+      "name": "Maker",
+      "symbol": "MKR",
+      "amount": 80,
+      "id": 7
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 600,
+      "id": 8
     }
   ]
 }
