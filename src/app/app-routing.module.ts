@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component'
 import { UpdateComponent } from './components/update/update.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'transfer', component: TransferComponent },
   { path: 'update', component: UpdateComponent },
-  { path: 'transaction-history', component: TransactionHistoryComponent }
+  { path: 'transaction-history', component: TransactionHistoryComponent }, 
+  { path: 'about-us', component: AboutUsComponent }
 ];
 
 @NgModule({
