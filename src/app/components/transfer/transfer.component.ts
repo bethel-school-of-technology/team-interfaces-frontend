@@ -53,18 +53,18 @@ export class TransferComponent implements OnInit {
 
     //check for positive transfer amount
     if(this.transferAmount <= 0) {
-      alert("Enter a transfer amount");
+     return alert("Enter a transfer amount");
     }
     
     const selection = parseFloat(this.selectedTransactionType)
     console.log(this.selectedTransactionType);
     if(selection == 0) {
-      alert("Select transaction type");
+      return alert("Select transaction type");
     }
 
     //If 1, withdraw funds
     if(selection == 1) {
-      this.currentUser.balance -= this.transferAmount;
+      this.currentUser.balance += this.transferAmount;
       this.userService.updateUserById(this.currentUser.id, this.currentUser).subscribe(() => {
       });
       this.router.navigate(['/profile']);
@@ -72,7 +72,7 @@ export class TransferComponent implements OnInit {
       // if 2, add funds
     } 
     if(selection == 2) {
-      this.currentUser.balance += this.transferAmount;
+      this.currentUser.balance -= this.transferAmount;
       this.userService.updateUserById(this.currentUser.id, this.currentUser).subscribe(() => {
       });
       this.router.navigate(['/profile']);

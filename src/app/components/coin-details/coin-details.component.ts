@@ -25,6 +25,8 @@ export class CoinDetailsComponent implements OnInit {
   newTransaction: Transaction = new Transaction;
   newCrypto: Crypto = new Crypto;
   amount: number = 0;
+  usdAmount: number = 0;
+  conversionRate: number = 0;
 
   constructor(
     private cryptoService: CryptoService, 
@@ -41,6 +43,7 @@ export class CoinDetailsComponent implements OnInit {
     this.cryptoService.getCoinById(this.currentCoinId).subscribe(result => {
       this.coin = result;
       this.closeValue = parseFloat(this.coin.quotes.USD.price.toFixed(2));
+      this.conversionRate = this.closeValue;
     });
 
     // Get description and Twitter feed
@@ -62,9 +65,23 @@ export class CoinDetailsComponent implements OnInit {
     });
   }
 
+
+  updateUsDollars() {
+    this.usdAmount = this.amount * this.conversionRate;
+  }
+  
+  // This method is called when the USD field is updated
+  updateAmount() {
+    this.amount = this.usdAmount / this.conversionRate;
+  }
+
+
+
   buy(coin: any): void {
     let totalCost = parseFloat((this.amount * this.closeValue).toFixed(2));  
-    console.log(totalCost);
+    if(this.currentUser.balance < totalCost) {
+      return alert("Insuffient funds to complete this purchase");
+    }
 
     if (this.currentUser.balance >= totalCost) {
       this.currentUser.balance -= totalCost;
@@ -112,60 +129,5 @@ export class CoinDetailsComponent implements OnInit {
     }
   }
 
-  sell(coin: any): void {
-    // Validate if user has enough crypto to sell
-    this.transactionService.getCryptoBySymbolAndUserId(this.currentUser.id, coin.symbol).subscribe(result => {
-        this.existinCrypto = result[0];
-        
-        if (!this.existinCrypto) {
-            alert('You don\'t own any of this cryptocurrency.');
-            return;
-        }
-
-        if (this.existinCrypto.amount < this.amount) {
-            alert('Insufficient funds to sell this amount.');
-            return;
-        }
-
-        // Calculate sale revenue
-        const saleRevenue = this.amount * this.closeValue;
-        
-        // Update user balance
-        this.currentUser.balance += saleRevenue;
-        this.userService.updateUserById(this.currentUser.id, this.currentUser).subscribe(() => {
-            // Update crypto holdings
-            if (this.existinCrypto.amount === this.amount) {
-                // Update crypto amount to 0 instead of deleting
-                this.existinCrypto.amount = 0;
-                this.transactionService.editCryptoById(this.existinCrypto.id, this.existinCrypto).subscribe();
-            } else {
-                // Update crypto amount for partial sale
-                this.existinCrypto.amount -= this.amount;
-                this.transactionService.editCryptoById(this.existinCrypto.id, this.existinCrypto).subscribe();
-            }
-
-            // Find original buy transaction
-            this.transactionService.getCryptoBySymbolAndUserId(
-                this.currentUser.id, 
-                coin.symbol
-            ).subscribe(result => {
-                if (result[0] && result[0].id === this.existinCrypto.id) {
-                    // Update transaction with sell details
-                    const profitLoss = (saleRevenue - (this.amount * this.closeValue));
-                    
-                    const updatedTransaction = {
-                        ...this.newTransaction,
-                        sellDate: Date.now(),
-                        sellPrice: this.closeValue,
-                        profitLoss: profitLoss
-                    };
-                    
-                    this.transactionService.editCryptoById(updatedTransaction.id, updatedTransaction).subscribe();
-                }
-            });
-
-            this.router.navigate(['/profile']);
-        });
-    });
-}
+  
 }
