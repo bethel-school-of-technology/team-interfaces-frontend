@@ -1,36 +1,50 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://static.coinpaprika.com/coin/{{this.currentCoinId}}/logo.png" />
-                    <h3></h3>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
-                    <p class="card-text">Description: {{this.Description.description}}</p>
-                    <p class="card-text">Price: ${{this.closeValue}}</p>
-                    <form #form="ngForm" (ngSubmit)="buy(this.coin)">
-                        <label>Quantity</label>
+<div class="bg-image d-flex justify-content-center " style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y3J5cHRvJTIwY3VycmVuY3l8ZW58MHx8MHx8fDA%3D');
+    height: 100vh; height:auto;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://static.coinpaprika.com/coin/{{this.currentCoinId}}/logo.png" />
+                        <h3></h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.coin.name}} | Rank: {{this.coin.rank}}</h5>
+                        <h6 class="card-text">Description:</h6>
+                        <p class="card-text">{{this.Description.description}}</p>
+                        <h6 class="card-text">Price: ${{this.closeValue}}</h6>
+                        <form #form="ngForm" (ngSubmit)="buy(this.coin)">
+                            <!-- <label>Quantity</label>
                         <input type="number" name="amount" [(ngModel)]="this.amount">
-                        <button class="btn btn-primary" type="submit">Buy</button>
-                    </form>
+                        <button class="btn btn-primary" style="margin-left: 10px;" type="submit">Buy</button> -->
+                            <label style="font-weight: 600;" >Quantity</label>
+                            <input style="margin-bottom: 10px; margin-left: 22px;" type="number" name="amount" [(ngModel)]="amount" (ngModelChange)="updateUsDollars()"
+                                placeholder="Enter quantity">
+                            <br>
+                            <label style="font-weight: 600;" >US Dollars</label>
+                            <input style="margin-left: 10px;" type="number" name="usd" [(ngModel)]="usdAmount" (ngModelChange)="updateAmount()"
+                                placeholder="Enter amount in USD">
+                            <br>
+
+                            <button class="btn btn-primary" style="margin-top: 10px;" type="submit">Buy</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <h2>What They're saying:</h2>
-            <div *ngFor="let c of TwitterFeed">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{c.user_image_link}}" />
-                        <h5 class="card-title">{{c.user_name}}</h5>
-                        <p class="card-text">{{c.status}}</p>
+            <div class="col-md-6">
+                <h2>What They're saying:</h2>
+                <div *ngFor="let c of TwitterFeed">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="{{c.user_image_link}}" />
+                            <h5 class="card-title">{{c.user_name}}</h5>
+                            <p class="card-text">{{c.status}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
 </div>
-<br>

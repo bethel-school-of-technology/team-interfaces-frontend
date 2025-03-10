@@ -84,10 +84,8 @@ export class TransactionHistoryComponent implements OnInit {
   }
 
   sell(transaction: Transaction) {
-    console.log("user balance at beginnig of sell transaction", this.currentUser.balance);
-    console.log("current user 1st: ", this.currentUser)
+
     this.coinPaprikaAPI.getCoinById(transaction.crypto_id).subscribe(result => {
-      console.log(transaction);
       let sellPrice = Math.round(result.quotes.USD.price * 100) / 100;
       let saleTotal = parseFloat((sellPrice * transaction.amount).toFixed(2));
       let saleRevenue = (saleTotal - (transaction.buyPrice * transaction.amount)).toFixed(2);
