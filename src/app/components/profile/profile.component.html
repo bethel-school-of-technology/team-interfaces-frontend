@@ -1,13 +1,15 @@
-<app-navbar></app-navbar>
-<div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/coding2.jpg');
-height: 100vh;">
+<div class="main-content">
+    <app-navbar></app-navbar>
+<div class="bg-image d-flex justify-content-center align-items-center"
+    style="background-image: url('/assets/images/coding2.jpg')">
 
     <div class="container-fluid">
 
         <!-- Welcome -->
-        <div class="row">
+        <div class="row mt-5 pt-5">
             <div class="col">
-                <h1 class="text-white" style="
+                <h1 class="text-white welcome-header"
+                style="
                 background-color: black;
                 border: 1px solid silver;
                 padding: 15px;
@@ -19,10 +21,10 @@ height: 100vh;">
 
         <!-- Purchases -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
                 
                 <div class="table-section">
-                    <h3 class="text-white" style="
+                    <h3 class="text-white purchases-title" style="
                     background-color: black;
                     border: 1px solid silver;
                     padding: 15px;
@@ -32,7 +34,8 @@ height: 100vh;">
                     <div class="d-flex justify-content-center">
                         <button class="btn btn-danger btn-lg" routerLink="/transaction-history">Sell</button>
                     </div>
-                    <table class="table table-dark">
+                    <div class="table-container">
+                        <table class="table table-dark">
                         <thead>
                             <tr class="table-active">
                                 <th>Symbol</th>
@@ -44,7 +47,7 @@ height: 100vh;">
                         </thead>
                         <tbody>
                             <tr *ngFor="let crypto of assets">
-                                <td><img id="cryptoIcon" src="https://static.coinpaprika.com/coin/{{crypto.crypto_id}}/logo.png"/></td>
+                                <td><img id="cryptoIcon" style="max-width: 30px" src="https://static.coinpaprika.com/coin/{{crypto.crypto_id}}/logo.png"/></td>
                                 <td>{{ crypto.name }}</td>
                                 <td>{{transactionDates.get(crypto.crypto_id) | date:'medium'}}</td>
                                 <td>{{ crypto.amount }}</td>
@@ -52,12 +55,14 @@ height: 100vh;">
                             </tr>
                         </tbody>
                     </table>
+                    </div>
+                    
                 </div>
             </div>
 
         <!-- Pie Chart -->
-        <div class="col-md-6">
-            <canvas class="text-white" style="
+        <div class="col-12 col-md-6">
+            <canvas class="text-white pie-chart" style="
             background-color: white;
             border: 1px solid black;
             padding: 15px;
@@ -67,3 +72,5 @@ height: 100vh;">
         </div>
     </div>
 </div>
+</div>
+

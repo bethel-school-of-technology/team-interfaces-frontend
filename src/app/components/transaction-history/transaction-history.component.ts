@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Transaction } from '../../models/transaction';
 import { TransactionService } from '../../services/transaction.service';
 import { UserService } from '../../services/user.service';
@@ -6,16 +6,17 @@ import { Router } from '@angular/router';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { User } from '../../models/user';
 import { Crypto } from '../../models/crypto';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Component({
   selector: 'app-transaction-history',
   templateUrl: './transaction-history.component.html',
-  styleUrls: ['./transaction-history.component.scss'],
+  styleUrl: './transaction-history.component.css',
   standalone: false
 })
 export class TransactionHistoryComponent implements OnInit {
-
+  private isBrowser: boolean;
   public currentUserID!: number;
   public currentUser: User = new User();
   transactions: Transaction[] = [];
@@ -30,16 +31,18 @@ export class TransactionHistoryComponent implements OnInit {
     private userService: UserService,
     private transactionService: TransactionService,
     private router: Router,
-    private coinPaprikaAPI: CryptoService
-  ) { }
+    private coinPaprikaAPI: CryptoService,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) { this.isBrowser = isPlatformBrowser(platformId); }
 
   ngOnInit(): void {
+    const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
     this.loadUserData();
   }
 
   private loadUserData(): void {
     this.loading = true;
-    const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
+    const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
     if (!user?.user?.id || !user?.user?.name) {
       this.router.navigate(['/login']);
       return;

@@ -1,57 +1,58 @@
-<app-navbar></app-navbar>
+<div class="main-content">
+    <app-navbar></app-navbar>
+    <div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/background2.jpg');
+                height: 100vh;">
+
+        <div class="container mt-4">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <div class="card bg-transparent border-white">
+                        <div class="card-header">
+                            <h4 class="text-white border-white">Transfer Funds</h4>
+                        </div>
+                        <div class="card-body">
+                            <form #form="ngForm" (ngSubmit)="transfer()">
+                                <div class="mb-3">
+                                    <span>
+                                        <label for="paymentMethod" class="form-label text-white">Account</label>
+
+                                        <button style="margin-left: 10px;" type="button" [routerLink]="['/update']"
+                                            class="btn btn-outline-light form-label">
+                                            Change Account
+                                        </button>
+                                    </span>
+                                    <input type="text" name="bankAccount" class="form-control"
+                                        [(ngModel)]="currentUser.bankAccount"
+                                        [ngModel]="formatBankAccount(currentUser.bankAccount)" readonly />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="transactionType" class="form-label text-white">Transaction Type</label>
+
+                                    <select class="form-control" [(ngModel)]="selectedTransactionType" name="transactionType">
+                                        <option disabled selected>Choose Transaction Type</option>
+                                        <option value="1">Deposit</option>
+                                        <option  value="2">Withdraw</option>
+                                    </select>
+                                </div>
 
 
-<div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/background2.jpg');
-            height: 100vh;">
+                                <div class="mb-3">
+                                    <label for="amount" class="form-label text-white">Amount</label>
+                                    <input placeholder="0.00" type="number" name="amount" class="form-control" [(ngModel)]="transferAmount"/>
+                                </div>
 
-    <div class="container mt-4">
-        <div class="row justify-content-md-center">
-            <div class="col-md-6">
-                <div class="card bg-transparent border-white">
-                    <div class="card-header">
-                        <h4 class="text-white border-white">Transfer Funds</h4>
-                    </div>
-                    <div class="card-body">
-                        <form #form="ngForm" (ngSubmit)="transfer()">
-                            <div class="mb-3">
-                                <span>
-                                    <label for="paymentMethod" class="form-label text-white">Account</label>
-
-                                    <button style="margin-left: 10px;" type="button" [routerLink]="['/update']"
-                                        class="btn btn-outline-light form-label">
-                                        Change Account
-                                    </button>
-                                </span>
-                                <input type="text" name="bankAccount" class="form-control"
-                                    [(ngModel)]="currentUser.bankAccount"
-                                    [ngModel]="formatBankAccount(currentUser.bankAccount)" readonly />
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="transactionType" class="form-label text-white">Transaction Type</label>
-
-                                <select class="form-control" [(ngModel)]="selectedTransactionType" name="transactionType">
-                                    <option disabled selected>Choose Transaction Type</option>
-                                    <option value="1">Deposit</option>
-                                    <option  value="2">Withdraw</option>
-                                </select>
-                            </div>
+                                <button type="submit" class="btn btn-outline-light form-label">
+                                    Transfer
+                                </button>
 
 
-                            <div class="mb-3">
-                                <label for="amount" class="form-label text-white">Amount</label>
-                                <input placeholder="0.00" type="number" name="amount" class="form-control" [(ngModel)]="transferAmount"/>
-                            </div>
-
-                            <button type="submit" class="btn btn-outline-light form-label">
-                                Transfer
-                            </button>
-
-
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
