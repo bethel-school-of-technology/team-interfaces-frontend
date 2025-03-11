@@ -14,7 +14,7 @@
       "id": 1741229357244,
       "name": "Brian W.",
       "bankAccount": "789456123",
-      "balance": 120071.71999999997
+      "balance": 95430.51999999997
     }
   ],
   "transactions": [
@@ -84,7 +84,11 @@
       "amount": 40,
       "buyDate": 1741229496936,
       "buyPrice": 2270.05,
-      "id": 6
+      "id": 6,
+      "currentValue": 1883.97,
+      "sellDate": 1741649791917,
+      "sellPrice": 1883.97,
+      "profitLoss": -15443.2
     },
     {
       "user_id": 1741229357244,
@@ -145,6 +149,16 @@
       "buyDate": 1741635603575,
       "buyPrice": 1873.99,
       "id": 12
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 53.185831294543135,
+      "buyDate": 1741648884127,
+      "buyPrice": 1880.2,
+      "id": 13
     }
   ],
   "cryptos": [
@@ -193,7 +207,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 40,
+      "amount": 53.185831294543135,
       "id": 6
     },
     {

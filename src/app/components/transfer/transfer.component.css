@@ -1,0 +1,6 @@
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: calc(65px + 1rem);
+    }
+}

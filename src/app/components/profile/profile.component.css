@@ -1,40 +1,45 @@
-.profile {
-    margin: 20px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: calc(100px + 1rem);
+    }
+
+    .welcome-header {
+
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .purchases-title {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .table-dark th,
+    .table-dark td {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
 
-.assetTableItem {
-    display: inline;
-    margin: 10px;
-}
+@media (max-width: 576px) {
+    .pie-chart {
+        width: 100%;
+        height: auto;
+    }
 
-#cryptoIcon {
-    max-width: 30px;
+    .table-dark th,
+    .table-dark td {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
-
-/* .profile-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.user-info {
-    margin-bottom: 30px;
-}
-
-.chart-section {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.chart-container {
-    position: relative;
-    height: 400px;
-    width: 100%;
-}
-
-canvas {
-    max-width: 100%;
-    height: auto;
-} */

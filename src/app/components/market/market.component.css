@@ -1,23 +1,31 @@
-
 img {
     max-width: 20px;
     display: inline;
 }
 
 .marketItem {
-    
-    
     margin: 10px auto;
-
-    
 }
 
+.main-content {
+    margin-top: 50px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-content {
+        margin-top: calc(110px + 1rem);
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 991px) {
+    .main-content {
+      margin-top: calc(150px + 1rem);
+    }
+  }
 
-#title {
-    display: block;
-    margin: auto;
-    
-}
-
-
-
+  @media (min-width: 992px) and (max-width: 1090px) {
+    .main-content {
+      margin-top: calc(100px + 1rem);
+    }
+  }

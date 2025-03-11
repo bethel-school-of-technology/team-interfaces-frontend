@@ -1,36 +1,37 @@
-<app-navbar></app-navbar>
+<div class="main-content">
+    <app-navbar></app-navbar>
 
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" > 
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <h2 class="navbar-nav me-auto mb-2 mb-lg-0" id="title" aria-current="page">DISCOVER</h2>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" > 
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <h2 class="navbar-nav me-auto mb-2 mb-lg-0" id="title" aria-current="page">DISCOVER</h2>
 
-            <form class="d-flex" style="justify-content: end;" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+                <form class="d-flex" style="justify-content: end;" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-    </div>
- </nav>  -->
- <div class="bg-image d-flex justify-content-center " style="background-image: url('/assets/images/background4.jpg');
- height: 100vh; height:auto;">
-    <div class="container" style="padding-top: 20px; margin-top: 40px;">
-        <div class="row">
-            <div class="col" *ngFor="let c of cryptoList">
+    </nav>  -->
+    <div class="bg-image d-flex justify-content-center " style="background-image: url('/assets/images/background4.jpg');
+    height: 100vh; height:auto;">
+        <div class="container" style="padding-top: 20px; margin-top: 40px;">
+            <div class="row">
+                <div class="col" *ngFor="let c of cryptoList">
 
-                <div class="card marketItem" style="width: 18rem;">
-                    <div class="card-body">
+                    <div class="card marketItem" style="width: 18rem;">
+                        <div class="card-body">
 
-                        <h5 class="card-title"> {{c.name}} </h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">{{c.symbol}}</h6>
-                        <img src="https://static.coinpaprika.com/coin/{{c.id}}/logo.png" />
-                        <p class="card-text">Price: ${{c.quotes.USD.price.toFixed(2)}}</p>
-                        <p class="card-text">Last 24hrs: {{c.quotes.USD.percent_change_24h}}%</p>
-                        <a [routerLink]="['/market', c.id]" class="card-link">View Details</a>
+                            <h5 class="card-title"> {{c.name}} </h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{c.symbol}}</h6>
+                            <img src="https://static.coinpaprika.com/coin/{{c.id}}/logo.png" />
+                            <p class="card-text">Price: ${{c.quotes.USD.price.toFixed(2)}}</p>
+                            <p class="card-text">Last 24hrs: {{c.quotes.USD.percent_change_24h}}%</p>
+                            <a [routerLink]="['/market', c.id]" class="card-link">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-

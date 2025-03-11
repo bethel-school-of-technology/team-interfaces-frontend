@@ -1,5 +1,25 @@
 img {
     max-width: 50px;
-    
 }
+
+.row {
+    padding: 100px;
+}
+
+.main-content {
+    margin-top: 55px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-content {
+        margin-top: calc(100px + 1rem);
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1090px) {
+    .main-content {
+      margin-top: calc(200px + 1rem);
+    }
+  }
 

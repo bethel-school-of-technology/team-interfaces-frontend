@@ -1,65 +1,68 @@
-<app-navbar></app-navbar>
-<!-- User Information -->
-<div class="user-info">
-  <h2> {{ currentUser.name }}'s Transactions</h2>
-</div>
+<div class="main-content">
+  <app-navbar></app-navbar>
 
-<!-- Open Transactions Table -->
-<div class="table-section">
-  <h3>Open Transactions</h3>
-  <table class="table table-dark">
-    <thead>
-      <tr class="table-active">
-        <th>Date, Time</th>
-        <th>Crypto</th>
-        <th>Amount</th>
-        <th>Buy Price/Coin</th>
-        <th>Current Value/Coin</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let transaction of openTransactions">
-        <td>{{ transaction.buyDate | date:'short' }}</td>
-        <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-        <td>{{ transaction.amount }}</td>
-        <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
-        <td>{{ transaction.currentValue| currency:'USD':true }}</td>
-        <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
-          (click)="sell(transaction)">Sell</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+ <!-- User Information -->
+ <div class="user-info">
+    <h2> {{ currentUser.name }}'s Transactions</h2>
+  </div>
 
-<!-- Closed Transactions Table -->
-<div class="table-section">
-  <h3>Closed Transactions</h3>
-  <table class="table table-dark">
-    <thead>
-      <tr class="table-active">
-        <th>Date, Time</th>
-        <th>Crypto</th>
-        <th>Amount</th>
-        <th>Buy/Sell Price</th>
-        <th>Profit/Loss</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let transaction of closedTransactions">
-        <td>{{ transaction.buyDate | date:'short' }}</td>
-        <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-        <td>{{ transaction.amount }}</td>
-        <td>
-          Buy: {{ transaction.buyPrice | currency:'USD':true}}<br>
-          Sell: {{ transaction.sellPrice | currency:'USD':true}}
-        </td>
-        <td [class.profit]="transaction.profitLoss! >= 0"
-            [class.loss]="transaction.profitLoss! < 0">
-          {{ transaction.profitLoss! | currency:'USD':true }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Open Transactions Table -->
+  <div class="table-section">
+    <h3>Open Transactions</h3>
+    <table class="table table-dark">
+      <thead>
+        <tr class="table-active">
+          <th>Date, Time</th>
+          <th>Crypto</th>
+          <th>Amount</th>
+          <th>Buy Price/Coin</th>
+          <th>Current Value/Coin</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of openTransactions">
+          <td>{{ transaction.buyDate | date:'short' }}</td>
+          <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
+          <td>{{ transaction.currentValue| currency:'USD':true }}</td>
+          <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
+            (click)="sell(transaction)">Sell</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Closed Transactions Table -->
+  <div class="table-section">
+    <h3>Closed Transactions</h3>
+    <table class="table table-dark">
+      <thead>
+        <tr class="table-active">
+          <th>Date, Time</th>
+          <th>Crypto</th>
+          <th>Amount</th>
+          <th>Buy/Sell Price</th>
+          <th>Profit/Loss</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of closedTransactions">
+          <td>{{ transaction.buyDate | date:'short' }}</td>
+          <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
+          <td>{{ transaction.amount }}</td>
+          <td>
+            Buy: {{ transaction.buyPrice | currency:'USD':true}}<br>
+            Sell: {{ transaction.sellPrice | currency:'USD':true}}
+          </td>
+          <td [class.profit]="transaction.profitLoss! >= 0"
+              [class.loss]="transaction.profitLoss! < 0">
+            {{ transaction.profitLoss! | currency:'USD':true }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
