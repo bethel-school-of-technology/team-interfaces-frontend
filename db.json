@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 33088.32
+      "balance": 86188.71000000002
     },
     {
       "email": "bw@test.com",
@@ -118,7 +118,11 @@
       "amount": 10000,
       "buyDate": 1741631352167,
       "buyPrice": 2.33,
-      "id": 9
+      "id": 9,
+      "currentValue": 2.56,
+      "sellDate": 1741720075621,
+      "sellPrice": 2.53,
+      "profitLoss": 2000
     },
     {
       "user_id": 1740684281625,
@@ -138,7 +142,11 @@
       "amount": 0.8501955449753443,
       "buyDate": 1741634600138,
       "buyPrice": 117.62,
-      "id": 11
+      "id": 11,
+      "currentValue": 127.25,
+      "sellDate": 1741721345848,
+      "sellPrice": 127.25,
+      "profitLoss": 8.19
     },
     {
       "user_id": 1740684281625,
@@ -148,7 +156,11 @@
       "amount": 15,
       "buyDate": 1741635603575,
       "buyPrice": 1873.99,
-      "id": 12
+      "id": 12,
+      "currentValue": 1948.53,
+      "sellDate": 1741721230632,
+      "sellPrice": 1948.06,
+      "profitLoss": 1111.05
     },
     {
       "user_id": 1741229357244,
@@ -159,6 +171,36 @@
       "buyDate": 1741648884127,
       "buyPrice": 1880.2,
       "id": 13
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 10,
+      "buyDate": 1741721431546,
+      "buyPrice": 1952.72,
+      "id": 14
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "sol-solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "amount": 62.86836935166994,
+      "buyDate": 1741721460731,
+      "buyPrice": 127.25,
+      "id": 15
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 10,
+      "buyDate": 1741721489210,
+      "buyPrice": 1948.06,
+      "id": 16
     }
   ],
   "cryptos": [
@@ -167,7 +209,7 @@
       "crypto_id": "near-near-protocol",
       "name": "Near Protocol",
       "symbol": "NEAR",
-      "amount": 10000,
+      "amount": 0,
       "id": 1
     },
     {
@@ -231,7 +273,7 @@
       "crypto_id": "sol-solana",
       "name": "Solana",
       "symbol": "SOL",
-      "amount": 0.8501955449753443,
+      "amount": 62.86836935166994,
       "id": 9
     },
     {
@@ -239,8 +281,16 @@
       "crypto_id": "steth-lido-staked-ether",
       "name": "Lido Staked Ether",
       "symbol": "STETH",
-      "amount": 15,
+      "amount": 10,
       "id": 10
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 10,
+      "id": 11
     }
   ]
 }
