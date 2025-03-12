@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Crypto } from '../../models/crypto';
@@ -6,6 +6,7 @@ import { TransactionService } from '../../services/transaction.service';
 import { Transaction } from '../../models/transaction';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-coin-details',
@@ -14,6 +15,7 @@ import { UserService } from '../../services/user.service';
   styleUrl: './coin-details.component.css'
 })
 export class CoinDetailsComponent implements OnInit {
+  private isBrowser: boolean = true;
   currentUser: User = new User;
   existinCrypto: Crypto = new Crypto;
   currentUserId: number = 0;
@@ -22,6 +24,7 @@ export class CoinDetailsComponent implements OnInit {
   closeValue: any = null;
   Description: any = null;
   TwitterFeed: any[] = []
+  twitterFeedDisplay: boolean = false;
   newTransaction: Transaction = new Transaction;
   newCrypto: Crypto = new Crypto;
   amount: number = 0;
@@ -31,16 +34,17 @@ export class CoinDetailsComponent implements OnInit {
   buyingTransaction: Transaction = new Transaction
 
   constructor(
-    private cryptoService: CryptoService, 
-    private actRoute: ActivatedRoute, 
-    private router: Router, 
-    private transactionService: TransactionService, 
-    private userService: UserService
-  ) { }
+    private cryptoService: CryptoService,
+    private actRoute: ActivatedRoute,
+    private router: Router,
+    private transactionService: TransactionService,
+    private userService: UserService,
+    @Inject(PLATFORM_ID) private platformId: object
+          ) { this.isBrowser = isPlatformBrowser(platformId); }
 
   ngOnInit(): void {
     this.currentCoinId = this.actRoute.snapshot.paramMap.get('coinId') ?? "";
-    
+
     // Get coin details
     this.cryptoService.getCoinById(this.currentCoinId).subscribe(result => {
       this.coin = result;
@@ -53,10 +57,16 @@ export class CoinDetailsComponent implements OnInit {
       console.log(result);
       this.Description = result;
     });
-    
+
     this.cryptoService.getTwitter(this.currentCoinId).subscribe(result => {
       this.TwitterFeed = result;
+      if (this.TwitterFeed.length > 0) {
+        this.twitterFeedDisplay = true;
+      }
+
     });
+
+
 
     // Initialize user data
     const user = JSON.parse(localStorage.getItem('currentUser') ?? "");
@@ -71,35 +81,36 @@ export class CoinDetailsComponent implements OnInit {
   updateUsDollars() {
     this.usdAmount = this.amount * this.conversionRate;
   }
-  
+
   // This method is called when the USD field is updated
   updateAmount() {
     this.amount = this.usdAmount / this.conversionRate;
   }
 
-    // Open the prompt box
-    openPrompt(coin: any): void {
-      this.buyingTransaction = coin;
-      this.showPrompt = true;
-    }
-  
-    // Handle the confirmation action
-    onConfirm(): void {
-      this.showPrompt = false;  // Close the prompt
-      console.log(this.buyingTransaction);
-      this.buy(this.buyingTransaction);
-    }
-  
-    // Handle the cancel action
-    onCancel(): void {
-      this.showPrompt = false;  // Close the prompt
-      console.log('Transaction cancelled');
-      // Handle cancelation logic here
-    }
+  // Open the prompt box
+  openPrompt(): void {
+    console.log("amount: ", this.amount);
+    console.log(this.coin);
 
+    this.showPrompt = true;
+  }
+
+  // Handle the confirmation action
+  onConfirm(): void {
+    this.showPrompt = false;  // Close the prompt
+    this.buy(this.coin);
+  }
+
+  // Handle the cancel action
+  onCancel(): void {
+    this.showPrompt = false;  // Close the prompt
+    console.log('Transaction cancelled');
+  }
+
+  //Buy method;
   buy(coin: any): void {
-    let totalCost = parseFloat((this.amount * this.closeValue).toFixed(2));  
-    if(this.currentUser.balance < totalCost) {
+    let totalCost = parseFloat((this.amount * this.closeValue).toFixed(2));
+    if (this.currentUser.balance < totalCost) {
       return alert("Insuffient funds to complete this purchase");
     }
 
@@ -109,7 +120,7 @@ export class CoinDetailsComponent implements OnInit {
         // Handle crypto holdings
         this.transactionService.getCryptoBySymbolAndUserId(this.currentUser.id, coin.symbol).subscribe(result => {
           this.existinCrypto = (result[0]);
-          
+
           if (!this.existinCrypto) {
             this.newCrypto = {
               id: undefined,
@@ -149,5 +160,5 @@ export class CoinDetailsComponent implements OnInit {
     }
   }
 
-  
+
 }

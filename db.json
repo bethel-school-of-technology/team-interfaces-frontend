@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 86188.71000000002
+      "balance": 73652.72000000003
     },
     {
       "email": "bw@test.com",
@@ -305,6 +305,66 @@
       "buyDate": 1741741039927,
       "buyPrice": 1909.74,
       "id": 26
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 2000,
+      "buyDate": 1741803405420,
+      "buyPrice": 2.51,
+      "id": 27
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 1,
+      "buyDate": 1741803738895,
+      "buyPrice": 1874.93,
+      "id": 28
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "steth-lido-staked-ether",
+      "name": "Lido Staked Ether",
+      "symbol": "STETH",
+      "amount": 1,
+      "buyDate": 1741803941980,
+      "buyPrice": 1877.86,
+      "id": 29
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 1,
+      "buyDate": 1741806010355,
+      "buyPrice": 1880.49,
+      "id": 30
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "near-near-protocol",
+      "name": "Near Protocol",
+      "symbol": "NEAR",
+      "amount": 1,
+      "buyDate": 1741806233413,
+      "buyPrice": 2.53,
+      "id": 31
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 1,
+      "buyDate": 1741806311196,
+      "buyPrice": 1880.18,
+      "id": 32
     }
   ],
   "cryptos": [
@@ -313,7 +373,7 @@
       "crypto_id": "near-near-protocol",
       "name": "Near Protocol",
       "symbol": "NEAR",
-      "amount": 0,
+      "amount": 2001,
       "id": 1
     },
     {
@@ -385,7 +445,7 @@
       "crypto_id": "steth-lido-staked-ether",
       "name": "Lido Staked Ether",
       "symbol": "STETH",
-      "amount": 10,
+      "amount": 12,
       "id": 10
     },
     {
@@ -393,7 +453,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 10,
+      "amount": 12,
       "id": 11
     },
     {
