@@ -16,8 +16,8 @@
           <th>Date, Time</th>
           <th>Crypto</th>
           <th>Amount</th>
-          <th>Buy Price/Coin</th>
-          <th>Current Value/Coin</th>
+          <th>Buy Price Per Coin</th>
+          <th>Current Value Per Coin</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -70,14 +70,12 @@
 
 <div *ngIf="showPrompt" class="promptOverlay">
   <div *ngIf="showPrompt" class="prompt-box">
-    <h3>Are you sure you want to sell this transaction</h3>
-    <p>
-      Qty:
-      {{sellingTransaction.amount}} - 
-      {{sellingTransaction.name}} for a net value of: 
-      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD':true}}   
-    </p>
-    <button (click)="onConfirm()">Confirm</button>
-    <button (click)="onCancel()">Cancel</button>
+    <h3>Are you sure you want to sell the quantity of</h3>
+    <h3>{{sellingTransaction.amount}} - 
+      {{sellingTransaction.name}} for a Profit/Loss of: 
+      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD':true}}   </h3>
+
+    <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
+    <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>
   </div>
 </div>

@@ -27,6 +27,8 @@ export class CoinDetailsComponent implements OnInit {
   amount: number = 0;
   usdAmount: number = 0;
   conversionRate: number = 0;
+  showPrompt: boolean = false;
+  buyingTransaction: Transaction = new Transaction
 
   constructor(
     private cryptoService: CryptoService, 
@@ -75,7 +77,25 @@ export class CoinDetailsComponent implements OnInit {
     this.amount = this.usdAmount / this.conversionRate;
   }
 
-
+    // Open the prompt box
+    openPrompt(coin: any): void {
+      this.buyingTransaction = coin;
+      this.showPrompt = true;
+    }
+  
+    // Handle the confirmation action
+    onConfirm(): void {
+      this.showPrompt = false;  // Close the prompt
+      console.log(this.buyingTransaction);
+      this.buy(this.buyingTransaction);
+    }
+  
+    // Handle the cancel action
+    onCancel(): void {
+      this.showPrompt = false;  // Close the prompt
+      console.log('Transaction cancelled');
+      // Handle cancelation logic here
+    }
 
   buy(coin: any): void {
     let totalCost = parseFloat((this.amount * this.closeValue).toFixed(2));  
