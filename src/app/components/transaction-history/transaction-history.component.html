@@ -1,8 +1,9 @@
 <div class="main-content">
   <app-navbar></app-navbar>
 
- <!-- User Information -->
- <div class="user-info">
+
+  <!-- User Information -->
+  <div class="user-info">
     <h2> {{ currentUser.name }}'s Transactions</h2>
   </div>
 
@@ -28,7 +29,7 @@
           <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
           <td>{{ transaction.currentValue| currency:'USD':true }}</td>
           <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
-            (click)="sell(transaction)">Sell</button>
+              (click)="openPrompt(transaction)">Sell</button>
           </td>
         </tr>
       </tbody>
@@ -57,12 +58,26 @@
             Buy: {{ transaction.buyPrice | currency:'USD':true}}<br>
             Sell: {{ transaction.sellPrice | currency:'USD':true}}
           </td>
-          <td [class.profit]="transaction.profitLoss! >= 0"
-              [class.loss]="transaction.profitLoss! < 0">
+          <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0">
             {{ transaction.profitLoss! | currency:'USD':true }}
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+
+</div>
+
+<div *ngIf="showPrompt" class="promptOverlay">
+  <div *ngIf="showPrompt" class="prompt-box">
+    <h3>Are you sure you want to sell this transaction</h3>
+    <p>
+      Qty:
+      {{sellingTransaction.amount}} - 
+      {{sellingTransaction.name}} for a net value of: 
+      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD':true}}   
+    </p>
+    <button (click)="onConfirm()">Confirm</button>
+    <button (click)="onCancel()">Cancel</button>
   </div>
 </div>

@@ -29,6 +29,8 @@
         font-size: 14px;
         padding: 8px;
     }
+
+    
 }
 
 @media (max-width: 576px) {
@@ -42,4 +44,17 @@
         font-size: 12px;
         padding: 6px;
     }
+}
+
+.hover-text {
+    transition: font-size 0.3s ease;
+}
+
+.hover-text:hover{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: gold;
+
+    
+
 }

@@ -24,6 +24,8 @@ export class TransactionHistoryComponent implements OnInit {
   closedTransactions: Transaction[] = [];
   loading = false;
   error?: string;
+  showPrompt: boolean = false;
+  sellingTransaction: Transaction = new Transaction
 
 
 
@@ -86,8 +88,28 @@ export class TransactionHistoryComponent implements OnInit {
     })
   }
 
-  sell(transaction: Transaction) {
+    // Open the prompt box
+    openPrompt(transaction: Transaction): void {
+      this.sellingTransaction = transaction;
+      this.showPrompt = true;
+    }
+  
+    // Handle the confirmation action
+    onConfirm(): void {
+      this.showPrompt = false;  // Close the prompt
+      console.log(this.sellingTransaction);
+      this.sell(this.sellingTransaction);
+    }
+  
+    // Handle the cancel action
+    onCancel(): void {
+      this.showPrompt = false;  // Close the prompt
+      console.log('Transaction cancelled');
+      // Handle cancelation logic here
+    }
 
+  sell(transaction: Transaction) {
+    
     this.coinPaprikaAPI.getCoinById(transaction.crypto_id).subscribe(result => {
       let sellPrice = Math.round(result.quotes.USD.price * 100) / 100;
       let saleTotal = parseFloat((sellPrice * transaction.amount).toFixed(2));
