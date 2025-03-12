@@ -125,7 +125,6 @@ export class TransactionHistoryComponent implements OnInit {
         console.log(existinCrypto);
 
         this.transactionService.editCryptoById(existinCrypto.id, existinCrypto).subscribe(() => {
-
         });
 
         //update user balance
@@ -135,7 +134,6 @@ export class TransactionHistoryComponent implements OnInit {
         console.log(this.currentUser.balance);
 
         this.userService.updateUserById(this.currentUserID, this.currentUser).subscribe(() => {
-
         });
 
         //close transaction
@@ -146,10 +144,7 @@ export class TransactionHistoryComponent implements OnInit {
 
           this.router.navigate(['/profile']);
         });
-
       });
     });
   }
-
-
 }

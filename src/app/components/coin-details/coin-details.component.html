@@ -29,7 +29,9 @@
                                 <input type="number" name="usd" [(ngModel)]="usdAmount" (ngModelChange)="updateAmount()"
                                 placeholder="Enter amount in USD">
                                 <br>
-                                <button class="btn btn-primary" style="margin-top: 10px;" type="submit">Buy</button>
+                                <button class="btn btn-primary" style="margin-top: 10px;"
+                                    (click)="openPrompt(coin)">Buy</button>
+                                <button class="btn btn-danger" style="margin-top: 10px;" routerLink="/market">Go Back</button>
                             </form>
                         </div>
                     </div>
@@ -52,3 +54,14 @@
     </div>
 </div>
 
+<div *ngIf="showPrompt" class="promptOverlay">
+    <div *ngIf="showPrompt" class="prompt-box">
+      <h3>Are you sure you want to sell the quantity of</h3>
+      <h3>{{buyingTransaction.amount}} - 
+        {{buyingTransaction.name}} for a Profit/Loss of: 
+        {{ (((buyingTransaction.amount) * (buyingTransaction.currentValue ?? 0 )) - ((buyingTransaction.amount) * (buyingTransaction.buyPrice)) )| currency: 'USD':true}}   </h3>
+  
+      <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
+      <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>
+    </div>
+  </div>
