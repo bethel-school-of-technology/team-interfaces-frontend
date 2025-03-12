@@ -15,31 +15,28 @@
                             <h6 class="card-text">Description:</h6>
                             <p class="card-text">{{this.Description.description}}</p>
                             <h6 class="card-text">Price: ${{this.closeValue}}</h6>
-                            <form #form="ngForm" (ngSubmit)="buy(this.coin)">
-                                <!-- <label>Quantity</label>
-                            <input type="number" name="amount" [(ngModel)]="this.amount">
-                            <button class="btn btn-primary" style="margin-left: 10px;" type="submit">Buy</button> -->
-                                <label style="font-weight: 600;" >Quantity</label>
+                            <form #form="ngForm" (ngSubmit)="openPrompt()">
+                                <label style="font-weight: 600;">Quantity</label>
                                 <br>
-                                <input style="margin-bottom: 10px" type="number" name="amount" [(ngModel)]="amount" (ngModelChange)="updateUsDollars()"
-                                    placeholder="Enter quantity">
+                                <input style="margin-bottom: 10px" type="number" name="amount" [(ngModel)]="amount"
+                                    (ngModelChange)="updateUsDollars()" placeholder="Enter quantity">
                                 <br>
-                                <label style="font-weight: 600;" >US Dollars</label>
+                                <label style="font-weight: 600;">US Dollars</label>
                                 <br>
                                 <input type="number" name="usd" [(ngModel)]="usdAmount" (ngModelChange)="updateAmount()"
-                                placeholder="Enter amount in USD">
+                                    placeholder="Enter amount in USD">
                                 <br>
-                                <button class="btn btn-primary" style="margin-top: 10px;"
-                                    (click)="openPrompt(coin)">Buy</button>
-                                <button class="btn btn-danger" style="margin-top: 10px;" routerLink="/market">Go Back</button>
+                                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Buy</button>
+                                <button class="btn btn-danger" style="margin-top: 10px; margin-left: 10px;"
+                                    routerLink="/market">Go Back</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" style="color: white;">
+                <div *ngIf="this.twitterFeedDisplay" class="col-md-6" style="color: white;">
                     <h2>What They're saying:</h2>
                     <div *ngFor="let c of TwitterFeed">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem; margin-bottom: 10px;">
                             <div class="card-body">
                                 <img src="{{c.user_image_link}}" />
                                 <h5 class="card-title">{{c.user_name}}</h5>
@@ -56,12 +53,14 @@
 
 <div *ngIf="showPrompt" class="promptOverlay">
     <div *ngIf="showPrompt" class="prompt-box">
-      <h3>Are you sure you want to sell the quantity of</h3>
-      <h3>{{buyingTransaction.amount}} - 
-        {{buyingTransaction.name}} for a Profit/Loss of: 
-        {{ (((buyingTransaction.amount) * (buyingTransaction.currentValue ?? 0 )) - ((buyingTransaction.amount) * (buyingTransaction.buyPrice)) )| currency: 'USD':true}}   </h3>
-  
-      <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
-      <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>
+        <h3>Are you sure you want to buy the quantity of</h3>
+        <h3> 
+            {{this.amount}} -
+            {{this.coin.name}} for:
+            {{ ((this.coin.quotes.USD.price) * (this.amount )) | currency:"USD":true }}
+        </h3>
+
+        <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
+        <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>
     </div>
-  </div>
+</div>
