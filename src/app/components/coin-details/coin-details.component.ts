@@ -7,6 +7,7 @@ import { Transaction } from '../../models/transaction';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { isPlatformBrowser } from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-coin-details',
@@ -34,6 +35,7 @@ export class CoinDetailsComponent implements OnInit {
   buyingTransaction: Transaction = new Transaction
 
   constructor(
+    private location: Location,
     private cryptoService: CryptoService,
     private actRoute: ActivatedRoute,
     private router: Router,
@@ -41,6 +43,10 @@ export class CoinDetailsComponent implements OnInit {
     private userService: UserService,
     @Inject(PLATFORM_ID) private platformId: object
           ) { this.isBrowser = isPlatformBrowser(platformId); }
+
+  goBack(): void {
+    this.location.back();
+  }
 
   ngOnInit(): void {
     this.currentCoinId = this.actRoute.snapshot.paramMap.get('coinId') ?? "";
@@ -159,6 +165,4 @@ export class CoinDetailsComponent implements OnInit {
       });
     }
   }
-
-
 }
