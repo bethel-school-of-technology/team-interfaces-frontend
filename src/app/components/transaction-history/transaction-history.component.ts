@@ -142,7 +142,9 @@ export class TransactionHistoryComponent implements OnInit {
         transaction.profitLoss = parseFloat(saleRevenue);
         this.transactionService.editTransactionById(transaction.id ?? 0, transaction).subscribe(() => {
 
-          this.router.navigate(['/profile']);
+          this.loadTransactions();
+          this.userService.sendUpdatedBalance(this.currentUser.balance);
+          // this.router.navigate(['/profile']);
         });
       });
     });
