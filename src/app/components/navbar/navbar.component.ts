@@ -3,6 +3,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { isPlatformBrowser } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,14 +13,19 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
   private isBrowser: boolean;
-  
+  subscription!: Subscription;
+  currentUser: User = new User();
+
   constructor(
     public userService: UserService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: object
-  ) { this.isBrowser = isPlatformBrowser(platformId); }
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  
+  }
 
-  currentUser: User = new User();
+  
 
   get currentUrl(): string {
     return this.router.url;
@@ -31,11 +37,17 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
+    const user = this.isBrowser ? JSON.parse(localStorage.getItem('currentUser') ?? "") : "";
     if (!user?.user?.id) {
       this.router.navigate(['/login']);
       return;
     }
+
+       // Subscribe to the updated user balance
+       this.subscription = this.userService.getUpdatedUserBalance().subscribe(result => {
+        console.log('Updated balance:', result);
+        this.currentUser.balance = result; // Update the balance
+      });
 
     // Enhanced navigation debugging
     this.router.events.subscribe(event => {

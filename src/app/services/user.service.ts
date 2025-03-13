@@ -1,6 +1,6 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, Subject, tap, throwError } from 'rxjs';
 import { User } from '../models/user';
 import { ChartDataPoint } from '../models/chart-data-point';
 import { isPlatformBrowser } from '@angular/common';
@@ -12,6 +12,7 @@ export class UserService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSubject.asObservable();
   private isBrowser: boolean;
+  private userBalance = new Subject();
   
   private apiUrl = 'http://localhost:3000';
 
@@ -94,4 +95,13 @@ export class UserService {
   getCurrentUser(): User | null {
     return this.currentUserSubject.value;
   }
+
+  sendUpdatedBalance(balance: number) {
+    this.userBalance.next(balance);
+  }
+
+  getUpdatedUserBalance(): Observable<number> {
+    return this.userBalance.asObservable() as Observable<number>;
+  }
+
 }

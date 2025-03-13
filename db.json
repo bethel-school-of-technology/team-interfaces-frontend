@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 75560.16000000003
+      "balance": 76676.16000000003
     },
     {
       "email": "bw@test.com",
@@ -98,7 +98,11 @@
       "amount": 8000,
       "buyDate": 1741631375380,
       "buyPrice": 2.06,
-      "id": 10
+      "id": 10,
+      "currentValue": 2.23,
+      "sellDate": 1741887761387,
+      "sellPrice": 2.23,
+      "profitLoss": 1360
     },
     {
       "user_id": 1740684281625,
@@ -136,7 +140,11 @@
       "amount": 10,
       "buyDate": 1741721431546,
       "buyPrice": 1952.72,
-      "id": 14
+      "id": 14,
+      "currentValue": 1836.12,
+      "sellDate": 1741888163990,
+      "sellPrice": 1836.12,
+      "profitLoss": -1166
     },
     {
       "user_id": 1740684281625,
@@ -156,7 +164,11 @@
       "amount": 10,
       "buyDate": 1741721489210,
       "buyPrice": 1948.06,
-      "id": 16
+      "id": 16,
+      "currentValue": 1844.97,
+      "sellDate": 1741887483758,
+      "sellPrice": 1844.97,
+      "profitLoss": -1030.9
     },
     {
       "user_id": 1740684281625,
@@ -218,7 +230,11 @@
       "amount": 1,
       "buyDate": 1741806233413,
       "buyPrice": 2.53,
-      "id": 31
+      "id": 31,
+      "currentValue": 2.51,
+      "sellDate": 1741887290244,
+      "sellPrice": 2.51,
+      "profitLoss": -0.02
     },
     {
       "user_id": 1740684281625,
@@ -228,7 +244,11 @@
       "amount": 1,
       "buyDate": 1741806311196,
       "buyPrice": 1880.18,
-      "id": 32
+      "id": 32,
+      "currentValue": 1836.12,
+      "sellDate": 1741888391823,
+      "sellPrice": 1836.12,
+      "profitLoss": -44.06
     },
     {
       "user_id": 1740684281625,
@@ -238,7 +258,39 @@
       "amount": 500,
       "buyDate": 1741823218948,
       "buyPrice": 2.24,
-      "id": 33
+      "id": 33,
+      "currentValue": 2.23,
+      "sellDate": 1741888792614,
+      "sellPrice": 2.23,
+      "profitLoss": -5
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 1,
+      "buyDate": 1741888653848,
+      "buyPrice": 1,
+      "id": 34,
+      "currentValue": 1,
+      "sellDate": 1741888665632,
+      "sellPrice": 1,
+      "profitLoss": 0
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "usdt-tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "amount": 1,
+      "buyDate": 1741888735578,
+      "buyPrice": 1,
+      "id": 35,
+      "currentValue": 1,
+      "sellDate": 1741888745031,
+      "sellPrice": 1,
+      "profitLoss": 0
     }
   ],
   "cryptos": [
@@ -247,7 +299,7 @@
       "crypto_id": "near-near-protocol",
       "name": "Near Protocol",
       "symbol": "NEAR",
-      "amount": 2001,
+      "amount": 2000,
       "id": 1
     },
     {
@@ -271,7 +323,7 @@
       "crypto_id": "xrp-xrp",
       "name": "XRP",
       "symbol": "XRP",
-      "amount": 8500,
+      "amount": 0,
       "id": 4
     },
     {
@@ -295,7 +347,7 @@
       "crypto_id": "steth-lido-staked-ether",
       "name": "Lido Staked Ether",
       "symbol": "STETH",
-      "amount": 10,
+      "amount": 0,
       "id": 10
     },
     {
@@ -303,7 +355,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 11,
+      "amount": 0,
       "id": 11
     },
     {

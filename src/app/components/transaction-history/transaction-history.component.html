@@ -26,8 +26,8 @@
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
           <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.buyPrice | currency:'USD':true }}</td>
-          <td>{{ transaction.currentValue| currency:'USD':true }}</td>
+          <td>{{ transaction.buyPrice | currency:'USD': 'symbol' }}</td>
+          <td>{{ transaction.currentValue| currency:'USD': 'symbol' }}</td>
           <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
               (click)="openPrompt(transaction)">Sell</button>
           </td>
@@ -55,11 +55,11 @@
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
           <td>{{ transaction.amount }}</td>
           <td>
-            Buy: {{ transaction.buyPrice | currency:'USD':true}}<br>
-            Sell: {{ transaction.sellPrice | currency:'USD':true}}
+            Buy: {{ transaction.buyPrice | currency:'USD': 'symbol' }}<br>
+            Sell: {{ transaction.sellPrice | currency:'USD': 'symbol' }}
           </td>
           <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0">
-            {{ transaction.profitLoss! | currency:'USD':true }}
+            {{ transaction.profitLoss! | currency:'USD': 'symbol' }}
           </td>
         </tr>
       </tbody>
@@ -73,7 +73,7 @@
     <h3>Are you sure you want to sell the quantity of</h3>
     <h3>{{sellingTransaction.amount}} - 
       {{sellingTransaction.name}} for a Profit/Loss of: 
-      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD':true}}   </h3>
+      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD': 'symbol' }}   </h3>
 
     <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
     <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>
