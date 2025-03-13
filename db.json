@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654321",
-      "balance": 73652.72000000003
+      "balance": 75560.16000000003
     },
     {
       "email": "bw@test.com",
@@ -324,7 +324,11 @@
       "amount": 1,
       "buyDate": 1741803738895,
       "buyPrice": 1874.93,
-      "id": 28
+      "id": 28,
+      "currentValue": 1903.9,
+      "sellDate": 1741826920954,
+      "sellPrice": 1903.9,
+      "profitLoss": 28.97
     },
     {
       "user_id": 1740684281625,
@@ -334,7 +338,11 @@
       "amount": 1,
       "buyDate": 1741803941980,
       "buyPrice": 1877.86,
-      "id": 29
+      "id": 29,
+      "currentValue": 1903.9,
+      "sellDate": 1741826951759,
+      "sellPrice": 1903.9,
+      "profitLoss": 26.04
     },
     {
       "user_id": 1740684281625,
@@ -344,7 +352,11 @@
       "amount": 1,
       "buyDate": 1741806010355,
       "buyPrice": 1880.49,
-      "id": 30
+      "id": 30,
+      "currentValue": 1907.44,
+      "sellDate": 1741826977687,
+      "sellPrice": 1907.44,
+      "profitLoss": 26.95
     },
     {
       "user_id": 1740684281625,
@@ -365,6 +377,16 @@
       "buyDate": 1741806311196,
       "buyPrice": 1880.18,
       "id": 32
+    },
+    {
+      "user_id": 1740684281625,
+      "crypto_id": "xrp-xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "amount": 500,
+      "buyDate": 1741823218948,
+      "buyPrice": 2.24,
+      "id": 33
     }
   ],
   "cryptos": [
@@ -397,7 +419,7 @@
       "crypto_id": "xrp-xrp",
       "name": "XRP",
       "symbol": "XRP",
-      "amount": 8000,
+      "amount": 8500,
       "id": 4
     },
     {
@@ -445,7 +467,7 @@
       "crypto_id": "steth-lido-staked-ether",
       "name": "Lido Staked Ether",
       "symbol": "STETH",
-      "amount": 12,
+      "amount": 10,
       "id": 10
     },
     {
@@ -453,7 +475,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 12,
+      "amount": 11,
       "id": 11
     },
     {
