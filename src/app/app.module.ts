@@ -16,6 +16,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     ScrollingModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

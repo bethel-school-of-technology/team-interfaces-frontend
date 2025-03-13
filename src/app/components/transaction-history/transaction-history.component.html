@@ -9,7 +9,8 @@
 
   <!-- Open Transactions Table -->
   <div class="table-section">
-    <h3>Open Transactions</h3>
+    <h3 *ngIf="cryptoId">Open Transactions for Crypto: {{ cryptoId }}</h3>
+    <h3 *ngIf="!cryptoId">Open Transactions</h3>
     <table class="table table-dark">
       <thead>
         <tr class="table-active">
@@ -22,6 +23,14 @@
         </tr>
       </thead>
       <tbody>
+        <tr *ngIf="openTransactions.length == 0">
+          <td>No open transactions</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         <tr *ngFor="let transaction of openTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
@@ -38,7 +47,8 @@
 
   <!-- Closed Transactions Table -->
   <div class="table-section">
-    <h3>Closed Transactions</h3>
+    <h3 *ngIf="cryptoId">Closed Transactions for Crypto: {{ cryptoId }}</h3>
+    <h3 *ngIf="!cryptoId">Closed Transactions</h3>
     <table class="table table-dark">
       <thead>
         <tr class="table-active">
@@ -50,6 +60,14 @@
         </tr>
       </thead>
       <tbody>
+        <tr *ngIf="closedTransactions.length == 0">
+          <td>No closed transactions</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         <tr *ngFor="let transaction of closedTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
@@ -71,9 +89,10 @@
 <div *ngIf="showPrompt" class="promptOverlay">
   <div *ngIf="showPrompt" class="prompt-box">
     <h3>Are you sure you want to sell the quantity of</h3>
-    <h3>{{sellingTransaction.amount}} - 
-      {{sellingTransaction.name}} for a Profit/Loss of: 
-      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) * (sellingTransaction.buyPrice)) )| currency: 'USD': 'symbol' }}   </h3>
+    <h3>{{sellingTransaction.amount}} -
+      {{sellingTransaction.name}} for a Profit/Loss of:
+      {{ (((sellingTransaction.amount) * (sellingTransaction.currentValue ?? 0 )) - ((sellingTransaction.amount) *
+      (sellingTransaction.buyPrice)) )| currency: 'USD': 'symbol' }} </h3>
 
     <button (click)="onConfirm()" style="font-weight: 500;">Confirm</button>
     <button (click)="onCancel()" style="font-weight: 500;">Cancel</button>

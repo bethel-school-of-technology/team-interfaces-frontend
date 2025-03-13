@@ -18,6 +18,10 @@ export class TransactionService {
     return this.http.get<Transaction[]>(this.transactionURL);
   }
 
+  getTransactionsbyCryptoAndUserId(cryptoId: string, UserId: number): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(`${this.transactionURL}?crypto_id=${cryptoId}&user_id=${UserId}`);
+  }
+
   getTransactionById(TransactionId: number): Observable<Transaction> {
     return this.http.get<Transaction>(`${this.transactionURL}/${TransactionId}`);
   }
