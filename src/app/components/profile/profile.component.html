@@ -49,7 +49,7 @@
                             <tr *ngFor="let crypto of assets">
                                 <td><img id="cryptoIcon" style="max-width: 30px" src="https://static.coinpaprika.com/coin/{{crypto.crypto_id}}/logo.png"/></td>
                                 <td class="hover-text" [routerLink]='["/market", crypto.crypto_id]' >{{ crypto.name }}</td>
-                                <td>{{transactionDates.get(crypto.crypto_id) | date:'medium'}}</td>
+                                <td class="hover-text" [routerLink]='["/transaction-history", crypto.crypto_id]' >{{transactionDates.get(crypto.crypto_id) | date:'medium'}}</td>
                                 <td>{{ crypto.amount }}</td>
                                 <td>${{ valueMap.get(crypto.crypto_id)?.toFixed(2) || '0.00' }}</td>
                             </tr>

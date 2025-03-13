@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'transfer', component: TransferComponent },
   { path: 'update', component: UpdateComponent },
-  { path: 'transaction-history', component: TransactionHistoryComponent }, 
+  { path: 'transaction-history', component: TransactionHistoryComponent },
+  { path: 'transaction-history/:cryptoId', component: TransactionHistoryComponent }, 
   { path: 'about-us', component: AboutUsComponent }
 ];
 

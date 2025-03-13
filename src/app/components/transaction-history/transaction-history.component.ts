@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Transaction } from '../../models/transaction';
 import { TransactionService } from '../../services/transaction.service';
 import { UserService } from '../../services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CryptoService } from '../../services/coinPaprikaAPI.service';
 import { User } from '../../models/user';
 import { Crypto } from '../../models/crypto';
@@ -25,7 +25,9 @@ export class TransactionHistoryComponent implements OnInit {
   loading = false;
   error?: string;
   showPrompt: boolean = false;
-  sellingTransaction: Transaction = new Transaction
+  sellingTransaction: Transaction = new Transaction;
+  cryptoId: string | null = null;
+  cryptoIdPresent: boolean = false;
 
 
 
@@ -34,12 +36,50 @@ export class TransactionHistoryComponent implements OnInit {
     private transactionService: TransactionService,
     private router: Router,
     private coinPaprikaAPI: CryptoService,
+    private actRoute: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: object
   ) { this.isBrowser = isPlatformBrowser(platformId); }
 
   ngOnInit(): void {
     const user = this.isBrowser? JSON.parse(localStorage.getItem('currentUser') ?? ""):"";
+    // load user
     this.loadUserData();
+
+    // load all transactions by user or by user and crypto
+    this.actRoute.paramMap.subscribe(params => {
+      this.cryptoId = params.get('cryptoId');
+
+      if(this.cryptoId) {
+        this.cryptoIdPresent = true;
+        this.transactionService.getTransactionsbyCryptoAndUserId(this.cryptoId, this.currentUser.id ?? 0).subscribe({
+          next: (transactions) => {
+            this.transactions = transactions;
+            this.splitTransactions();
+            this.openTransactions.forEach(t => this.getCurrentValue(t, t.crypto_id))
+            this.loading = false;
+          },
+          error: (err) => {
+            this.error = 'Failed to load transactions';
+            this.loading = false;
+          }
+        });
+      } else {
+        this.transactionService.getTransactionUserId(this.currentUserID).subscribe({
+          next: (transactions) => {
+            this.transactions = transactions;
+            this.splitTransactions();
+            this.openTransactions.forEach(t => this.getCurrentValue(t, t.crypto_id))
+            this.loading = false;
+          },
+          error: (err) => {
+            this.error = 'Failed to load transactions';
+            this.loading = false;
+          }
+        });
+      }
+
+    });
+    
   }
 
   private loadUserData(): void {
@@ -59,7 +99,6 @@ export class TransactionHistoryComponent implements OnInit {
       balance: user.user.balance,
       password: user.user.password
     };
-    this.loadTransactions();
   }
 
   private loadTransactions(): void {
