@@ -10,11 +10,11 @@
     },
     {
       "email": "bw@test.com",
-      "password": "$2a$10$rUBSOrtIiKUNAbMe3LxWQu3YVlXFtMLaT4hQY.NGXZF2D8mXdR13u",
+      "password": "$2a$10$S18j2BVtod4ZLojH82.bu.pRg0H/7t8vlgu7nwzVHAa1qIXZbOsRK",
       "id": 1741229357244,
-      "name": "Brian W.",
+      "name": "Brian Whisenhunt",
       "bankAccount": "789456123",
-      "balance": 113442.47
+      "balance": 6145.1100000000015
     }
   ],
   "transactions": [
@@ -101,16 +101,6 @@
       "id": 7
     },
     {
-      "user_id": 1741229357244,
-      "crypto_id": "sol-solana",
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 600,
-      "buyDate": 1741229704652,
-      "buyPrice": 148.61,
-      "id": 8
-    },
-    {
       "user_id": 1740684281625,
       "crypto_id": "near-near-protocol",
       "name": "Near Protocol",
@@ -167,20 +157,6 @@
       "profitLoss": 1111.05
     },
     {
-      "user_id": 1741229357244,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 53.185831294543135,
-      "buyDate": 1741648884127,
-      "buyPrice": 1880.2,
-      "id": 13,
-      "currentValue": 1919.86,
-      "sellDate": 1741738062718,
-      "sellPrice": 1919.86,
-      "profitLoss": 2109.35
-    },
-    {
       "user_id": 1740684281625,
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
@@ -217,106 +193,6 @@
       "sellDate": 1741887483758,
       "sellPrice": 1844.97,
       "profitLoss": -1030.9
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "usdt-tether",
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 0,
-      "buyDate": 1741738453275,
-      "buyPrice": 1,
-      "id": 17
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "sol-solana",
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 0,
-      "buyDate": 1741738477236,
-      "buyPrice": 125.49,
-      "id": 18
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 0,
-      "buyDate": 1741738515803,
-      "buyPrice": 1919.68,
-      "id": 19
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "usdc-usd-coin",
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 0,
-      "buyDate": 1741738695173,
-      "buyPrice": 1,
-      "id": 20
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "doge-dogecoin",
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 93750,
-      "buyDate": 1741739664286,
-      "buyPrice": 0.16,
-      "id": 21
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "trx-tron",
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 113636.36363636363,
-      "buyDate": 1741740722903,
-      "buyPrice": 0.22,
-      "id": 22
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "ada-cardano",
-      "name": "Cardano",
-      "symbol": "ADA",
-      "amount": 41095.890410958906,
-      "buyDate": 1741740794459,
-      "buyPrice": 0.73,
-      "id": 23
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "link-chainlink",
-      "name": "Chainlink",
-      "symbol": "LINK",
-      "amount": 2679.938744257274,
-      "buyDate": 1741740924793,
-      "buyPrice": 13.06,
-      "id": 24
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "avax-avalanche",
-      "name": "Avalanche",
-      "symbol": "AVAX",
-      "amount": 575.3739930955121,
-      "buyDate": 1741740969502,
-      "buyPrice": 17.38,
-      "id": 25
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 10,
-      "buyDate": 1741741039927,
-      "buyPrice": 1909.74,
-      "id": 26
     },
     {
       "user_id": 1740684281625,
@@ -449,6 +325,26 @@
       "buyDate": 1741893105268,
       "buyPrice": 1854.11,
       "id": 36
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 150,
+      "buyDate": 1741902621835,
+      "buyPrice": 574.3,
+      "id": 37
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 2,
+      "buyDate": 1741903946640,
+      "buyPrice": 576.18,
+      "id": 38
     }
   ],
   "cryptos": [
@@ -509,14 +405,6 @@
       "id": 7
     },
     {
-      "user_id": 1741229357244,
-      "crypto_id": "sol-solana",
-      "name": "Solana",
-      "symbol": "SOL",
-      "amount": 600,
-      "id": 8
-    },
-    {
       "user_id": 1740684281625,
       "crypto_id": "sol-solana",
       "name": "Solana",
@@ -541,68 +429,20 @@
       "id": 11
     },
     {
-      "user_id": 1741229357244,
-      "crypto_id": "usdt-tether",
-      "name": "Tether",
-      "symbol": "USDT",
-      "amount": 0,
-      "id": 12
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "usdc-usd-coin",
-      "name": "USDC",
-      "symbol": "USDC",
-      "amount": 0,
-      "id": 13
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "doge-dogecoin",
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "amount": 93750,
-      "id": 14
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "trx-tron",
-      "name": "TRON",
-      "symbol": "TRX",
-      "amount": 113636.36363636363,
-      "id": 15
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "ada-cardano",
-      "name": "Cardano",
-      "symbol": "ADA",
-      "amount": 41095.890410958906,
-      "id": 16
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "link-chainlink",
-      "name": "Chainlink",
-      "symbol": "LINK",
-      "amount": 2679.938744257274,
-      "id": 17
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "avax-avalanche",
-      "name": "Avalanche",
-      "symbol": "AVAX",
-      "amount": 575.3739930955121,
-      "id": 18
-    },
-    {
       "user_id": 1740684281625,
       "crypto_id": "usdt-tether",
       "name": "Tether",
       "symbol": "USDT",
       "amount": 0,
       "id": 19
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "bnb-binance-coin",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "amount": 152,
+      "id": 20
     }
   ]
 }

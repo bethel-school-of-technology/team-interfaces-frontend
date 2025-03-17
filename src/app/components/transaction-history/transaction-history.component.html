@@ -18,7 +18,9 @@
           <th>Crypto</th>
           <th>Amount</th>
           <th>Buy Price Per Coin</th>
+          <th>Total Buy Value</th>
           <th>Current Value Per Coin</th>
+          <th>Total Current Value</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -30,13 +32,16 @@
           <td></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
         <tr *ngFor="let transaction of openTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
           <td>{{ transaction.amount }}</td>
           <td>{{ transaction.buyPrice | currency:'USD': 'symbol' }}</td>
+          <td>{{ getBuyValue(transaction) | currency:'USD':'symbol' }}</td>
           <td>{{ transaction.currentValue| currency:'USD': 'symbol' }}</td>
+          <td>{{ getTotalValue(transaction) | currency:'USD':'symbol' }}</td>
           <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
               (click)="openPrompt(transaction)">Sell</button>
           </td>
