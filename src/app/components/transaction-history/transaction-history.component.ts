@@ -127,6 +127,20 @@ export class TransactionHistoryComponent implements OnInit {
     })
   }
 
+  getBuyValue(transaction: Transaction): number | undefined {
+    if (transaction.amount === 0 || transaction.buyPrice === undefined) {
+        return undefined;
+    }
+    return transaction.amount * transaction.buyPrice;
+}
+
+  getTotalValue(transaction: Transaction): number | undefined {
+    if (transaction.amount === 0 || transaction.currentValue === undefined) {
+        return undefined;
+    }
+    return transaction.amount * transaction.currentValue;
+}
+
     // Open the prompt box
     openPrompt(transaction: Transaction): void {
       this.sellingTransaction = transaction;
