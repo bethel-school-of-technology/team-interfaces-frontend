@@ -3,14 +3,14 @@
 
 
   <!-- User Information -->
-  <div class="user-info">
+  <div class="user-info title">
     <h2> {{ currentUser.name }}'s Transactions</h2>
   </div>
 
   <!-- Open Transactions Table -->
   <div class="table-section">
-    <h3 *ngIf="cryptoId">Open Transactions for Crypto: {{ cryptoId }}</h3>
-    <h3 *ngIf="!cryptoId">Open Transactions</h3>
+    <h3 *ngIf="cryptoId" class="title">Open Transactions for Crypto: {{ cryptoId }}</h3>
+    <h3 *ngIf="!cryptoId" class="title">Open Transactions</h3>
     <table class="table table-dark">
       <thead>
         <tr class="table-active">
@@ -52,8 +52,8 @@
 
   <!-- Closed Transactions Table -->
   <div class="table-section">
-    <h3 *ngIf="cryptoId">Closed Transactions for Crypto: {{ cryptoId }}</h3>
-    <h3 *ngIf="!cryptoId">Closed Transactions</h3>
+    <h3 *ngIf="cryptoId" class="title">Closed Transactions for Crypto: {{ cryptoId }}</h3>
+    <h3 *ngIf="!cryptoId" class="title">Closed Transactions</h3>
     <table class="table table-dark">
       <thead>
         <tr class="table-active">

@@ -2,6 +2,10 @@
   margin-top: 70px;
 }
 
+.title {
+  margin-left: 25px;
+}
+
 .promptOverlay {
   position: fixed;
   top: 0;
