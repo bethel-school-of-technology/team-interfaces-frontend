@@ -37,7 +37,9 @@
         <tr *ngFor="let transaction of openTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-          <td class="center">{{ transaction.amount }}</td>
+          <td class="center">
+            {{ transaction.amount % 1 === 0 ? (transaction.amount | number:'1.0-0') : (transaction.amount | number:'1.3-3') }}
+          </td>
           <td class="currency">{{ transaction.buyPrice | currency:'USD': 'symbol' }}</td>
           <td class="currency">{{ getBuyValue(transaction) | currency:'USD':'symbol' }}</td>
           <td class="currency">{{ transaction.currentValue| currency:'USD': 'symbol' }}</td>
@@ -76,12 +78,14 @@
         <tr *ngFor="let transaction of closedTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-          <td class="center">{{ transaction.amount }}</td>
+          <td class="center">
+            {{ transaction.amount % 1 === 0 ? (transaction.amount | number:'1.0-0') : (transaction.amount | number:'1.3-3') }}
+          </td>
           <td class="currency">
             Buy: {{ transaction.buyPrice | currency:'USD': 'symbol' }}<br>
             Sell: {{ transaction.sellPrice | currency:'USD': 'symbol' }}
           </td>
-          <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0"  class="currency">
+          <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0" class="currency">
             {{ transaction.profitLoss! | currency:'USD': 'symbol' }}
           </td>
         </tr>
