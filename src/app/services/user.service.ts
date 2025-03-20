@@ -13,8 +13,8 @@ export class UserService {
   currentUser$ = this.currentUserSubject.asObservable();
   private isBrowser: boolean;
   private userBalance = new Subject();
-  
-  private apiUrl = 'http://localhost:3000';
+
+  private apiUrl = 'http://207.244.251.209:3000';
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -28,7 +28,7 @@ export class UserService {
         this.currentUserSubject.next(JSON.parse(user));
       }
     }
-    
+
   }
 
   signUp(user: User): Observable<User> {
