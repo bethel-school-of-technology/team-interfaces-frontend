@@ -16,11 +16,11 @@
         <tr class="table-active">
           <th>Date, Time</th>
           <th>Crypto</th>
-          <th>Amount</th>
-          <th>Buy Price Per Coin</th>
-          <th>Total Buy Value</th>
-          <th>Current Value Per Coin</th>
-          <th>Total Current Value</th>
+          <th class="center">Amount</th>
+          <th class="currency">Buy Price Per Coin</th>
+          <th class="currency">Total Buy Value</th>
+          <th class="currency">Current Value Per Coin</th>
+          <th class="currency">Total Current Value</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -37,11 +37,11 @@
         <tr *ngFor="let transaction of openTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-          <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.buyPrice | currency:'USD': 'symbol' }}</td>
-          <td>{{ getBuyValue(transaction) | currency:'USD':'symbol' }}</td>
-          <td>{{ transaction.currentValue| currency:'USD': 'symbol' }}</td>
-          <td>{{ getTotalValue(transaction) | currency:'USD':'symbol' }}</td>
+          <td class="center">{{ transaction.amount }}</td>
+          <td class="currency">{{ transaction.buyPrice | currency:'USD': 'symbol' }}</td>
+          <td class="currency">{{ getBuyValue(transaction) | currency:'USD':'symbol' }}</td>
+          <td class="currency">{{ transaction.currentValue| currency:'USD': 'symbol' }}</td>
+          <td class="currency">{{ getTotalValue(transaction) | currency:'USD':'symbol' }}</td>
           <td><button *ngIf="transaction.amount > 0" [disabled]="loading" class="btn btn-danger" type="button"
               (click)="openPrompt(transaction)">Sell</button>
           </td>
@@ -59,9 +59,9 @@
         <tr class="table-active">
           <th>Date, Time</th>
           <th>Crypto</th>
-          <th>Amount</th>
-          <th>Buy/Sell Price</th>
-          <th>Profit/Loss</th>
+          <th class="center">Amount</th>
+          <th class="currency">Buy/Sell Price</th>
+          <th class="currency">Profit/Loss</th>
         </tr>
       </thead>
       <tbody>
@@ -76,12 +76,12 @@
         <tr *ngFor="let transaction of closedTransactions">
           <td>{{ transaction.buyDate | date:'short' }}</td>
           <td>{{ transaction.symbol }} ({{ transaction.name }})</td>
-          <td>{{ transaction.amount }}</td>
-          <td>
+          <td class="center">{{ transaction.amount }}</td>
+          <td class="currency">
             Buy: {{ transaction.buyPrice | currency:'USD': 'symbol' }}<br>
             Sell: {{ transaction.sellPrice | currency:'USD': 'symbol' }}
           </td>
-          <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0">
+          <td [class.profit]="transaction.profitLoss! >= 0" [class.loss]="transaction.profitLoss! < 0"  class="currency">
             {{ transaction.profitLoss! | currency:'USD': 'symbol' }}
           </td>
         </tr>

@@ -14,7 +14,15 @@
       "id": 1741229357244,
       "name": "Brian Whisenhunt",
       "bankAccount": "789456123",
-      "balance": 6145.1100000000015
+      "balance": 7384.010000000002
+    },
+    {
+      "email": "brian@test.com",
+      "password": "$2a$10$.utM3KdPZ3Gsgc8B.TbNMuGO2bR1W5UAK0UyIkLjl8AGMVZLg0WKm",
+      "id": 1742433082617,
+      "name": "Brian",
+      "bankAccount": "789456123",
+      "balance": 100000
     }
   ],
   "transactions": [
@@ -348,7 +356,11 @@
       "amount": 2,
       "buyDate": 1741903946640,
       "buyPrice": 576.18,
-      "id": 38
+      "id": 38,
+      "currentValue": 619.81,
+      "sellDate": 1742429212660,
+      "sellPrice": 619.45,
+      "profitLoss": 86.54
     },
     {
       "user_id": 1740684281625,
@@ -455,7 +467,7 @@
       "crypto_id": "bnb-binance-coin",
       "name": "Binance Coin",
       "symbol": "BNB",
-      "amount": 152,
+      "amount": 150,
       "id": 20
     }
   ]
