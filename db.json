@@ -9,12 +9,12 @@
       "balance": 77217.24000000003
     },
     {
-      "email": "bw@test.com",
-      "password": "$2a$10$S18j2BVtod4ZLojH82.bu.pRg0H/7t8vlgu7nwzVHAa1qIXZbOsRK",
+      "email": "bw@coinspace.com",
+      "password": "$2a$10$Odq1DA7.GbhzT2v7vp1Ok.e4toCBsYyxglORJgpZ5p4vWOQhuZ4pu",
       "id": 1741229357244,
       "name": "Brian Whisenhunt",
       "bankAccount": "789456123",
-      "balance": 6145.1100000000015
+      "balance": 13382.590000000002
     }
   ],
   "transactions": [
@@ -75,20 +75,6 @@
       "buyDate": 1741229466309,
       "buyPrice": 91433.08,
       "id": 5
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 40,
-      "buyDate": 1741229496936,
-      "buyPrice": 2270.05,
-      "id": 6,
-      "currentValue": 1883.97,
-      "sellDate": 1741649791917,
-      "sellPrice": 1883.97,
-      "profitLoss": -15443.2
     },
     {
       "user_id": 1741229357244,
@@ -348,7 +334,11 @@
       "amount": 2,
       "buyDate": 1741903946640,
       "buyPrice": 576.18,
-      "id": 38
+      "id": 38,
+      "currentValue": 619.81,
+      "sellDate": 1742429212660,
+      "sellPrice": 619.45,
+      "profitLoss": 86.54
     },
     {
       "user_id": 1740684281625,
@@ -359,6 +349,16 @@
       "buyDate": 1742412502647,
       "buyPrice": 2034.47,
       "id": 39
+    },
+    {
+      "user_id": 1741229357244,
+      "crypto_id": "eth-ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "amount": 0.4933715531829866,
+      "buyDate": 1742437702859,
+      "buyPrice": 2026.87,
+      "id": 40
     }
   ],
   "cryptos": [
@@ -393,22 +393,6 @@
       "symbol": "XRP",
       "amount": 0,
       "id": 4
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "btc-bitcoin",
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "amount": 1,
-      "id": 5
-    },
-    {
-      "user_id": 1741229357244,
-      "crypto_id": "eth-ethereum",
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "amount": 10,
-      "id": 6
     },
     {
       "user_id": 1741229357244,
@@ -455,7 +439,7 @@
       "crypto_id": "bnb-binance-coin",
       "name": "Binance Coin",
       "symbol": "BNB",
-      "amount": 152,
+      "amount": 150,
       "id": 20
     }
   ]
