@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654337",
-      "balance": 77217.24000000003
+      "balance": 79275.12000000004
     },
     {
       "email": "bw@test.com",
@@ -358,7 +358,11 @@
       "amount": 1,
       "buyDate": 1742412502647,
       "buyPrice": 2034.47,
-      "id": 39
+      "id": 39,
+      "currentValue": 2057.88,
+      "sellDate": 1742429170750,
+      "sellPrice": 2057.88,
+      "profitLoss": 23.41
     }
   ],
   "cryptos": [
@@ -439,7 +443,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 1,
+      "amount": 0,
       "id": 11
     },
     {
