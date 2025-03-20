@@ -6,7 +6,7 @@
       "id": 1740684281625,
       "name": "Rudy Weiler",
       "bankAccount": "987654337",
-      "balance": 77217.24000000003
+      "balance": 79275.12000000004
     },
     {
       "email": "bw@coinspace.com",
@@ -423,7 +423,7 @@
       "crypto_id": "eth-ethereum",
       "name": "Ethereum",
       "symbol": "ETH",
-      "amount": 1,
+      "amount": 0,
       "id": 11
     },
     {
