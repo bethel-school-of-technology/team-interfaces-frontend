@@ -11,8 +11,8 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  transactionURL: string = "http://207.244.251.209:3000/transactions";
-  cryptoURL: string = "http://207.244.251.209:3000/cryptos";
+  transactionURL: string = "http://localhost:3000/transactions";
+  cryptoURL: string = "http://localhost:3000/cryptos";
 
   getAllTransactions(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.transactionURL);
